@@ -9,15 +9,22 @@ public abstract class BaseDao<T> : IDao<T>
     public string TabelaCreateQuery { get; set; }
     public string SelectQuery { get; set; }
     public string InsertQuery { get; set; }
+    public string UpdateQuery { get; set; }
 
     public string TabelaName { get; set; }
 
-    protected BaseDao(string tabelaQuery, string selectQuery, string insertQuery, string tabelaName)
+    protected BaseDao(
+        string tabelaQuery, 
+        string selectQuery, 
+        string insertQuery,
+        string tabelaName,
+        string updateQuery)
     {
         TabelaCreateQuery = tabelaQuery;
         SelectQuery = selectQuery;
         InsertQuery = insertQuery;
         TabelaName = tabelaName;
+        UpdateQuery = updateQuery;
         CriarBancoDeDados();
     }
 
@@ -89,4 +96,27 @@ public abstract class BaseDao<T> : IDao<T>
 
     protected abstract T CriarInstancia(SqliteDataReader sqliteDataReader);
 
+    public Task AtualizarRegistro(T objetoParaAtualizar)
+    {
+        return Task.Run(() =>
+        {
+            using (var sqlConnection = new SqliteConnection(CONNECTION_STRING))
+            {
+                sqlConnection.Open();
+
+                using (var command = sqlConnection.CreateCommand())
+                {
+                    command.CommandText = UpdateQuery;
+
+                    // Assume que as propriedades do objetoVo correspondem aos parâmetros do comando SQL
+                    foreach (var propriedade in typeof(T).GetProperties())
+                    {
+                        command.Parameters.AddWithValue($"@{propriedade.Name}", propriedade.GetValue(objetoParaAtualizar) ?? DBNull.Value);
+                    }
+
+                    command.ExecuteNonQuery();
+                }
+            }
+        });
+    }
 }

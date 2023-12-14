@@ -20,6 +20,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens
 		Readme.md = Readme.md
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoEmTresCamadas.Pizzaria.WebApi", "ProjetoEmTresCamadas.Pizzaria.Console\ProjetoEmTresCamadas.Pizzaria.WebApi\ProjetoEmTresCamadas.Pizzaria.WebApi.csproj", "{51E6DC0E-781F-4F08-A112-7DC5EE626268}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{899A7B5E-BA86-46D4-B2B6-95030E9E44E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{899A7B5E-BA86-46D4-B2B6-95030E9E44E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{899A7B5E-BA86-46D4-B2B6-95030E9E44E9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51E6DC0E-781F-4F08-A112-7DC5EE626268}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51E6DC0E-781F-4F08-A112-7DC5EE626268}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51E6DC0E-781F-4F08-A112-7DC5EE626268}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51E6DC0E-781F-4F08-A112-7DC5EE626268}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -46,6 +52,7 @@ Global
 		{09D9E852-F481-4195-8234-9D481CE32CAE} = {90883400-3C02-4BC0-9F7C-9BA4A81126C8}
 		{39A92FFB-9DB2-45F2-A7BC-D0B001359DBC} = {71E72EDC-0F30-418D-8532-BDB7BC4F4C11}
 		{899A7B5E-BA86-46D4-B2B6-95030E9E44E9} = {C3631059-F065-4B35-B1CD-898A0A808088}
+		{51E6DC0E-781F-4F08-A112-7DC5EE626268} = {90883400-3C02-4BC0-9F7C-9BA4A81126C8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0739DC29-7388-4CD3-BC13-F9F74975EB45}

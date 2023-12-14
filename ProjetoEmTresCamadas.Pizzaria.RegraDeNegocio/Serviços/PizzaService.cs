@@ -7,7 +7,8 @@ namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Serviços;
 
 public class PizzaService :
     IAdicionar<Pizza>,
-    IObter<Pizza>
+    IObter<Pizza>,
+    IAtualizar<Pizza>
 {
     private IPizzaDao PizzaDao { get; set; }
 
@@ -23,14 +24,7 @@ public class PizzaService :
 
     public Pizza Adicionar(Pizza objeto)
     {
-
-        PizzaVo pizzaVo = new PizzaVo()
-        {
-            Descricao = objeto.Descricao,
-            Sabor = objeto.Sabor,
-            TamanhoDePizza = Convert.ToInt32(objeto.TamanhoDePizza),
-            Valor = objeto.Valor
-        };
+        PizzaVo pizzaVo = objeto.ToPizzaVo();
         objeto.Id = PizzaDao.CriarRegistro(pizzaVo);
         return objeto;
     }
@@ -53,5 +47,15 @@ public class PizzaService :
             pizzas.Add(pizza);
         }
         return pizzas;
+    }
+
+    public async Task<Pizza> AtualizarAsync(Pizza objeto)
+    {
+        PizzaVo pizzaVo = objeto.ToPizzaVo();
+        await PizzaDao.AtualizarRegistro(pizzaVo);
+
+        objeto = ObterTodos().Find(pizza => pizza.Id.Equals(objeto.Id));
+
+        return objeto;
     }
 }

@@ -25,9 +25,19 @@ public class PizzaDao :  BaseDao<PizzaVo>, IPizzaDao
                 INSERT INTO {TABELA_PIZZA_NOME} (Sabor, Descricao, TamanhoDePizza, Valor)
                 VALUES (@Sabor, @Descricao, @TamanhoDePizza, @Valor)";
 
+    private const string UPDATE_PIZZA = @$"
+    UPDATE {TABELA_PIZZA_NOME}
+    SET
+        Sabor = @Sabor,
+        Descricao = @Descricao,
+        TamanhoDePizza = @TamanhoDePizza,
+        Valor = @Valor
+    WHERE
+        ID = @Id";
+
     private const string SELECT_PIZZA = @$"SELECT * FROM {TABELA_PIZZA_NOME}";
 
-    public PizzaDao() : base(TABELA_PIZZA, SELECT_PIZZA, INSERIR_PIZZA, TABELA_PIZZA_NOME) { }
+    public PizzaDao() : base(TABELA_PIZZA, SELECT_PIZZA, INSERIR_PIZZA, TABELA_PIZZA_NOME, UPDATE_PIZZA) { }
 
     protected override PizzaVo CriarInstancia(SqliteDataReader sqliteDataReader)
     {
@@ -36,8 +46,8 @@ public class PizzaDao :  BaseDao<PizzaVo>, IPizzaDao
             Id = Convert.ToInt32(sqliteDataReader["Id"]),
             Sabor = sqliteDataReader["Sabor"].ToString(),
             Descricao = sqliteDataReader["Descricao"].ToString(),
-            TamanhoDePizza = Convert.ToInt32(sqliteDataReader["TAMANHODAPIZZA"]),
-            Valor = Convert.ToDouble(sqliteDataReader["VALOR"])
+            TamanhoDePizza = Convert.ToInt32(sqliteDataReader["TamanhoDePizza"]),
+            Valor = Convert.ToDouble(sqliteDataReader["Valor"])
         };
     }
 }

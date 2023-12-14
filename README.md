@@ -19,6 +19,6 @@
 4. Obter todos os clientes.
 5. Obter todas as pizzas.
 6. Obter todos os pedidos.
-7. Gerar relatório em arquivo texto dos pedidos finalizados mostrando os dados de quem pediu, a pizza, horário que o pedido começou e horário de finalização da preparação, horário que saiu e finalizou a entrega. 
+7. Gerar relatório dos pedidos finalizados mostrando os dados de quem pediu, a pizza, horário que o pedido começou e horário de finalização da preparação, horário que saiu e finalizou a entrega. 
 7.1 Deve permitir gerar o relatório escolhendo a data inicial e final 
-7.2 Deve ter uma opção de escolher entre arquivo texto e json
+

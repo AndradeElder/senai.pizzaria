@@ -1,4 +1,6 @@
-﻿namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades;
+﻿using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
+
+namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades;
 
 
 public class Pizza : EntidadeBase
@@ -19,5 +21,17 @@ public class Pizza : EntidadeBase
     public override string ToString()
     {
         return $"Sua Pizza é de sabor {Sabor} e tamanho {TamanhoDePizza}";
+    }
+
+    public PizzaVo ToPizzaVo()
+    {
+        return new PizzaVo()
+        {
+            Id = Id,
+            Descricao = Descricao,
+            Sabor = Sabor,
+            TamanhoDePizza = Convert.ToInt32(TamanhoDePizza),
+            Valor = Valor
+        };
     }
 }
