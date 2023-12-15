@@ -8,7 +8,8 @@ namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Serviços;
 public class PizzaService :
     IAdicionar<Pizza>,
     IObter<Pizza>,
-    IAtualizar<Pizza>
+    IAtualizar<Pizza>,
+    IDeletar<Pizza>
 {
     private IPizzaDao PizzaDao { get; set; }
 
@@ -57,5 +58,10 @@ public class PizzaService :
         objeto = ObterTodos().Find(pizza => pizza.Id.Equals(objeto.Id));
 
         return objeto;
+    }
+
+    public async Task Deletar(int ID)
+    {
+        await PizzaDao.DeletarRegistro(ID);
     }
 }

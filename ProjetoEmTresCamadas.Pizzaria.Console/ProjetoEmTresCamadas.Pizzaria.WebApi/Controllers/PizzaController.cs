@@ -36,6 +36,12 @@ namespace ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers
         {
             return await _pizzaService.AtualizarAsync(pizza); 
         }
+
+        [HttpDelete]
+        public async Task DeletePizza(int ID)
+        {
+            await _pizzaService.Deletar(ID);
+        }
     
     }
 }

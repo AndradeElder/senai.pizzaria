@@ -10,7 +10,7 @@ public abstract class BaseDao<T> : IDao<T>
     public string SelectQuery { get; set; }
     public string InsertQuery { get; set; }
     public string UpdateQuery { get; set; }
-
+    public string DeleteQuery { get; set; }
     public string TabelaName { get; set; }
 
     protected BaseDao(
@@ -18,13 +18,15 @@ public abstract class BaseDao<T> : IDao<T>
         string selectQuery, 
         string insertQuery,
         string tabelaName,
-        string updateQuery)
+        string updateQuery,
+        string deleteQuery)
     {
         TabelaCreateQuery = tabelaQuery;
         SelectQuery = selectQuery;
         InsertQuery = insertQuery;
         TabelaName = tabelaName;
         UpdateQuery = updateQuery;
+        DeleteQuery = deleteQuery;
         CriarBancoDeDados();
     }
 
@@ -114,6 +116,29 @@ public abstract class BaseDao<T> : IDao<T>
                         command.Parameters.AddWithValue($"@{propriedade.Name}", propriedade.GetValue(objetoParaAtualizar) ?? DBNull.Value);
                     }
 
+                    command.ExecuteNonQuery();
+                }
+            }
+        });
+    }
+
+    public Task<T> ObterRegistro(int ID)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task DeletarRegistro(int ID)
+    {
+        return Task.Run(() =>
+        {
+            using (var sqlConnection = new SqliteConnection(CONNECTION_STRING))
+            {
+                sqlConnection.Open();
+
+                using (var command = sqlConnection.CreateCommand())
+                {
+                    command.CommandText = DeleteQuery;                    
+                    command.Parameters.AddWithValue($"ID", ID);
                     command.ExecuteNonQuery();
                 }
             }
