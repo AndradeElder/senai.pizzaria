@@ -2,17 +2,20 @@
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Regras;
 
 namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Serviços;
-public class PedidoService :
-    IPedidoService,
-    IObter<Pedido>,
-    IAdicionar<Pedido>
+
+public class PedidoService : IPedidoService
 {
-    public Pedido Adicionar(Pedido objeto)
+    public Pizza Adicionar(Pizza objeto)
     {
         throw new NotImplementedException();
     }
 
-    public Cliente Adicionar(Cliente objeto)
+    public Task<Pizza> AtualizarAsync(Pizza objeto)
+    {
+        throw new NotImplementedException();
+    }
+
+    public Task Deletar(int ID)
     {
         throw new NotImplementedException();
     }
@@ -27,8 +30,9 @@ public class PedidoService :
         throw new NotImplementedException();
     }
 
-    public List<Pedido> ObterTodos()
+    public Task<List<Pizza>> ObterTodos()
     {
         throw new NotImplementedException();
     }
 }
+

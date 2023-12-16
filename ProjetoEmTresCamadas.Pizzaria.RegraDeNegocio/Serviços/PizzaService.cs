@@ -1,26 +1,17 @@
-﻿using ProjetoEmTresCamadas.Pizzaria.DAO;
+﻿using ProjetoEmTresCamadas.Pizzaria.DAO.Dao;
 using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Regras;
 
 namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Serviços;
-
-public class PizzaService :
-    IAdicionar<Pizza>,
-    IObter<Pizza>,
-    IAtualizar<Pizza>,
-    IDeletar<Pizza>
+public class PizzaService : IPizzaService
+    
 {
     private IPizzaDao PizzaDao { get; set; }
 
     public PizzaService(IPizzaDao pizzaDao)
     {
         PizzaDao = pizzaDao;
-    }
-
-    public PizzaService()
-    {
-        PizzaDao = new PizzaDao();
     }
 
     public Pizza Adicionar(Pizza objeto)
@@ -30,7 +21,7 @@ public class PizzaService :
         return objeto;
     }
 
-    public List<Pizza> ObterTodos()
+    public async Task<List<Pizza>> ObterTodos()
     {
         List<Pizza> pizzas = new List<Pizza>();
         List<PizzaVo> pizzasBanco = PizzaDao.ObterRegistros();
@@ -55,7 +46,7 @@ public class PizzaService :
         PizzaVo pizzaVo = objeto.ToPizzaVo();
         await PizzaDao.AtualizarRegistro(pizzaVo);
 
-        objeto = ObterTodos().Find(pizza => pizza.Id.Equals(objeto.Id));
+        objeto = (await ObterTodos()).Find(pizza => pizza.Id.Equals(objeto.Id));
 
         return objeto;
     }

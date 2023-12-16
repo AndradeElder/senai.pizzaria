@@ -1,7 +1,7 @@
 ﻿using Microsoft.Data.Sqlite;
 using ProjetoEmTresCamadas.Pizzaria.DAO.Regras;
 
-namespace ProjetoEmTresCamadas.Pizzaria.DAO;
+namespace ProjetoEmTresCamadas.Pizzaria.DAO.Dao;
 
 public abstract class BaseDao<T> : IDao<T>
 {
@@ -14,8 +14,8 @@ public abstract class BaseDao<T> : IDao<T>
     public string TabelaName { get; set; }
 
     protected BaseDao(
-        string tabelaQuery, 
-        string selectQuery, 
+        string tabelaQuery,
+        string selectQuery,
         string insertQuery,
         string tabelaName,
         string updateQuery,
@@ -137,7 +137,7 @@ public abstract class BaseDao<T> : IDao<T>
 
                 using (var command = sqlConnection.CreateCommand())
                 {
-                    command.CommandText = DeleteQuery;                    
+                    command.CommandText = DeleteQuery;
                     command.Parameters.AddWithValue($"ID", ID);
                     command.ExecuteNonQuery();
                 }

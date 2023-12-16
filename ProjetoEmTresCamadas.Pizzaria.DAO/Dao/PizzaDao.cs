@@ -2,13 +2,13 @@
 using ProjetoEmTresCamadas.Pizzaria.DAO.Regras;
 using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
 
-namespace ProjetoEmTresCamadas.Pizzaria.DAO;
+namespace ProjetoEmTresCamadas.Pizzaria.DAO.Dao;
 
-public interface IPizzaDao: IDao<PizzaVo>
+public interface IPizzaDao : IDao<PizzaVo>
 {
 
 }
-public class PizzaDao :  BaseDao<PizzaVo>, IPizzaDao
+public class PizzaDao : BaseDao<PizzaVo>, IPizzaDao
 {
     private const string TABELA_PIZZA_NOME = "TB_PIZZA";
 
@@ -43,11 +43,12 @@ public class PizzaDao :  BaseDao<PizzaVo>, IPizzaDao
 
     public PizzaDao() : base(
         TABELA_PIZZA,
-        SELECT_PIZZA, 
+        SELECT_PIZZA,
         INSERIR_PIZZA,
         TABELA_PIZZA_NOME,
         UPDATE_PIZZA,
-        DELETE_PIZZA) { }
+        DELETE_PIZZA)
+    { }
 
     protected override PizzaVo CriarInstancia(SqliteDataReader sqliteDataReader)
     {

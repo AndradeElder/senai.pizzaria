@@ -2,5 +2,5 @@
 
 public interface IObter<T>
 {
-    List<T> ObterTodos();
+    Task<List<T>> ObterTodos();
 }

@@ -17,9 +17,9 @@ namespace ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers
         }
 
         [HttpGet]
-        public Pizza[] GetPizzas()
+        public async Task<Pizza[]> GetPizzas()
         {
-            List<Pizza> pizzas = _pizzaService.ObterTodos();
+            List<Pizza> pizzas = await _pizzaService.ObterTodos();
 
             return pizzas.ToArray();
         }
