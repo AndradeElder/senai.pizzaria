@@ -1,13 +1,7 @@
 ﻿using Microsoft.Data.Sqlite;
-using ProjetoEmTresCamadas.Pizzaria.DAO.Regras;
 using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
 
 namespace ProjetoEmTresCamadas.Pizzaria.DAO.Dao;
-
-public interface IPizzaDao : IDao<PizzaVo>
-{
-
-}
 public class PizzaDao : BaseDao<PizzaVo>, IPizzaDao
 {
     private const string TABELA_PIZZA_NOME = "TB_PIZZA";

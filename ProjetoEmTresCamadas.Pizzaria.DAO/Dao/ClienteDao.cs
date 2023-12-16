@@ -4,11 +4,6 @@ using ProjetoEmTresCamadas.Pizzaria.DAO.Regras;
 using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
 
 namespace ProjetoEmTresCamadas.Clienteria.DAO.Dao;
-
-public interface IClienteDao : IDao<ClienteVo>
-{
-
-}
 public class ClienteDao : BaseDao<ClienteVo>, IClienteDao
 {
     private const string TABELA_Cliente_NOME = "TB_Cliente";

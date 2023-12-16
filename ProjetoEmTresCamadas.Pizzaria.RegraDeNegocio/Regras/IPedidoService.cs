@@ -3,12 +3,13 @@
 namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Regras;
 
 public interface IPedidoService :
-    IAdicionar<Pizza>,
-    IObter<Pizza>,
-    IAtualizar<Pizza>,
-    IDeletar<Pizza>
+    IAdicionar<Pedido>,
+    IObter<Pedido>,
+    IAtualizar<Pedido>,
+    IDeletar<Pedido>
 {
-    void FazerPedido(Cliente cliente, Pizza pizza);
+    Pedido FazerPedido(Cliente cliente, Pizza pizza);
+    Pedido FazerPedido(Cliente cliente, Pizza[] pizzas);
     string ObterInformacoesPedidos();
 }
 
