@@ -1,14 +1,15 @@
 ﻿
+using ProjetoEmTresCamadas.Pizzaria.DAO.Dao;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades;
+using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Regras;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Serviços;
-
-var pizzaService = new PizzaService();
-
 
 Console.WriteLine("Bem vindo a nossa pizaria");
 Console.WriteLine("Gostaria de uma pizza, S para sim e N para não?");
 var resposta = "S";// Console.ReadLine();
 
+
+IPizzaService pizzaService = new PizzaService(new PizzaDao());
 if (resposta == "S")
 {
     var pizza = new Pizza()
