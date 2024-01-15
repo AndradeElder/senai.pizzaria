@@ -16,10 +16,10 @@ namespace ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers
             _pedidoService = pedidoService;
         }
 
-        [HttpPost]
+        /*[HttpPost]
         public Pedido FazerPedido(Cliente cLiente, Pizza pizza)
         {
             return _pedidoService.FazerPedido(cLiente, pizza);
-        }
+        }*/
     }
 }

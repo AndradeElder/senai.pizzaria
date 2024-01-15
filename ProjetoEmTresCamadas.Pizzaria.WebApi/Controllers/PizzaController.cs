@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades;
+using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Regras;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Serviços;
 
 namespace ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers
@@ -9,9 +10,9 @@ namespace ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers
     [ApiController]
     public class PizzaController : ControllerBase
     {
-        private readonly PizzaService _pizzaService;
+        private readonly IPizzaService _pizzaService;
 
-        public PizzaController(PizzaService pizzaService)
+        public PizzaController(IPizzaService pizzaService)
         {
             _pizzaService = pizzaService;
         }
