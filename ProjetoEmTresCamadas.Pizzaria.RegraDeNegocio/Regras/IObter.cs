@@ -3,4 +3,6 @@
 public interface IObter<T>
 {
     Task<List<T>> ObterTodos();
+    Task<List<T>> ObterTodos(int[] id);
+    Task<T> Obter(int id);
 }

@@ -31,13 +31,16 @@ public class ClienteDao : BaseDao<ClienteVo>, IClienteDao
 
     private const string SELECT_Cliente = @$"SELECT * FROM {TABELA_Cliente_NOME}";
 
+    private const string SELECT_Cliente_By_ID = @$"SELECT * FROM {TABELA_Cliente_NOME} WHERE ID = @ID";
+
     public ClienteDao() : base(
         TABELA_Cliente,
         SELECT_Cliente,
         INSERIR_Cliente,
         TABELA_Cliente_NOME,
         UPDATE_Cliente,
-        DELETE_Cliente)
+        DELETE_Cliente,
+        SELECT_Cliente_By_ID)
     { }
 
     protected override ClienteVo CriarInstancia(SqliteDataReader sqliteDataReader)

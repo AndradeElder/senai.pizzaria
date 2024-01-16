@@ -33,6 +33,18 @@ public class ClienteService : IClienteService
        await _clienteDao.DeletarRegistro(ID);
     }
 
+    public async Task<Cliente> Obter(int id)
+    {
+        ClienteVo clienteVo = await _clienteDao.ObterRegistro(id);
+
+        Cliente cliente = new()
+            {
+                Nome = clienteVo.Nome,
+                Id = clienteVo.Id,
+            };
+        return cliente;
+    }
+
     public async Task<List<Cliente>> ObterTodos()
     {
         List<Cliente> clientes = new List<Cliente>();
@@ -48,5 +60,14 @@ public class ClienteService : IClienteService
             clientes.Add(cliente);
         }
         return clientes;
+    }
+
+    public async Task<List<Cliente>> ObterTodos(int[] id)
+    {
+        return 
+            (
+                await ObterTodos())
+                    .FindAll( x => id.Contains(x.Id)
+            );
     }
 }

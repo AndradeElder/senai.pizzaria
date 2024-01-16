@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Regras;
+using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Serviços;
 
 namespace ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers
 {
@@ -16,10 +17,38 @@ namespace ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers
             _pedidoService = pedidoService;
         }
 
-        /*[HttpPost]
-        public Pedido FazerPedido(Cliente cLiente, Pizza pizza)
+        [HttpGet]
+        public async Task<Pedido[]> GetPedidos()
         {
-            return _pedidoService.FazerPedido(cLiente, pizza);
-        }*/
+            List<Pedido> pedidos = await _pedidoService.ObterTodos();
+
+            return pedidos.ToArray();
+        }
+
+
+        [HttpPost]
+        public Pedido FazerPedido(Pedido pedido)
+        {
+            return _pedidoService.Adicionar(pedido);
+        }
+
+        [HttpPut]
+        public async Task AtualizarPedido(Pedido pedido)
+        {
+            await _pedidoService.AtualizarAsync(pedido);
+        }
+
+        [HttpDelete]
+        public async Task Deletar(int ID)
+        {
+            try
+            {
+                await _pedidoService.Deletar(ID);
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 }

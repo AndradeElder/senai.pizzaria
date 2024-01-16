@@ -5,7 +5,7 @@ using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Regras;
 
 namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Serviços;
 public class PizzaService : IPizzaService
-    
+
 {
     private IPizzaDao PizzaDao { get; set; }
 
@@ -54,5 +54,30 @@ public class PizzaService : IPizzaService
     public async Task Deletar(int ID)
     {
         await PizzaDao.DeletarRegistro(ID);
+    }
+
+    public async Task<List<Pizza>> ObterTodos(int[] id)
+    {
+        return
+            (
+                await ObterTodos())
+                    .FindAll(x => id.Contains(x.Id)
+            );
+    }
+
+    public async Task<Pizza> Obter(int id)
+    {
+        PizzaVo pizzaVo = await PizzaDao.ObterRegistro(id);
+
+
+        Pizza pizza = new ()
+        {
+            Descricao = pizzaVo.Descricao,
+            Sabor = pizzaVo.Sabor,
+            TamanhoDePizza = (TamanhoDePizza)pizzaVo.TamanhoDePizza,
+            Valor = pizzaVo.Valor,
+            Id = pizzaVo.Id,
+        };
+        return pizza;
     }
 }

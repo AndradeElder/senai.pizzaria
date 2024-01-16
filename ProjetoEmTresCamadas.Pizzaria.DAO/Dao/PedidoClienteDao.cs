@@ -42,6 +42,7 @@ public class PedidoClienteDao : BaseDao<PedidoClienteVo>, IPedidoClienteDao
     WHERE ID = @ID";
 
     private const string SELECT_PedidoCliente = @$"SELECT * FROM {TABELA_PedidoCliente_NOME}";
+    private const string SELECT_PedidoCliente_By_Id = @$"SELECT * FROM {TABELA_PedidoCliente_NOME} WHERE ID = @ID";
 
     public PedidoClienteDao() : base(
         TABELA_PedidoCliente,
@@ -49,7 +50,8 @@ public class PedidoClienteDao : BaseDao<PedidoClienteVo>, IPedidoClienteDao
         INSERIR_PedidoCliente,
         TABELA_PedidoCliente_NOME,
         UPDATE_PedidoCliente,
-        DELETE_PedidoCliente)
+        DELETE_PedidoCliente,
+        SELECT_PedidoCliente_By_Id)
     { }
 
     protected override PedidoClienteVo CriarInstancia(SqliteDataReader sqliteDataReader)

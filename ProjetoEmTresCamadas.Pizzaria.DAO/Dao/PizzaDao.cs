@@ -34,6 +34,7 @@ public class PizzaDao : BaseDao<PizzaVo>, IPizzaDao
     WHERE ID = @ID";
 
     private const string SELECT_PIZZA = @$"SELECT * FROM {TABELA_PIZZA_NOME}";
+    private const string SELECT_PIZZA_BY_ID = @$"SELECT * FROM {TABELA_PIZZA_NOME} WHERE ID = @ID";
 
     public PizzaDao() : base(
         TABELA_PIZZA,
@@ -41,7 +42,8 @@ public class PizzaDao : BaseDao<PizzaVo>, IPizzaDao
         INSERIR_PIZZA,
         TABELA_PIZZA_NOME,
         UPDATE_PIZZA,
-        DELETE_PIZZA)
+        DELETE_PIZZA,
+        SELECT_PIZZA_BY_ID)
     { }
 
     protected override PizzaVo CriarInstancia(SqliteDataReader sqliteDataReader)

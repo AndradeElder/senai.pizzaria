@@ -8,6 +8,7 @@ public abstract class BaseDao<T> : IDao<T>
     protected const string CONNECTION_STRING = "Data Source=Pizza.db";
     public string TabelaCreateQuery { get; set; }
     public string SelectQuery { get; set; }
+    public string SelectQueryByID { get; set; }
     public string InsertQuery { get; set; }
     public string UpdateQuery { get; set; }
     public string DeleteQuery { get; set; }
@@ -19,7 +20,8 @@ public abstract class BaseDao<T> : IDao<T>
         string insertQuery,
         string tabelaName,
         string updateQuery,
-        string deleteQuery)
+        string deleteQuery,
+        string selectQueryByID)
     {
         TabelaCreateQuery = tabelaQuery;
         SelectQuery = selectQuery;
@@ -27,6 +29,7 @@ public abstract class BaseDao<T> : IDao<T>
         TabelaName = tabelaName;
         UpdateQuery = updateQuery;
         DeleteQuery = deleteQuery;
+        SelectQueryByID = selectQueryByID;
         CriarBancoDeDados();
     }
 
@@ -69,6 +72,7 @@ public abstract class BaseDao<T> : IDao<T>
 
         return registros;
     }
+
     public int CriarRegistro(T objetoVo)
     {
         using (var sqlConnection = new SqliteConnection(CONNECTION_STRING))
@@ -122,9 +126,30 @@ public abstract class BaseDao<T> : IDao<T>
         });
     }
 
-    public Task<T> ObterRegistro(int ID)
+    public async Task<T> ObterRegistro(int ID)
     {
-        throw new NotImplementedException();
+        List<T> registros = new List<T>();
+
+        using (var sqlConnection = new SqliteConnection(CONNECTION_STRING))
+        {
+            sqlConnection.Open();
+
+            using (var command = sqlConnection.CreateCommand())
+            {
+                command.CommandText = SelectQueryByID;
+                command.Parameters.AddWithValue($"ID", ID);
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        T registro = CriarInstancia(reader);
+                        registros.Add(registro);
+                    }
+                }
+            }
+        }
+
+        return registros.FirstOrDefault();
     }
 
     public Task DeletarRegistro(int ID)
@@ -143,5 +168,32 @@ public abstract class BaseDao<T> : IDao<T>
                 }
             }
         });
+    }
+
+    public List<T> ObterRegistros(int ID)
+    {
+        List<T> registros = new List<T>();
+
+        using (var sqlConnection = new SqliteConnection(CONNECTION_STRING))
+        {
+            sqlConnection.Open();
+
+            using (var command = sqlConnection.CreateCommand())
+            {
+                command.CommandText = SelectQueryByID;
+                command.Parameters.AddWithValue($"ID", ID);
+
+                using (var reader = command.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        T registro = CriarInstancia(reader);
+                        registros.Add(registro);
+                    }
+                }
+            }
+        }
+
+        return registros;
     }
 }

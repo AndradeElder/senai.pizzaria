@@ -7,9 +7,7 @@ public interface IPedidoService :
     IObter<Pedido>,
     IAtualizar<Pedido>,
     IDeletar<Pedido>
-{
-    Pedido FazerPedido(Cliente cliente, Pizza pizza);
-    Pedido FazerPedido(Cliente cliente, Pizza[] pizzas);
+{   
     string ObterInformacoesPedidos();
 }
 
