@@ -16,6 +16,8 @@ public class PizzaService : IPizzaService
 
     public Pizza Adicionar(Pizza objeto)
     {
+
+
         PizzaVo pizzaVo = objeto.ToPizzaVo();
         objeto.Id = PizzaDao.CriarRegistro(pizzaVo);
         return objeto;

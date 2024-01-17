@@ -1,4 +1,5 @@
-﻿using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
+﻿using FluentValidation;
+using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
 
 namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades;
 
@@ -33,5 +34,17 @@ public class Pizza : EntidadeBase
             TamanhoDePizza = Convert.ToInt32(TamanhoDePizza),
             Valor = Valor
         };
+    }
+}
+
+
+public class PizzaValidator : AbstractValidator<Pizza>
+{
+    public PizzaValidator()
+    {
+        RuleFor( pizza =>  pizza.Sabor ).NotEmpty();
+        RuleFor( pizza =>  pizza.Valor ).NotEmpty();
+        RuleFor( pizza =>  pizza.TamanhoDePizza ).NotEmpty();
+        RuleFor( pizza =>  pizza.Descricao ).NotEmpty();
     }
 }
