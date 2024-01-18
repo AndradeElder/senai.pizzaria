@@ -1,4 +1,5 @@
-﻿using ProjetoEmTresCamadas.Pizzaria.DAO.Dao;
+﻿using Microsoft.Extensions.Logging;
+using ProjetoEmTresCamadas.Pizzaria.DAO.Dao;
 using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Regras;
@@ -7,27 +8,33 @@ namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Serviços;
 public class PizzaService : IPizzaService
 
 {
-    private IPizzaDao PizzaDao { get; set; }
+    private readonly IPizzaDao PizzaDao;
 
-    public PizzaService(IPizzaDao pizzaDao)
+    public readonly ILogger<PizzaService> Logger;
+
+    public PizzaService(
+        IPizzaDao pizzaDao,
+        ILogger<PizzaService> logger
+        )
     {
         PizzaDao = pizzaDao;
+        Logger = logger;
     }
 
     public Pizza Adicionar(Pizza objeto)
     {
 
-
         PizzaVo pizzaVo = objeto.ToPizzaVo();
         objeto.Id = PizzaDao.CriarRegistro(pizzaVo);
+        Logger.LogInformation("Pizza adicionada com sucesso");
         return objeto;
     }
 
     public async Task<List<Pizza>> ObterTodos()
     {
-        List<Pizza> pizzas = new List<Pizza>();
+        List<Pizza> pizzas = new ();
         List<PizzaVo> pizzasBanco = PizzaDao.ObterRegistros();
-
+        Logger.LogInformation("Pizzas do banco");
         foreach (PizzaVo pizzaVo in pizzasBanco)
         {
             Pizza pizza = new Pizza()
@@ -48,8 +55,9 @@ public class PizzaService : IPizzaService
         PizzaVo pizzaVo = objeto.ToPizzaVo();
         await PizzaDao.AtualizarRegistro(pizzaVo);
 
-        objeto = (await ObterTodos()).Find(pizza => pizza.Id.Equals(objeto.Id));
+        objeto = (await Obter(objeto.Id));
 
+        Logger.LogInformation("Pizza Atualizada com sucesso");
         return objeto;
     }
 
@@ -70,8 +78,6 @@ public class PizzaService : IPizzaService
     public async Task<Pizza> Obter(int id)
     {
         PizzaVo pizzaVo = await PizzaDao.ObterRegistro(id);
-
-
         Pizza pizza = new ()
         {
             Descricao = pizzaVo.Descricao,
