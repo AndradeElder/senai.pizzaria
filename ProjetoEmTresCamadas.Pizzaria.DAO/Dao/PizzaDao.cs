@@ -1,4 +1,6 @@
 ﻿using Microsoft.Data.Sqlite;
+using Microsoft.Extensions.Options;
+using ProjetoEmTresCamadas.Pizzaria.DAO.Settings;
 using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
 
 namespace ProjetoEmTresCamadas.Pizzaria.DAO.Dao;
@@ -36,14 +38,15 @@ public class PizzaDao : BaseDao<PizzaVo>, IPizzaDao
     private const string SELECT_PIZZA = @$"SELECT * FROM {TABELA_PIZZA_NOME}";
     private const string SELECT_PIZZA_BY_ID = @$"SELECT * FROM {TABELA_PIZZA_NOME} WHERE ID = @ID";
 
-    public PizzaDao() : base(
+    public PizzaDao(IOptions<ConnectionStrings> connectionStringOptions) : base(
         TABELA_PIZZA,
         SELECT_PIZZA,
         INSERIR_PIZZA,
         TABELA_PIZZA_NOME,
         UPDATE_PIZZA,
         DELETE_PIZZA,
-        SELECT_PIZZA_BY_ID)
+        SELECT_PIZZA_BY_ID,
+        connectionStringOptions)
     { }
 
     protected override PizzaVo CriarInstancia(SqliteDataReader sqliteDataReader)

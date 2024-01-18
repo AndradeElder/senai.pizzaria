@@ -1,6 +1,7 @@
 using ProjetoEmTresCamadas.Clienteria.DAO.Dao;
 using ProjetoEmTresCamadas.Pizzaria.DAO.Dao;
 using ProjetoEmTresCamadas.Pizzaria.DAO.Regras;
+using ProjetoEmTresCamadas.Pizzaria.DAO.Settings;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Regras;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Serviços;
 using Serilog;
@@ -17,6 +18,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+
+builder.Services.Configure<ConnectionStrings>(builder.Configuration.GetSection("ConnectionStrings"));
 
 // Criação objetos acesso a dados
 builder.Services.AddScoped<IPizzaDao, PizzaDao>();

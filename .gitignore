@@ -396,3 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/ProjetoEmTresCamadas.Pizzaria.WebApi/log20240118.txt

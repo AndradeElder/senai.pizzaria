@@ -1,5 +1,7 @@
 ﻿using Microsoft.Data.Sqlite;
+using Microsoft.Extensions.Options;
 using ProjetoEmTresCamadas.Pizzaria.DAO.Regras;
+using ProjetoEmTresCamadas.Pizzaria.DAO.Settings;
 using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
 
 namespace ProjetoEmTresCamadas.Pizzaria.DAO.Dao;
@@ -34,14 +36,15 @@ public class PedidoDao : BaseDao<PedidoVo>, IPedidoDao
     private const string SELECT_Pedido = @$"SELECT * FROM {TABELA_Pedido_NOME}";
     private const string SELECT_PEDIDO_BY_ID = @$"SELECT * FROM {TABELA_Pedido_NOME} WHERE ID = @ID";
 
-    public PedidoDao() : base(
+    public PedidoDao(IOptions<ConnectionStrings> connectionStringOptions) : base(
         TABELA_Pedido,
         SELECT_Pedido,
         INSERIR_Pedido,
         TABELA_Pedido_NOME,
         UPDATE_Pedido,
         DELETE_Pedido,
-        SELECT_PEDIDO_BY_ID)
+        SELECT_PEDIDO_BY_ID,
+        connectionStringOptions)
     { }
 
     protected override PedidoVo CriarInstancia(SqliteDataReader sqliteDataReader)

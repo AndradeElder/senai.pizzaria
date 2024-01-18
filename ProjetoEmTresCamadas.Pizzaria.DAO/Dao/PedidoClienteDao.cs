@@ -1,5 +1,7 @@
 ﻿using Microsoft.Data.Sqlite;
+using Microsoft.Extensions.Options;
 using ProjetoEmTresCamadas.Pizzaria.DAO.Regras;
+using ProjetoEmTresCamadas.Pizzaria.DAO.Settings;
 using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
 using System;
 using System.Collections.Generic;
@@ -44,14 +46,15 @@ public class PedidoClienteDao : BaseDao<PedidoClienteVo>, IPedidoClienteDao
     private const string SELECT_PedidoCliente = @$"SELECT * FROM {TABELA_PedidoCliente_NOME}";
     private const string SELECT_PedidoCliente_By_Id = @$"SELECT * FROM {TABELA_PedidoCliente_NOME} WHERE ID = @ID";
 
-    public PedidoClienteDao() : base(
+    public PedidoClienteDao(IOptions<ConnectionStrings> connectionStringOptions) : base(
         TABELA_PedidoCliente,
         SELECT_PedidoCliente,
         INSERIR_PedidoCliente,
         TABELA_PedidoCliente_NOME,
         UPDATE_PedidoCliente,
         DELETE_PedidoCliente,
-        SELECT_PedidoCliente_By_Id)
+        SELECT_PedidoCliente_By_Id,
+        connectionStringOptions)
     { }
 
     protected override PedidoClienteVo CriarInstancia(SqliteDataReader sqliteDataReader)

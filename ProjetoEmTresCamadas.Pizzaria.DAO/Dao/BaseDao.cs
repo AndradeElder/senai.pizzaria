@@ -1,11 +1,13 @@
 ﻿using Microsoft.Data.Sqlite;
+using Microsoft.Extensions.Options;
 using ProjetoEmTresCamadas.Pizzaria.DAO.Regras;
+using ProjetoEmTresCamadas.Pizzaria.DAO.Settings;
 
 namespace ProjetoEmTresCamadas.Pizzaria.DAO.Dao;
 
 public abstract class BaseDao<T> : IDao<T>
 {
-    protected const string CONNECTION_STRING = "Data Source=Pizza.db";
+    protected string CONNECTION_STRING;
     public string TabelaCreateQuery { get; set; }
     public string SelectQuery { get; set; }
     public string SelectQueryByID { get; set; }
@@ -21,7 +23,8 @@ public abstract class BaseDao<T> : IDao<T>
         string tabelaName,
         string updateQuery,
         string deleteQuery,
-        string selectQueryByID)
+        string selectQueryByID,
+        IOptions<ConnectionStrings> connectionStringOptions)
     {
         TabelaCreateQuery = tabelaQuery;
         SelectQuery = selectQuery;
@@ -30,6 +33,7 @@ public abstract class BaseDao<T> : IDao<T>
         UpdateQuery = updateQuery;
         DeleteQuery = deleteQuery;
         SelectQueryByID = selectQueryByID;
+        CONNECTION_STRING = connectionStringOptions.Value.Master;
         CriarBancoDeDados();
     }
 

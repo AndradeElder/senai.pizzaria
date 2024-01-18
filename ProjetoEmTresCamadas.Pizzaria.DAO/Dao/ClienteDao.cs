@@ -1,6 +1,8 @@
 ﻿using Microsoft.Data.Sqlite;
+using Microsoft.Extensions.Options;
 using ProjetoEmTresCamadas.Pizzaria.DAO.Dao;
 using ProjetoEmTresCamadas.Pizzaria.DAO.Regras;
+using ProjetoEmTresCamadas.Pizzaria.DAO.Settings;
 using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
 
 namespace ProjetoEmTresCamadas.Clienteria.DAO.Dao;
@@ -33,14 +35,15 @@ public class ClienteDao : BaseDao<ClienteVo>, IClienteDao
 
     private const string SELECT_Cliente_By_ID = @$"SELECT * FROM {TABELA_Cliente_NOME} WHERE ID = @ID";
 
-    public ClienteDao() : base(
+    public ClienteDao(IOptions<ConnectionStrings> connectionStringOptions) : base(
         TABELA_Cliente,
         SELECT_Cliente,
         INSERIR_Cliente,
         TABELA_Cliente_NOME,
         UPDATE_Cliente,
         DELETE_Cliente,
-        SELECT_Cliente_By_ID)
+        SELECT_Cliente_By_ID,
+        connectionStringOptions)
     { }
 
     protected override ClienteVo CriarInstancia(SqliteDataReader sqliteDataReader)
