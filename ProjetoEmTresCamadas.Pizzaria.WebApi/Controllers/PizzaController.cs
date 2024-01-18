@@ -31,7 +31,7 @@ public class PizzaController : ControllerBase
     }
 
     [HttpGet("{id}")]
-    public async Task<Pizza> GetPizzas(int id)
+    public async Task<Pizza> GetPizza(int id)
     {
         Logger.LogInformation("Buscando as pizzas");
         Pizza pizza = await _pizzaService.Obter(id);
