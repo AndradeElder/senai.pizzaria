@@ -1,0 +1,51 @@
+﻿@model ProjetoEmTresCamadas.Pizzaria.Mvc.Models.PizzasViewModel
+
+@{
+    ViewData["Title"] = "Menu de Pizzas";
+}
+<style>
+    .custom-image {
+        width: 196px;
+        height: 196px;
+    }
+</style>
+
+<div class="container mt-4">
+    <h2>Menu de Pizzas</h2>
+
+    <div class="row">
+        @foreach (var pizza in Model.Pizzas)
+        {
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <img src="@pizza.ImageUrl" class="card-img-top custom-image" alt="Imagem da Pizza">
+                    <div class="card-body">
+                        <h5 class="card-title">@pizza.Sabor</h5>
+                        <p class="card-text">@pizza.Descricao</p>
+                        <p class="card-text">Tamanho: @pizza.TamanhoDePizza</p>
+                        <p class="card-text">Valor: R$@pizza.Valor.ToString("0.00")</p>
+                        <input type="number" class="form-control" placeholder="Quantidade" value="@pizza.Quantity">
+                        <button class="btn btn-primary mt-2" onclick="adicionarAoCarrinho(@pizza.ID)">Adicionar ao Carrinho</button>
+                    
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+@section scripts {
+    <script>
+        function adicionarAoCarrinho(pizzaId) {
+            var quantidade = $('#' + pizzaId).val();
+
+            $.post('/Carrinho/AdicionarAoCarrinho', { id: pizzaId, quantidade: quantidade })
+                .done(function (data) {
+                    alert('Pizza adicionada ao carrinho com sucesso!');
+                })
+                .fail(function () {
+                    alert('Erro ao adicionar a pizza ao carrinho.');
+                });
+        }
+    </script>
+}

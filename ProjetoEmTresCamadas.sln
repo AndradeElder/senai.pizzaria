@@ -22,6 +22,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Itens de Solução", "Itens
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoEmTresCamadas.Pizzaria.WebApi", "ProjetoEmTresCamadas.Pizzaria.WebApi\ProjetoEmTresCamadas.Pizzaria.WebApi.csproj", "{5835EF26-CE82-4F47-BCCA-61BFCA491124}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoEmTresCamadas.Pizzaria.Mvc", "ProjetoEmTresCamadas.Pizzaria.Mvc\ProjetoEmTresCamadas.Pizzaria.Mvc.csproj", "{3E9B99E6-D80E-41B1-B910-2D01D543A0D5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -44,6 +46,10 @@ Global
 		{5835EF26-CE82-4F47-BCCA-61BFCA491124}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5835EF26-CE82-4F47-BCCA-61BFCA491124}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5835EF26-CE82-4F47-BCCA-61BFCA491124}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E9B99E6-D80E-41B1-B910-2D01D543A0D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E9B99E6-D80E-41B1-B910-2D01D543A0D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E9B99E6-D80E-41B1-B910-2D01D543A0D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E9B99E6-D80E-41B1-B910-2D01D543A0D5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -53,6 +59,7 @@ Global
 		{39A92FFB-9DB2-45F2-A7BC-D0B001359DBC} = {71E72EDC-0F30-418D-8532-BDB7BC4F4C11}
 		{899A7B5E-BA86-46D4-B2B6-95030E9E44E9} = {C3631059-F065-4B35-B1CD-898A0A808088}
 		{5835EF26-CE82-4F47-BCCA-61BFCA491124} = {90883400-3C02-4BC0-9F7C-9BA4A81126C8}
+		{3E9B99E6-D80E-41B1-B910-2D01D543A0D5} = {90883400-3C02-4BC0-9F7C-9BA4A81126C8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0739DC29-7388-4CD3-BC13-F9F74975EB45}
