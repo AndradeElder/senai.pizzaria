@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using ProjetoEmTresCamadas.Pizzaria.Mvc.Models;
 
 namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
 {
+    [Authorize]
     public class PizzasController : Controller
     {
         public PizzasViewModel PizzasViewModel { get; set; }
