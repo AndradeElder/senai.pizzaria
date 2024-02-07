@@ -29,7 +29,16 @@ namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
             // If user is already authenticated, redirect to another page
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Pizzas");
+                var role = User.Claims.FirstOrDefault(c => c.Type == ClaimTypes.Role);
+
+                if (role.Value == "simples")
+                {
+                    return RedirectToAction("Index", "Pizzas");
+                }
+                if (role.Value == "manager")
+                {
+                    return RedirectToAction("Index", "Admin");
+                }
             }
 
             return View();
@@ -45,11 +54,11 @@ namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(string username, string password)
+        public async Task<IActionResult> Index(string email, string password)
         {
             // Make a request to your authentication API to validate user credentials
             var apiEndpoint = _configuration["AuthenticationApiEndpoint"];
-            var requestBody = $"{{\"email\": \"{username}\", \"password\": \"{password}\"}}";
+            var requestBody = $"{{\"email\": \"{email}\", \"password\": \"{password}\"}}";
             var content = new StringContent(requestBody, Encoding.UTF8, "application/json");
 
             using (var response = await _httpClient.PostAsync(apiEndpoint, content))
@@ -115,7 +124,7 @@ namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
                         await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, claimsPrincipal, authProperties);
 
                         // Redirect to another page or return success
-                        return RedirectToAction("Index", "Pizzas");
+                        return RedirectToAction("Index", "Login");
                     }
                     else
                     {
@@ -132,6 +141,11 @@ namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
             }
 
 
+        }
+
+        public IActionResult Denied()
+        {
+            return View();
         }
     }
 }

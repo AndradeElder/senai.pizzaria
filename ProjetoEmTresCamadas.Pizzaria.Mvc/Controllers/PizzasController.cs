@@ -8,7 +8,7 @@ using System.Text.Json.Serialization;
 
 namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
 {
-    [Authorize]
+    [Authorize(Roles = "simples")]
     public class PizzasController : Controller
     {
         public PizzasViewModel PizzasViewModel { get; set; }
@@ -41,41 +41,11 @@ namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
         {
             PizzasViewModel pizzaViewModel = new PizzasViewModel();
 
-            using (var response = await _httpClient.GetAsync(PizzaApiEndpoint))
-            {
-                if (response.IsSuccessStatusCode)
-                {
-                    var jsonPizzas = await response.Content.ReadAsStringAsync();
-                    Pizza[] pizzas = JsonSerializer.Deserialize<Pizza[]>(jsonPizzas);
-                    pizzaViewModel.Pizzas.AddRange(pizzas);
-                }
-            }
-            
+            var pizzas = await _httpClient.GetFromJsonAsync<Pizza[]>(PizzaApiEndpoint);
 
+            pizzaViewModel.Pizzas.AddRange(pizzas);
             return View(pizzaViewModel);
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Cadastro
-            ([Bind("Sabor,TamanhoDePizza,Descricao,Valor")] Pizza pizza)
-        {
-            var requestBody = $"{{ \"id\": 0,\"Sabor\": \"{pizza.Sabor}\"," +
-              $" \"TamanhoDePizza\": {(int)pizza.TamanhoDePizza}," +
-              $" \"Descricao\": \"{pizza.Descricao}\"," +
-              $" \"Valor\": {pizza.Valor}" +
-              $"}}";
-            var content2 = new StringContent("{\r\n  \"id\": 0,\r\n  \"sabor\": \"sadsa\",\r\n  \"tamanhoDePizza\": 0,\r\n  \"descricao\": \"dsadsa\",\r\n  \"valor\": 23\r\n}", null, "application/json");
-
-            var content = new StringContent(requestBody, Encoding.UTF8, "application/json");
-
-            using (var response = await _httpClient.PostAsync(PizzaApiEndpoint, content))
-            {
-                if (response.IsSuccessStatusCode)
-                {
-                    return RedirectToAction("Index");
-                }
-            }
-            return RedirectToAction("Index");
-        }
     }
 }

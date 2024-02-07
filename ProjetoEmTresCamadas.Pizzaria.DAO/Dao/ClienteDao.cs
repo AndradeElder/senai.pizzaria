@@ -14,16 +14,18 @@ public class ClienteDao : BaseDao<ClienteVo>, IClienteDao
                 (
                     ID INTEGER PRIMARY KEY AUTOINCREMENT,
                     Nome VARCHAR(50) not null
+                    UserId VARCHAR(50) not null
                 )";
 
     private const string INSERIR_Cliente = @$"
-                INSERT INTO {TABELA_Cliente_NOME} (Nome)
-                VALUES (@Nome)";
+                INSERT INTO {TABELA_Cliente_NOME} (Nome,UserId)
+                VALUES (@Nome,@UserId)";
 
     private const string UPDATE_Cliente = @$"
     UPDATE {TABELA_Cliente_NOME}
     SET
-        Nome = @Nome        
+        Nome = @Nome,
+        UserId = @UserId
     WHERE
         ID = @Id";
 

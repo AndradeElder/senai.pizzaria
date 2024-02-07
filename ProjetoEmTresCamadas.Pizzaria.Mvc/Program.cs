@@ -19,6 +19,7 @@ builder.Services.AddAuthentication(options =>
 {
     options.LoginPath = "/Login/Index"; // Defenir página de login
     options.LogoutPath = "/Login/Logout"; // Defenir página logout
+    options.AccessDeniedPath = "/Login/Denied";
 });
 
 var app = builder.Build();
@@ -38,6 +39,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Pizzas}/{action=Index}/{id?}");
+    pattern: "{controller=Login}/{action=Index}/{id?}");
 
 app.Run();
