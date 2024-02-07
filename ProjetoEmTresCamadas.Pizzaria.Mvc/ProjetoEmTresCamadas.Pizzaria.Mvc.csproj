@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio\ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Update="wwwroot\images\margherita.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

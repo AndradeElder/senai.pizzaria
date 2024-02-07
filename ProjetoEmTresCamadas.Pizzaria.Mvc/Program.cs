@@ -5,10 +5,11 @@ var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+// Adicionar serviços de criação do HttpClient 
 builder.Services.AddHttpClient();
 
-var key = Encoding.ASCII.GetBytes("fedaf7d8863b48e197b9287d492b708e");
-
+// Adicionar schema de autenticação
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
@@ -16,8 +17,8 @@ builder.Services.AddAuthentication(options =>
     options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
 }).AddCookie(options =>
 {
-    options.LoginPath = "/Login/Index"; // Set the login page URL
-    options.LogoutPath = "/Login/Logout"; // Set the logout page URL
+    options.LoginPath = "/Login/Index"; // Defenir página de login
+    options.LogoutPath = "/Login/Logout"; // Defenir página logout
 });
 
 var app = builder.Build();
@@ -27,9 +28,6 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseExceptionHandler("/Home/Error");
 }
-
-
-
 
 app.UseStaticFiles();
 

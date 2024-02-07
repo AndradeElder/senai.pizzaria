@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -13,19 +14,22 @@ namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
         private readonly IConfiguration _configuration;
         private readonly HttpClient _httpClient;
 
-        public LoginController(IConfiguration configuration, IHttpClientFactory httpClientFactory)
+        public LoginController(
+            IConfiguration configuration,
+            IHttpClientFactory httpClientFactory)
         {
             _configuration = configuration;
             _httpClient = httpClientFactory.CreateClient();
         }
 
-        [HttpGet]
+        [HttpGet]       
         public IActionResult Index()
         {
+
             // If user is already authenticated, redirect to another page
             if (User.Identity.IsAuthenticated)
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("Index", "Pizzas");
             }
 
             return View();
