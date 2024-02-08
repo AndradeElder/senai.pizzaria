@@ -17,7 +17,7 @@
         @foreach (var pizza in Model.Pizzas)
         {
             <div class="col-md-4 mb-4">
-                @Html.Partial("PizzaCard", pizza) 
+                <partial name="PizzaCard" model="pizza" />
             </div>
         }
     </div>
