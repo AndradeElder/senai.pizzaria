@@ -14,7 +14,7 @@ namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades
 
         public ClienteVo ToVo()
         {
-            return new ClienteVo {  Nome = Nome, Id = Id, UserId = UserId };
+            return new ClienteVo { Nome = Nome, Id = Id };//, UserId = UserId };
         }
     }
 }

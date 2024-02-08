@@ -69,7 +69,7 @@ public class PedidoService : IPedidoService
         var pedidos = new List<Pedido>();
         foreach (var pedidoVo in pedidosVo)
         {
-            var cliente = await _clienteService.Obter(pedidoVo.CLienteID);
+            var cliente = await _clienteService.Obter(pedidoVo.ClienteId);
 
             //var pedidosDePizza = _pedidoDao.ObterRegistros(pedidoVo.Id);
 

@@ -25,7 +25,7 @@ namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades
         {
             return new PedidoVo()
             {
-                CLienteID = Cliente.Id,
+                ClienteId = Cliente.Id,
                 DataSolicitacao = DataSolicitacao,
                 DataFinalizacaoEntrega = DataFinalizacaoEntrega,
                 DataPreparacao = DataPreparacao,

@@ -10,7 +10,6 @@ namespace ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects
     {
         public PedidoVo() { }
 
-        public int CLienteID { get; set; }
 
         public DateTime DataSolicitacao { get; set; }
         public DateTime? DataPreparacao { get; set; }

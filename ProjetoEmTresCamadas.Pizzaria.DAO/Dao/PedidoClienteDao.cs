@@ -62,7 +62,7 @@ public class PedidoClienteDao : BaseDao<PedidoVo>, IPedidoClienteDao
         return new PedidoVo
         {
             Id = Convert.ToInt32(sqliteDataReader["ID"]),
-            CLienteID = Convert.ToInt32(sqliteDataReader["CLienteID"]),
+            ClienteId = Convert.ToInt32(sqliteDataReader["CLienteID"]),
             DataSolicitacao = Convert.ToDateTime(sqliteDataReader["DataSolicitacao"]),
             DataPreparacao = Convert.ToDateTime(sqliteDataReader["DataPreparacao"]),
             DataSaidaEntrega = Convert.ToDateTime(sqliteDataReader["DataSaidaEntrega"]),
