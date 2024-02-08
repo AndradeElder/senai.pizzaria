@@ -1,0 +1,15 @@
+﻿
+@model ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza
+
+<div class="card">
+    <img src="/images/margherita.jpg" class="card-img-top custom-image" alt="Imagem da Pizza">
+    <div class="card-body">
+        <h5 class="card-title">Sabor: @Model.Sabor </h5>
+        <p class="card-text">Descrição: @Model.Descricao</p>
+        <p class="card-text">Tamanho: @Model.TamanhoDePizza</p>
+        <p class="card-text">Valor: R$@Model.Valor.ToString("0.00")</p>
+        <input type="number" class="form-control" placeholder="Quantidade">
+        <button class="btn btn-primary mt-2" onclick="adicionarAoCarrinho(@Model.Id)">Adicionar ao Carrinho</button>
+
+    </div>
+</div>

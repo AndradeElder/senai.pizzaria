@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ProjetoEmTresCamadas.Pizzaria.Mvc.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
@@ -41,7 +42,7 @@ namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
                 }
             }
 
-            return View();
+            return View(new Login());
         }
 
         public async Task<IActionResult> Logout()
@@ -54,11 +55,18 @@ namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Index(string email, string password)
+        public async Task<IActionResult> Index([Bind("email,password")]Login login)
         {
+            if(ModelState.IsValid is false)
+            {
+                return View(login);
+            }
+            string Email = login.email;
+            string Password = login.password;
+
             // Make a request to your authentication API to validate user credentials
             var apiEndpoint = _configuration["AuthenticationApiEndpoint"];
-            var requestBody = $"{{\"email\": \"{email}\", \"password\": \"{password}\"}}";
+            var requestBody = $"{{\"email\": \"{Email}\", \"password\": \"{Password}\"}}";
             var content = new StringContent(requestBody, Encoding.UTF8, "application/json");
 
             using (var response = await _httpClient.PostAsync(apiEndpoint, content))
@@ -128,15 +136,16 @@ namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
                     }
                     else
                     {
-                        ModelState.AddModelError(string.Empty, "Invalid token received from the authentication API");
-                        return View();
+                        ModelState.AddModelError(string.Empty, "Problema com api de autenticação.");
+                        return View(login);
                     }
                 }
                 else
                 {
                     // Authentication failed
-                    ModelState.AddModelError(string.Empty, "Invalid login attempt");
-                    return View();
+                    ModelState.AddModelError(string.Empty, "Dados invalidos");
+                    
+                    return View(login);
                 }
             }
 
