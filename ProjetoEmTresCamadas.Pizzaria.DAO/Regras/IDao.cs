@@ -3,9 +3,9 @@
 public interface IDao<T>
 {
     Task<T> ObterRegistro(int ID);
-    List<T> ObterRegistros();
+    List<T> ObterRegistrosAsync();
     List<T> ObterRegistros(int ID);
-    int CriarRegistro(T objetoVo);
+    int CriarRegistroAsync(T objetoVo);
 
     Task AtualizarRegistro(T objetoParaAtualizar);
 

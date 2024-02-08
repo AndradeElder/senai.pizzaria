@@ -21,9 +21,9 @@ namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades
         public DateTime? DataSaidaEntrega { get; set; }
         public DateTime? DataFinalizacaoEntrega { get; set; }
 
-        public PedidoClienteVo ToPedidoClienteVo()
+        public PedidoVo ToPedidoClienteVo()
         {
-            return new PedidoClienteVo()
+            return new PedidoVo()
             {
                 CLienteID = Cliente.Id,
                 DataSolicitacao = DataSolicitacao,
@@ -31,7 +31,16 @@ namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades
                 DataPreparacao = DataPreparacao,
                 Id = this.Id,
                 DataSaidaEntrega = DataSaidaEntrega,
+                Cliente = Cliente.ToVo(),
+                Pizzas = ToPizzasVo(Pizzas)
             };
+        }
+
+        private ICollection<PizzaVo> ToPizzasVo(List<Pizza> pizzas)
+        {
+            var pizzasVo = new HashSet<PizzaVo>();
+            pizzas.ForEach(pizza => pizzasVo.Add(pizza.ToPizzaVo()));
+            return pizzasVo;
         }
     }
 }

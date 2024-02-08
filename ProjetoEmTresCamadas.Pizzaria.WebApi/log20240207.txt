@@ -325,3 +325,107 @@
 2024-02-07 21:07:31.589 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/_vs/browserLink - 200 null text/javascript; charset=UTF-8 24.6311ms
 2024-02-07 21:07:31.627 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/swagger/v1/swagger.json - null null
 2024-02-07 21:07:31.679 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 52.224ms
+2024-02-07 21:08:56.524 -03:00 [INF] Ola eu sou informação
+2024-02-07 21:08:56.763 -03:00 [INF] Now listening on: http://localhost:5122
+2024-02-07 21:08:56.764 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-07 21:08:56.765 -03:00 [INF] Hosting environment: Development
+2024-02-07 21:08:56.766 -03:00 [INF] Content root path: C:\george\senai.pizzaria\ProjetoEmTresCamadas.Pizzaria.WebApi
+2024-02-07 21:08:57.096 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/swagger/index.html - null null
+2024-02-07 21:08:57.212 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/swagger/index.html - 200 null text/html;charset=utf-8 118.805ms
+2024-02-07 21:08:57.213 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-07 21:08:57.213 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/_vs/browserLink - null null
+2024-02-07 21:08:57.214 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/_framework/aspnetcore-browser-refresh.js - 200 13808 application/javascript; charset=utf-8 1.384ms
+2024-02-07 21:08:57.230 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.8296ms
+2024-02-07 21:08:57.271 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/swagger/v1/swagger.json - null null
+2024-02-07 21:08:57.323 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 52.2221ms
+2024-02-07 21:09:09.218 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/api/pizza - null null
+2024-02-07 21:09:09.223 -03:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-07 21:09:09.233 -03:00 [INF] Route matched with {action = "GetPizzas", controller = "Pizza"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]] GetPizzas() on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-07 21:09:09.266 -03:00 [INF] Buscando as pizzas
+2024-02-07 21:09:09.271 -03:00 [INF] Pizzas do banco
+2024-02-07 21:09:09.275 -03:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]'.
+2024-02-07 21:09:09.283 -03:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi) in 47.8615ms
+2024-02-07 21:09:09.283 -03:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-07 21:09:09.284 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/api/pizza - 200 null application/json; charset=utf-8 65.564ms
+2024-02-07 21:47:19.190 -03:00 [INF] Ola eu sou informação
+2024-02-07 21:47:19.364 -03:00 [INF] Now listening on: http://localhost:5122
+2024-02-07 21:47:19.365 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-07 21:47:19.366 -03:00 [INF] Hosting environment: Development
+2024-02-07 21:47:19.367 -03:00 [INF] Content root path: C:\george\senai.pizzaria\ProjetoEmTresCamadas.Pizzaria.WebApi
+2024-02-07 21:47:29.808 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/swagger/index.html - null null
+2024-02-07 21:47:29.947 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/swagger/index.html - 200 null text/html;charset=utf-8 140.8338ms
+2024-02-07 21:47:29.948 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-07 21:47:29.949 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/_vs/browserLink - null null
+2024-02-07 21:47:29.950 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/_framework/aspnetcore-browser-refresh.js - 200 13808 application/javascript; charset=utf-8 1.8218ms
+2024-02-07 21:47:29.983 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.0268ms
+2024-02-07 21:47:30.038 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/swagger/v1/swagger.json - null null
+2024-02-07 21:47:30.107 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 70.0349ms
+2024-02-07 21:47:35.148 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/api/Cliente - null null
+2024-02-07 21:47:35.152 -03:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.ClienteController.BuscarClientes (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-07 21:47:35.163 -03:00 [INF] Route matched with {action = "BuscarClientes", controller = "Cliente"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Cliente[]] BuscarClientes() on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.ClienteController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-07 21:47:36.032 -03:00 [ERR] Failed executing DbCommand (11ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "c"."Id", "c"."Nome", "c"."UserId"
+FROM "Clientes" AS "c"
+2024-02-07 21:47:36.055 -03:00 [ERR] An exception occurred while iterating over the results of a query for context type 'ProjetoEmTresCamadas.Pizzaria.DAO.Dao.Ef.AppDbContext'.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: Clientes'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Storage.NonRetryingExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: Clientes'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Storage.NonRetryingExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+2024-02-07 21:47:36.098 -03:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.ClienteController.BuscarClientes (ProjetoEmTresCamadas.Pizzaria.WebApi) in 932.4749ms
+2024-02-07 21:47:36.098 -03:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.ClienteController.BuscarClientes (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-07 21:47:36.120 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.Data.Sqlite.SqliteException (0x80004005): SQLite Error 1: 'no such table: Clientes'.
+   at Microsoft.Data.Sqlite.SqliteException.ThrowExceptionForRC(Int32 rc, sqlite3 db)
+   at Microsoft.Data.Sqlite.SqliteCommand.PrepareAndEnumerateStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteCommand.GetStatements()+MoveNext()
+   at Microsoft.Data.Sqlite.SqliteDataReader.NextResult()
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteReader(CommandBehavior behavior)
+   at Microsoft.Data.Sqlite.SqliteCommand.ExecuteDbDataReader(CommandBehavior behavior)
+   at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReader(RelationalCommandParameterObject parameterObject)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.InitializeReader(Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.<>c.<MoveNext>b__21_0(DbContext _, Enumerator enumerator)
+   at Microsoft.EntityFrameworkCore.Storage.NonRetryingExecutionStrategy.Execute[TState,TResult](TState state, Func`3 operation, Func`3 verifySucceeded)
+   at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.Enumerator.MoveNext()
+   at System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   at System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   at ProjetoEmTresCamadas.Pizzaria.DAO.Dao.Ef.ClienteDaoEf.ObterRegistrosAsync() in C:\george\senai.pizzaria\ProjetoEmTresCamadas.Pizzaria.DAO\Dao\Ef\ClienteDaoEf.cs:line 48
+   at ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Serviços.ClienteService.ObterTodos() in C:\george\senai.pizzaria\ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio\Serviços\ClienteService.cs:line 51
+   at ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.ClienteController.BuscarClientes() in C:\george\senai.pizzaria\ProjetoEmTresCamadas.Pizzaria.WebApi\Controllers\ClienteController.cs:line 21
+   at lambda_method5(Closure, Object)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.AwaitableObjectResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Swashbuckle.AspNetCore.SwaggerUI.SwaggerUIMiddleware.Invoke(HttpContext httpContext)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-02-07 21:47:36.130 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/api/Cliente - 500 null text/plain; charset=utf-8 981.2022ms

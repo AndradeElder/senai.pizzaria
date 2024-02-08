@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects
 {
-    public class PedidoClienteVo : EntidadeBaseVo
+    public class PedidoVo : EntidadeBaseVo
     {
-        public PedidoClienteVo() { }
+        public PedidoVo() { }
 
         public int CLienteID { get; set; }
 
@@ -16,5 +16,9 @@ namespace ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects
         public DateTime? DataPreparacao { get; set; }
         public DateTime? DataSaidaEntrega { get; set; }
         public DateTime? DataFinalizacaoEntrega { get; set; }
+
+        public int ClienteId { get; set; }
+        public ClienteVo Cliente { get; set; }
+        public ICollection<PizzaVo> Pizzas { get; set; }
     }
 }

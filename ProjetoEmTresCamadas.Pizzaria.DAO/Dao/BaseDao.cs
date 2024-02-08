@@ -51,7 +51,7 @@ public abstract class BaseDao<T> : IDao<T>
         }
     }
 
-    public List<T> ObterRegistros()
+    public List<T> ObterRegistrosAsync()
     {
         List<T> registros = new List<T>();
 
@@ -77,7 +77,7 @@ public abstract class BaseDao<T> : IDao<T>
         return registros;
     }
 
-    public int CriarRegistro(T objetoVo)
+    public int CriarRegistroAsync(T objetoVo)
     {
         using (var sqlConnection = new SqliteConnection(CONNECTION_STRING))
         {

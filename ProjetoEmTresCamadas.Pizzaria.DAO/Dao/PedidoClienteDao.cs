@@ -10,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace ProjetoEmTresCamadas.Pizzaria.DAO.Dao;
-public class PedidoClienteDao : BaseDao<PedidoClienteVo>, IPedidoClienteDao
+public class PedidoClienteDao : BaseDao<PedidoVo>, IPedidoClienteDao
 {
     private const string TABELA_PedidoCliente_NOME = "TB_PedidoCliente";
 
@@ -57,9 +57,9 @@ public class PedidoClienteDao : BaseDao<PedidoClienteVo>, IPedidoClienteDao
         connectionStringOptions)
     { }
 
-    protected override PedidoClienteVo CriarInstancia(SqliteDataReader sqliteDataReader)
+    protected override PedidoVo CriarInstancia(SqliteDataReader sqliteDataReader)
     {
-        return new PedidoClienteVo
+        return new PedidoVo
         {
             Id = Convert.ToInt32(sqliteDataReader["ID"]),
             CLienteID = Convert.ToInt32(sqliteDataReader["CLienteID"]),

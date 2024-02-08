@@ -28,18 +28,20 @@ public class PedidoService : IPedidoService
 
     public Pedido Adicionar(Pedido pedido)
     {
-        var pedidoClienteVo =  _pedidoClienteDao.CriarRegistro(pedido.ToPedidoClienteVo());
+        var pedidoClienteVo =  _pedidoClienteDao.CriarRegistroAsync(pedido.ToPedidoClienteVo());
         pedido.Id = pedidoClienteVo;
 
-        foreach (var pizza in pedido.Pizzas)
-        {
-            var pedidoVo = new PedidoVo()
-            {
-                PedidoClienteId = pedido.Cliente.Id,
-                PizzaId = pizza.Id,
-            };
-            pedidoVo.Id = _pedidoDao.CriarRegistro(pedidoVo);
-        }
+        //foreach (var pizza in pedido.Pizzas)
+        //{
+        //    var pedidoVo = new PedidoVo()
+        //    {
+        //        PedidoClienteId = pedido.Cliente.Id,
+        //        PizzaId = pizza.Id,
+        //    };
+        //    pedidoVo.Id = _pedidoDao.CriarRegistro(pedidoVo);
+        //}
+
+
         
         return pedido;
     }
@@ -62,20 +64,20 @@ public class PedidoService : IPedidoService
 
     public async Task<List<Pedido>> ObterTodos()
     {
-        var pedidosVo = _pedidoClienteDao.ObterRegistros();
+        var pedidosVo = _pedidoClienteDao.ObterRegistrosAsync();
 
         var pedidos = new List<Pedido>();
         foreach (var pedidoVo in pedidosVo)
         {
             var cliente = await _clienteService.Obter(pedidoVo.CLienteID);
 
-            var pedidosDePizza = _pedidoDao.ObterRegistros(pedidoVo.Id);
+            //var pedidosDePizza = _pedidoDao.ObterRegistros(pedidoVo.Id);
 
             var pizzas = new List<Pizza>();
 
-            foreach (var pedidoDePizza in pedidosDePizza)
+            foreach (var pedidoDePizza in pedidoVo.Pizzas)
             {
-                var pizza = await _pizzaService.Obter(pedidoDePizza.PizzaId);
+                var pizza = await _pizzaService.Obter(pedidoDePizza.Id);
                 pizzas.Add(pizza);
             }
 

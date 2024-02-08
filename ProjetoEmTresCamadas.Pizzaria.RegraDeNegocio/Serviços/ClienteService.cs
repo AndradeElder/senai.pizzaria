@@ -16,7 +16,7 @@ public class ClienteService : IClienteService
     }
     public Cliente Adicionar(Cliente objeto)
     {
-        objeto.Id = _clienteDao.CriarRegistro(objeto.ToVo());        
+        objeto.Id = _clienteDao.CriarRegistroAsync(objeto.ToVo());        
         return objeto;
     }
 
@@ -48,7 +48,7 @@ public class ClienteService : IClienteService
     public async Task<List<Cliente>> ObterTodos()
     {
         List<Cliente> clientes = new List<Cliente>();
-        List<ClienteVo> clientesVo = _clienteDao.ObterRegistros();
+        List<ClienteVo> clientesVo = _clienteDao.ObterRegistrosAsync();
 
         foreach (ClienteVo o in clientesVo)
         {

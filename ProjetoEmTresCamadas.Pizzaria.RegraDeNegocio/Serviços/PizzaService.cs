@@ -25,7 +25,7 @@ public class PizzaService : IPizzaService
     {
 
         PizzaVo pizzaVo = objeto.ToPizzaVo();
-        objeto.Id = PizzaDao.CriarRegistro(pizzaVo);
+        objeto.Id = PizzaDao.CriarRegistroAsync(pizzaVo);
         Logger.LogInformation("Pizza adicionada com sucesso");
         return objeto;
     }
@@ -33,7 +33,7 @@ public class PizzaService : IPizzaService
     public async Task<List<Pizza>> ObterTodos()
     {
         List<Pizza> pizzas = new ();
-        List<PizzaVo> pizzasBanco = PizzaDao.ObterRegistros();
+        List<PizzaVo> pizzasBanco = PizzaDao.ObterRegistrosAsync();
         Logger.LogInformation("Pizzas do banco");
         foreach (PizzaVo pizzaVo in pizzasBanco)
         {

@@ -52,8 +52,8 @@ public class PedidoDao : BaseDao<PedidoVo>, IPedidoDao
         return new PedidoVo
         {
             Id = Convert.ToInt32(sqliteDataReader["ID"]),
-            PedidoClienteId = Convert.ToInt32(sqliteDataReader["PedidoClienteId"]),
-            PizzaId = Convert.ToInt32(sqliteDataReader["PizzaId"])
+            //PedidoClienteId = Convert.ToInt32(sqliteDataReader["PedidoClienteId"]),
+            //PizzaId = Convert.ToInt32(sqliteDataReader["PizzaId"])
         };
     }
 }
