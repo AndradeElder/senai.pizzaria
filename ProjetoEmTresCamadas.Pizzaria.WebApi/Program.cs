@@ -27,6 +27,9 @@ builder.Services.AddSwaggerGen();
 builder.Services.Configure<ConnectionStrings>(builder.Configuration.GetSection("ConnectionStrings"));
 
 var connectionStrings = builder.Configuration.GetSection("ConnectionStrings").GetValue<string>("Master");
+
+Console.WriteLine(connectionStrings);
+
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(connectionStrings));
 // Criação objetos acesso a dados
 builder.Services.AddScoped<IPizzaDao, PizzaDao>();
