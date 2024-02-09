@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using ProjetoEmTresCamadas.Pizzaria.Mvc.Filters;
 using ProjetoEmTresCamadas.Pizzaria.Mvc.Models;
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
@@ -10,8 +11,10 @@ using System.Text;
 
 namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
 {
+    [AuthenticationTokenFilter]
     public class LoginController : Controller
     {
+        public const string TOKEN_KEY = "JwtCookie";
         private readonly IConfiguration _configuration;
         private readonly HttpClient _httpClient;
 
@@ -119,7 +122,7 @@ namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
                             Expires = DateTime.Now.AddHours(1) // Set the expiration time as needed
                         };
 
-                        Response.Cookies.Append("JwtCookie", tokenString, cookieOptions);
+                        Response.Cookies.Append(TOKEN_KEY, tokenString, cookieOptions);
 
                         var authProperties = new AuthenticationProperties
                         {

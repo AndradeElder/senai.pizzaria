@@ -316,3 +316,67 @@ FROM "Clientes" AS "c"
 2024-02-08 18:57:27.594 -03:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.ClienteController.BuscarClientes (ProjetoEmTresCamadas.Pizzaria.WebApi) in 65.6449ms
 2024-02-08 18:57:27.594 -03:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.ClienteController.BuscarClientes (ProjetoEmTresCamadas.Pizzaria.WebApi)'
 2024-02-08 18:57:27.596 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/api/Cliente - 200 null application/json; charset=utf-8 69.1282ms
+2024-02-08 19:10:55.363 -03:00 [INF] Ola eu sou informação
+2024-02-08 19:10:55.567 -03:00 [INF] Now listening on: http://localhost:5122
+2024-02-08 19:10:55.569 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-08 19:10:55.570 -03:00 [INF] Hosting environment: Development
+2024-02-08 19:10:55.571 -03:00 [INF] Content root path: C:\george\senai.pizzaria\ProjetoEmTresCamadas.Pizzaria.WebApi
+2024-02-08 19:11:01.763 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/swagger/index.html - null null
+2024-02-08 19:11:01.878 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/swagger/index.html - 200 null text/html;charset=utf-8 119.9183ms
+2024-02-08 19:11:01.879 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-08 19:11:01.880 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/_vs/browserLink - null null
+2024-02-08 19:11:01.881 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/_framework/aspnetcore-browser-refresh.js - 200 13808 application/javascript; charset=utf-8 1.5866ms
+2024-02-08 19:11:01.901 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.2488ms
+2024-02-08 19:11:01.937 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/swagger/v1/swagger.json - null null
+2024-02-08 19:11:01.988 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 51.0395ms
+2024-02-08 19:11:04.820 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/api/Cliente - null null
+2024-02-08 19:11:04.825 -03:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.ClienteController.BuscarClientes (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-08 19:11:04.836 -03:00 [INF] Route matched with {action = "BuscarClientes", controller = "Cliente"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Cliente[]] BuscarClientes() on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.ClienteController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-08 19:11:04.841 -03:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Cliente[]'.
+2024-02-08 19:11:04.847 -03:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.ClienteController.BuscarClientes (ProjetoEmTresCamadas.Pizzaria.WebApi) in 8.7333ms
+2024-02-08 19:11:04.847 -03:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.ClienteController.BuscarClientes (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-08 19:11:04.847 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/api/Cliente - 200 null application/json; charset=utf-8 27.3943ms
+2024-02-08 20:00:59.295 -03:00 [INF] Ola eu sou informação
+2024-02-08 20:00:59.633 -03:00 [INF] Now listening on: http://localhost:5122
+2024-02-08 20:00:59.634 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-08 20:00:59.635 -03:00 [INF] Hosting environment: Development
+2024-02-08 20:00:59.636 -03:00 [INF] Content root path: C:\george\senai.pizzaria\ProjetoEmTresCamadas.Pizzaria.WebApi
+2024-02-08 20:00:59.983 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/swagger/index.html - null null
+2024-02-08 20:01:03.951 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/swagger/index.html - 200 null text/html;charset=utf-8 3972.1789ms
+2024-02-08 20:01:03.955 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-08 20:01:03.957 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/_framework/aspnetcore-browser-refresh.js - 200 13808 application/javascript; charset=utf-8 2.1107ms
+2024-02-08 20:01:03.962 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/_vs/browserLink - null null
+2024-02-08 20:01:09.356 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/_vs/browserLink - 200 null text/javascript; charset=UTF-8 5393.6548ms
+2024-02-08 20:01:09.386 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/swagger/v1/swagger.json - null null
+2024-02-08 20:01:09.437 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 50.691ms
+2024-02-08 20:01:57.984 -03:00 [INF] Ola eu sou informação
+2024-02-08 20:01:58.159 -03:00 [INF] Now listening on: http://localhost:5122
+2024-02-08 20:01:58.161 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-08 20:01:58.162 -03:00 [INF] Hosting environment: Development
+2024-02-08 20:01:58.163 -03:00 [INF] Content root path: C:\george\senai.pizzaria\ProjetoEmTresCamadas.Pizzaria.WebApi
+2024-02-08 20:02:11.321 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/swagger/index.html - null null
+2024-02-08 20:02:56.031 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/swagger/index.html - 200 null text/html;charset=utf-8 44712.771ms
+2024-02-08 20:02:56.032 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-08 20:02:56.033 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/_framework/aspnetcore-browser-refresh.js - 200 13808 application/javascript; charset=utf-8 1.0901ms
+2024-02-08 20:02:56.038 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/_vs/browserLink - null null
+2024-02-08 20:02:56.059 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/_vs/browserLink - 200 null text/javascript; charset=UTF-8 21.1261ms
+2024-02-08 20:02:56.095 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/swagger/v1/swagger.json - null null
+2024-02-08 20:02:56.145 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 49.9188ms
+2024-02-08 20:03:24.526 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/api/pizza - null null
+2024-02-08 20:03:24.531 -03:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-08 20:03:24.542 -03:00 [INF] Route matched with {action = "GetPizzas", controller = "Pizza"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]] GetPizzas() on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-08 20:03:24.730 -03:00 [INF] Buscando as pizzas
+2024-02-08 20:03:24.732 -03:00 [INF] Pizzas do banco
+2024-02-08 20:03:24.736 -03:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]'.
+2024-02-08 20:03:24.743 -03:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi) in 198.6218ms
+2024-02-08 20:03:24.743 -03:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-08 20:03:24.743 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/api/pizza - 200 null application/json; charset=utf-8 217.1424ms
+2024-02-08 20:03:31.022 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/api/pizza - null null
+2024-02-08 20:03:31.023 -03:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-08 20:03:31.024 -03:00 [INF] Route matched with {action = "GetPizzas", controller = "Pizza"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]] GetPizzas() on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-08 20:03:31.025 -03:00 [INF] Buscando as pizzas
+2024-02-08 20:03:31.026 -03:00 [INF] Pizzas do banco
+2024-02-08 20:03:31.027 -03:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]'.
+2024-02-08 20:03:31.027 -03:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi) in 3.5303ms
+2024-02-08 20:03:31.027 -03:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-08 20:03:31.027 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/api/pizza - 200 null application/json; charset=utf-8 4.7716ms

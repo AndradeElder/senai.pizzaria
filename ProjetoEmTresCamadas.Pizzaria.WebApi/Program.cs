@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using ProjetoEmTresCamadas.Clienteria.DAO.Dao;
 using ProjetoEmTresCamadas.Pizzaria.DAO.Dao;
 using ProjetoEmTresCamadas.Pizzaria.DAO.Dao.Ef;
+using ProjetoEmTresCamadas.Pizzaria.DAO.Dao.Memory;
 using ProjetoEmTresCamadas.Pizzaria.DAO.Regras;
 using ProjetoEmTresCamadas.Pizzaria.DAO.Settings;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Regras;
@@ -33,7 +34,7 @@ Console.WriteLine(connectionStrings);
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(connectionStrings));
 // Criação objetos acesso a dados
 builder.Services.AddScoped<IPizzaDao, PizzaDao>();
-builder.Services.AddScoped<IClienteDao, ClienteDaoEf>();
+builder.Services.AddScoped<IClienteDao, ClienteDaoInMemory>();
 builder.Services.AddScoped<IPedidoClienteDao, PedidoClienteDao>();
 builder.Services.AddScoped<IPedidoDao, PedidoDao>();
 
@@ -61,7 +62,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllers();
 
