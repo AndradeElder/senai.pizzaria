@@ -2,5 +2,5 @@
 
 public interface IAdicionar<T>
 {
-    T Adicionar(T objeto);
+    Task<T> AdicionarAsync(T objeto);
 }

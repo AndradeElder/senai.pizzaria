@@ -41,11 +41,11 @@ public class PizzaController : ControllerBase
     }
 
     [HttpPost]
-    public Pizza CriarPizza(Pizza pizza)
+    public async Task<Pizza> CriarPizzaAsync(Pizza pizza)
     {
         Logger.LogInformation("Criando pizza");
         Logger.LogDebug("Dados da pizza a ser criada {0}", pizza);
-        pizza = _pizzaService.Adicionar(pizza);
+        pizza = await _pizzaService.AdicionarAsync(pizza);
 
         return pizza;
     }

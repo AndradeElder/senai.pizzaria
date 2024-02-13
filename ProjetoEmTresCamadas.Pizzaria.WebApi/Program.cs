@@ -1,9 +1,6 @@
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using ProjetoEmTresCamadas.Clienteria.DAO.Dao;
 using ProjetoEmTresCamadas.Pizzaria.DAO.Dao;
 using ProjetoEmTresCamadas.Pizzaria.DAO.Dao.Ef;
-using ProjetoEmTresCamadas.Pizzaria.DAO.Dao.Memory;
 using ProjetoEmTresCamadas.Pizzaria.DAO.Regras;
 using ProjetoEmTresCamadas.Pizzaria.DAO.Settings;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Regras;
@@ -33,10 +30,9 @@ Console.WriteLine(connectionStrings);
 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlite(connectionStrings));
 // Criação objetos acesso a dados
-builder.Services.AddScoped<IPizzaDao, PizzaDao>();
-builder.Services.AddScoped<IClienteDao, ClienteDaoInMemory>();
-builder.Services.AddScoped<IPedidoClienteDao, PedidoClienteDao>();
-builder.Services.AddScoped<IPedidoDao, PedidoDao>();
+builder.Services.AddScoped<IPizzaDao, PizzaRepository>();
+builder.Services.AddScoped<IClienteDao, ClienteRepository>();
+builder.Services.AddScoped<IPedidoDao, PedidoRepository>();
 
 //Criação objetos de serviço
 builder.Services.AddScoped<IPizzaService,PizzaService>();

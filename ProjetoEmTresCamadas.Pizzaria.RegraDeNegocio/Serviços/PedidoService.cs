@@ -8,100 +8,87 @@ namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Serviços;
 
 public class PedidoService : IPedidoService
 {
-    
-    private readonly IPedidoClienteDao _pedidoClienteDao;
     private readonly IPedidoDao _pedidoDao;
-    private readonly IClienteService _clienteService;
-    private readonly IPizzaService _pizzaService;
 
     public PedidoService(
-        IPedidoClienteDao pedidoClienteDao,
-        IPedidoDao pedidoDao,
-        IClienteService clienteService,
-        IPizzaService pizzaService)
+        IPedidoDao pedidoDao)
     {
-        _pedidoClienteDao = pedidoClienteDao;
         _pedidoDao = pedidoDao;
-        _clienteService = clienteService;
-        _pizzaService = pizzaService;
     }
 
-    public Pedido Adicionar(Pedido pedido)
+    public async Task<Pedido> AdicionarAsync(Pedido pedido)
     {
-        var pedidoClienteVo =  _pedidoClienteDao.CriarRegistroAsync(pedido.ToPedidoClienteVo());
-        pedido.Id = pedidoClienteVo;
-
-        //foreach (var pizza in pedido.Pizzas)
-        //{
-        //    var pedidoVo = new PedidoVo()
-        //    {
-        //        PedidoClienteId = pedido.Cliente.Id,
-        //        PizzaId = pizza.Id,
-        //    };
-        //    pedidoVo.Id = _pedidoDao.CriarRegistro(pedidoVo);
-        //}
-
-
-        
+        var pedidoClienteVo = _pedidoDao.AddAsync(pedido.ToPedidoClienteVo());
+        pedido.Id = pedidoClienteVo.Id;
         return pedido;
     }
 
-    public Task<Pedido> AtualizarAsync(Pedido objeto)
+    public async Task<Pedido> AtualizarAsync(Pedido objeto)
     {
-        throw new NotImplementedException();
+        var pedidoClienteVo = objeto.ToPedidoClienteVo();
+        pedidoClienteVo.Id = objeto.Id;
+        _pedidoDao.Update(pedidoClienteVo);
+        return objeto;
+
     }
 
     public async Task Deletar(int ID)
     {
-        await _pedidoDao.DeletarRegistro(ID);
-        await _pedidoClienteDao.DeletarRegistro(ID);
+        var pedido = await _pedidoDao.GetByIdAsync(ID);
+        _pedidoDao.Delete(pedido);
 
-    }
-    public string ObterInformacoesPedidos()
-    {
-        throw new NotImplementedException();
     }
 
     public async Task<List<Pedido>> ObterTodos()
     {
-        var pedidosVo = _pedidoClienteDao.ObterRegistrosAsync();
+        var pedidosVo = _pedidoDao.GetAll().ToList();
 
         var pedidos = new List<Pedido>();
         foreach (var pedidoVo in pedidosVo)
         {
-            var cliente = await _clienteService.Obter(pedidoVo.ClienteId);
-
-            //var pedidosDePizza = _pedidoDao.ObterRegistros(pedidoVo.Id);
-
-            var pizzas = new List<Pizza>();
-
-            foreach (var pedidoDePizza in pedidoVo.Pizzas)
-            {
-                var pizza = await _pizzaService.Obter(pedidoDePizza.Id);
-                pizzas.Add(pizza);
-            }
-
-            var pedido = new Pedido()
-            {
-                Cliente = cliente,
-                DataFinalizacaoEntrega = pedidoVo.DataFinalizacaoEntrega,
-                DataPreparacao = pedidoVo.DataPreparacao,
-                DataSaidaEntrega = pedidoVo.DataSaidaEntrega,
-                DataSolicitacao = pedidoVo.DataSolicitacao,
-                Pizzas = pizzas
-            };
+            await MapVoToModel(pedidoVo);
         }
         return pedidos;
     }
 
-    public Task<List<Pedido>> ObterTodos(int[] id)
+    private async Task MapVoToModel(PedidoVo pedidoVo)
     {
-        throw new NotImplementedException();
+        var cliente = ClienteService.MapVoToCliente(pedidoVo.Cliente);
+        var pizzas = new List<Pizza>();
+        foreach (var pedidoDePizza in pedidoVo.Pizzas)
+        {
+            var pizza = PizzaService.MapPizzaVo(pedidoDePizza);
+            pizzas.Add(pizza);
+        }
+        var pedido = new Pedido()
+        {
+            Cliente = cliente,
+            DataFinalizacaoEntrega = pedidoVo.DataFinalizacaoEntrega,
+            DataPreparacao = pedidoVo.DataPreparacao,
+            DataSaidaEntrega = pedidoVo.DataSaidaEntrega,
+            DataSolicitacao = pedidoVo.DataSolicitacao,
+            Pizzas = pizzas
+        };
     }
 
-    public Task<Pedido> Obter(int id)
+    public async Task<List<Pedido>> ObterTodos(int[] id)
     {
-        throw new NotImplementedException();
+        var pedidosVo = _pedidoDao.GetAll().Where(pedido => id.Contains(pedido.Id));
+
+        var pedidos = new List<Pedido>();
+        foreach (var pedidoVo in pedidosVo)
+        {
+            await MapVoToModel(pedidoVo);
+        }
+        return pedidos;
+    }
+
+    public async Task<Pedido> Obter(int id)
+    {
+        var pedidoVo = await _pedidoDao.GetByIdAsync(id);
+        var pedido = new Pedido();
+        await MapVoToModel(pedidoVo);
+        return pedido;
     }
 }
 

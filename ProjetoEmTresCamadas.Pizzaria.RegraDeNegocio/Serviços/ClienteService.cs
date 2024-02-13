@@ -2,6 +2,7 @@
 using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Regras;
+using System.Linq;
 
 namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Serviços;
 
@@ -14,60 +15,70 @@ public class ClienteService : IClienteService
     {
         _clienteDao = clienteDao;
     }
-    public Cliente Adicionar(Cliente objeto)
+    public async Task<Cliente> AdicionarAsync(Cliente objeto)
     {
-        objeto.Id = _clienteDao.CriarRegistroAsync(objeto.ToVo());        
+        var clienteVo = objeto.ToVo();
+        await _clienteDao.AddAsync(clienteVo);
+        objeto.Id = clienteVo.Id;        
         return objeto;
     }
 
     public async Task<Cliente> AtualizarAsync(Cliente objeto)
     {
-        await _clienteDao.AtualizarRegistro(objeto.ToVo());
-        objeto = (await ObterTodos()).Find(cliente => cliente.Id.Equals(objeto.Id));
-
+        _clienteDao.Update(objeto.ToVo());
+        objeto = await Obter(objeto.Id);
         return objeto;
     }
 
     public async Task Deletar(int ID)
     {
-       await _clienteDao.DeletarRegistro(ID);
+        ClienteVo clienteVo = await _clienteDao.GetByIdAsync(ID);
+        _clienteDao.Delete(clienteVo);
     }
 
     public async Task<Cliente> Obter(int id)
     {
-        ClienteVo clienteVo = await _clienteDao.ObterRegistro(id);
+        ClienteVo clienteVo = await _clienteDao.GetByIdAsync(id);
 
-        Cliente cliente = new()
-            {
-                Nome = clienteVo.Nome,
-                Id = clienteVo.Id,
-            };
+        Cliente cliente = MapVoToCliente(clienteVo);
         return cliente;
     }
 
     public async Task<List<Cliente>> ObterTodos()
     {
-        List<Cliente> clientes = new List<Cliente>();
-        List<ClienteVo> clientesVo = _clienteDao.ObterRegistrosAsync();
+        List<Cliente> clientes = new();
+        var clientesVo = _clienteDao.GetAll().ToList();
+        MapVoToClientes(clientes, clientesVo);
+        return clientes;
+    }
 
-        foreach (ClienteVo o in clientesVo)
+    private static void MapVoToClientes(List<Cliente> clientes, List<ClienteVo> clientesVo)
+    {
+        foreach (ClienteVo clienteVo in clientesVo)
         {
-            Cliente cliente = new Cliente()
-            {
-                Nome = o.Nome,
-                Id = o.Id,
-            };
+            Cliente cliente = MapVoToCliente(clienteVo);
             clientes.Add(cliente);
         }
-        return clientes;
+    }
+
+    public static Cliente MapVoToCliente(ClienteVo o, Cliente cliente = null)
+    {
+        if(cliente == null)
+            cliente = new Cliente();
+
+        cliente.Nome = o.Nome;
+        cliente.Id = o.Id;
+
+        return cliente;
+        
     }
 
     public async Task<List<Cliente>> ObterTodos(int[] id)
     {
-        return 
-            (
-                await ObterTodos())
-                    .FindAll( x => id.Contains(x.Id)
-            );
+        var clientesVo = _clienteDao.GetAll().Where(cliente => id.Contains(cliente.Id)).ToList();
+        List<Cliente> clientes = new();
+        MapVoToClientes(clientes, clientesVo);
+        return clientes;
     }
+
 }
