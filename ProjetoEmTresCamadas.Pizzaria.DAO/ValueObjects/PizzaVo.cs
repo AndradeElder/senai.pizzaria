@@ -7,6 +7,5 @@ public class PizzaVo : EntidadeBaseVo
     public string Descricao { get; set; }
     public double Valor { get; set; }
 
-    public int? PedidoCLienteVoId { get; set; }
-    public PedidoVo? PedidoClienteVo { get; set; }
+    public ICollection<PedidoVo> Pedidos { get; set; }
 }

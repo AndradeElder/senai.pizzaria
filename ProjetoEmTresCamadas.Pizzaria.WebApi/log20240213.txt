@@ -446,3 +446,92 @@ FROM "Pizzas" AS "p"
 2024-02-13 20:05:08.127 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
 SELECT "p"."Id", "p"."ClienteId", "p"."DataFinalizacaoEntrega", "p"."DataPreparacao", "p"."DataSaidaEntrega", "p"."DataSolicitacao"
 FROM "Pedidos" AS "p"
+2024-02-13 20:16:53.851 -03:00 [INF] Ola eu sou informação
+2024-02-13 20:16:54.239 -03:00 [INF] Now listening on: http://localhost:5122
+2024-02-13 20:16:54.240 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-13 20:16:54.242 -03:00 [INF] Hosting environment: Development
+2024-02-13 20:16:54.243 -03:00 [INF] Content root path: C:\george\senai.pizzaria\ProjetoEmTresCamadas.Pizzaria.WebApi
+2024-02-13 20:16:59.845 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/swagger/index.html - null null
+2024-02-13 20:17:00.002 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/swagger/index.html - 200 null text/html;charset=utf-8 159.567ms
+2024-02-13 20:17:00.005 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-13 20:17:00.006 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/_framework/aspnetcore-browser-refresh.js - 200 13808 application/javascript; charset=utf-8 1.1236ms
+2024-02-13 20:17:00.010 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/_vs/browserLink - null null
+2024-02-13 20:17:00.027 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/_vs/browserLink - 200 null text/javascript; charset=UTF-8 16.389ms
+2024-02-13 20:17:00.065 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/swagger/v1/swagger.json - null null
+2024-02-13 20:17:00.121 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 56.5716ms
+2024-02-13 20:17:06.494 -03:00 [INF] Ola eu sou informação
+2024-02-13 20:17:06.678 -03:00 [INF] Now listening on: http://localhost:5122
+2024-02-13 20:17:06.680 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-13 20:17:06.681 -03:00 [INF] Hosting environment: Development
+2024-02-13 20:17:06.682 -03:00 [INF] Content root path: C:\george\senai.pizzaria\ProjetoEmTresCamadas.Pizzaria.WebApi
+2024-02-13 20:17:11.698 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/swagger/index.html - null null
+2024-02-13 20:17:11.822 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/swagger/index.html - 200 null text/html;charset=utf-8 126.6168ms
+2024-02-13 20:17:11.825 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/_framework/aspnetcore-browser-refresh.js - null null
+2024-02-13 20:17:11.826 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/_framework/aspnetcore-browser-refresh.js - 200 13808 application/javascript; charset=utf-8 1.3011ms
+2024-02-13 20:17:11.830 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/_vs/browserLink - null null
+2024-02-13 20:17:11.848 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/_vs/browserLink - 200 null text/javascript; charset=UTF-8 17.5224ms
+2024-02-13 20:17:11.888 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/swagger/v1/swagger.json - null null
+2024-02-13 20:17:11.946 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 57.9734ms
+2024-02-13 20:17:37.535 -03:00 [INF] Request starting HTTP/1.1 GET http://localhost:5122/api/pizza - null null
+2024-02-13 20:17:37.539 -03:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-13 20:17:37.550 -03:00 [INF] Route matched with {action = "GetPizzas", controller = "Pizza"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]] GetPizzas() on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-13 20:17:38.398 -03:00 [INF] Executed DbCommand (17ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+PRAGMA journal_mode = 'wal';
+2024-02-13 20:17:38.468 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Clientes" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Clientes" PRIMARY KEY AUTOINCREMENT,
+    "Nome" TEXT NOT NULL,
+    "UserId" TEXT NOT NULL
+);
+2024-02-13 20:17:38.472 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Pizzas" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Pizzas" PRIMARY KEY AUTOINCREMENT,
+    "Sabor" TEXT NOT NULL,
+    "TamanhoDePizza" INTEGER NOT NULL,
+    "Descricao" TEXT NOT NULL,
+    "Valor" REAL NOT NULL
+);
+2024-02-13 20:17:38.477 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "Pedidos" (
+    "Id" INTEGER NOT NULL CONSTRAINT "PK_Pedidos" PRIMARY KEY AUTOINCREMENT,
+    "DataSolicitacao" TEXT NOT NULL,
+    "DataPreparacao" TEXT NULL,
+    "DataSaidaEntrega" TEXT NULL,
+    "DataFinalizacaoEntrega" TEXT NULL,
+    "ClienteId" INTEGER NOT NULL,
+    CONSTRAINT "FK_Pedidos_Clientes_ClienteId" FOREIGN KEY ("ClienteId") REFERENCES "Clientes" ("Id") ON DELETE CASCADE
+);
+2024-02-13 20:17:38.482 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE "PedidosPizzas" (
+    "PedidosId" INTEGER NOT NULL,
+    "PizzasId" INTEGER NOT NULL,
+    CONSTRAINT "PK_PedidosPizzas" PRIMARY KEY ("PedidosId", "PizzasId"),
+    CONSTRAINT "FK_PedidosPizzas_Pedidos_PedidosId" FOREIGN KEY ("PedidosId") REFERENCES "Pedidos" ("Id") ON DELETE CASCADE,
+    CONSTRAINT "FK_PedidosPizzas_Pizzas_PizzasId" FOREIGN KEY ("PizzasId") REFERENCES "Pizzas" ("Id") ON DELETE CASCADE
+);
+2024-02-13 20:17:38.488 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_Pedidos_ClienteId" ON "Pedidos" ("ClienteId");
+2024-02-13 20:17:38.492 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE INDEX "IX_PedidosPizzas_PizzasId" ON "PedidosPizzas" ("PizzasId");
+2024-02-13 20:17:38.523 -03:00 [INF] Executed DbCommand (3ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*) FROM "sqlite_master" WHERE "type" = 'table' AND "rootpage" IS NOT NULL;
+2024-02-13 20:17:38.666 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT COUNT(*)
+FROM "Pizzas" AS "p"
+2024-02-13 20:17:38.782 -03:00 [INF] Executed DbCommand (5ms) [Parameters=[@p0='?' (Size = 39), @p1='?' (Size = 9), @p2='?' (DbType = Int32), @p3='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Pizzas" ("Descricao", "Sabor", "TamanhoDePizza", "Valor")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "Id";
+2024-02-13 20:17:38.800 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[@p0='?' (Size = 48), @p1='?' (Size = 20), @p2='?' (DbType = Int32), @p3='?' (DbType = Double)], CommandType='"Text"', CommandTimeout='30']
+INSERT INTO "Pizzas" ("Descricao", "Sabor", "TamanhoDePizza", "Valor")
+VALUES (@p0, @p1, @p2, @p3)
+RETURNING "Id";
+2024-02-13 20:17:38.830 -03:00 [INF] Buscando as pizzas
+2024-02-13 20:17:38.859 -03:00 [INF] Executed DbCommand (1ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+SELECT "p"."Id", "p"."Descricao", "p"."Sabor", "p"."TamanhoDePizza", "p"."Valor"
+FROM "Pizzas" AS "p"
+2024-02-13 20:17:38.865 -03:00 [INF] Pizzas do banco
+2024-02-13 20:17:38.869 -03:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]'.
+2024-02-13 20:17:38.877 -03:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi) in 1325.7189ms
+2024-02-13 20:17:38.877 -03:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-13 20:17:38.883 -03:00 [INF] Request finished HTTP/1.1 GET http://localhost:5122/api/pizza - 200 null application/json; charset=utf-8 1348.6696ms
