@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects
+﻿namespace ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects
 {
     public class PedidoVo : EntidadeBaseVo
     {
@@ -17,7 +11,8 @@ namespace ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects
         public DateTime? DataFinalizacaoEntrega { get; set; }
 
         public int ClienteId { get; set; }
-        public ClienteVo Cliente { get; set; }
-        public ICollection<PizzaVo> Pizzas { get; set; }
+        public virtual ClienteVo Cliente { get; set; }
+
+        public ICollection<PizzaVo> Pizzas { get; set; } = new List<PizzaVo>();
     }
 }

@@ -1,9 +1,4 @@
 ﻿using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades
 {
@@ -25,13 +20,13 @@ namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades
         {
             return new PedidoVo()
             {
-                ClienteId = Cliente.Id,
                 DataSolicitacao = DataSolicitacao,
                 DataFinalizacaoEntrega = DataFinalizacaoEntrega,
                 DataPreparacao = DataPreparacao,
                 Id = this.Id,
                 DataSaidaEntrega = DataSaidaEntrega,
-                Cliente = Cliente.ToVo(),
+                ClienteId = Cliente.Id,
+                //Cliente = Cliente.ToVo(),
                 Pizzas = ToPizzasVo(Pizzas)
             };
         }
@@ -39,7 +34,7 @@ namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades
         private ICollection<PizzaVo> ToPizzasVo(List<Pizza> pizzas)
         {
             var pizzasVo = new HashSet<PizzaVo>();
-            pizzas.ForEach(pizza => pizzasVo.Add(pizza.ToPizzaVo()));
+            pizzas.ForEach(pizza => pizzasVo.Add(new PizzaVo() { Id = pizza.Id }));
             return pizzasVo;
         }
     }

@@ -1,5 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
 
 namespace ProjetoEmTresCamadas.Pizzaria.DAO.Dao.Repository.Configurations
@@ -10,10 +10,6 @@ namespace ProjetoEmTresCamadas.Pizzaria.DAO.Dao.Repository.Configurations
         {
             builder.ToTable("Pizzas");
 
-            builder
-                .HasMany(c => c.Pedidos)
-                .WithMany(s => s.Pizzas)
-                .UsingEntity(j => j.ToTable("PedidosPizzas"));
         }
     }
 }

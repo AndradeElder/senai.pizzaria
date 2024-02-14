@@ -2,7 +2,6 @@
 using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Regras;
-using System.Linq;
 
 namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Serviços;
 
@@ -19,7 +18,7 @@ public class ClienteService : IClienteService
     {
         var clienteVo = objeto.ToVo();
         await _clienteDao.AddAsync(clienteVo);
-        objeto.Id = clienteVo.Id;        
+        objeto.Id = clienteVo.Id;
         return objeto;
     }
 
@@ -63,14 +62,15 @@ public class ClienteService : IClienteService
 
     public static Cliente MapVoToCliente(ClienteVo o, Cliente cliente = null)
     {
-        if(cliente == null)
+        if (cliente == null)
             cliente = new Cliente();
 
         cliente.Nome = o.Nome;
         cliente.Id = o.Id;
+        cliente.UserId = o.UserId;
 
         return cliente;
-        
+
     }
 
     public async Task<List<Cliente>> ObterTodos(int[] id)

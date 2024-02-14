@@ -18,28 +18,33 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
 
     public IQueryable<TEntity> GetAll()
     {
-        return _dbSet.AsQueryable();
+        return _dbSet.AsNoTracking().AsQueryable();
     }
 
     public IQueryable<TEntity> Get(Expression<Func<TEntity, bool>> predicate)
     {
-        return _dbSet.Where(predicate);
+        return _dbSet.AsNoTracking().Where(predicate);
     }
 
     public async Task<TEntity> GetByIdAsync(int id)
     {
-        return await _dbSet.FindAsync(id);
+        var entity = await _dbSet.FindAsync(id);
+        _context.Entry(entity).State = EntityState.Detached; // Detach existingCliente if it's being tracked
+        return entity;
     }
 
     public async Task AddAsync(TEntity entity)
     {
         await _dbSet.AddAsync(entity);
+        _context.SaveChanges();
     }
 
     public void Update(TEntity entity)
     {
         _dbSet.Attach(entity);
         _context.Entry(entity).State = EntityState.Modified;
+
+        _context.SaveChanges();
     }
 
     public void Delete(TEntity entity)
@@ -49,5 +54,7 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
             _dbSet.Attach(entity);
         }
         _dbSet.Remove(entity);
+
+        _context.SaveChanges();
     }
 }

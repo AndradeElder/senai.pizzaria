@@ -1,5 +1,4 @@
-﻿using ProjetoEmTresCamadas.Pizzaria.DAO.Dao;
-using ProjetoEmTresCamadas.Pizzaria.DAO.Regras;
+﻿using ProjetoEmTresCamadas.Pizzaria.DAO.Regras;
 using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Regras;
@@ -9,17 +8,28 @@ namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Serviços;
 public class PedidoService : IPedidoService
 {
     private readonly IPedidoDao _pedidoDao;
+    private readonly IPizzaService _pizzaService;
+    private readonly IClienteService _clienteService;
 
     public PedidoService(
-        IPedidoDao pedidoDao)
+        IPedidoDao pedidoDao, IPizzaService pizzaService, IClienteService clienteService)
     {
         _pedidoDao = pedidoDao;
+        _pizzaService = pizzaService;
+        _clienteService = clienteService;
     }
 
     public async Task<Pedido> AdicionarAsync(Pedido pedido)
     {
-        var pedidoClienteVo = _pedidoDao.AddAsync(pedido.ToPedidoClienteVo());
-        pedido.Id = pedidoClienteVo.Id;
+        var cliente = await _clienteService.Obter(pedido.Cliente.Id);
+        var ids = new List<int>();
+        pedido.Pizzas.ForEach(pizza => ids.Add(pizza.Id));
+        var pizzas = await _pizzaService.ObterTodos(ids.ToArray());
+
+        var pedidoVo = pedido.ToPedidoClienteVo();
+        await _pedidoDao.AddAsync(pedidoVo);
+
+        pedido.Id = pedidoVo.Id;
         return pedido;
     }
 
