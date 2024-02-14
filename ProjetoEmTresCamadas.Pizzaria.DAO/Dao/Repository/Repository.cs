@@ -1,5 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProjetoEmTresCamadas.Pizzaria.DAO.Regras;
+using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
 using System.Linq.Expressions;
 
 namespace ProjetoEmTresCamadas.Pizzaria.DAO.Dao.Repository;
@@ -18,7 +19,9 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
 
     public IQueryable<TEntity> GetAll()
     {
-        return _dbSet.AsNoTracking().AsQueryable();
+        return _dbSet.
+            AsNoTracking().
+            AsQueryable();
     }
 
     public IQueryable<TEntity> Get(Expression<Func<TEntity, bool>> predicate)

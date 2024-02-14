@@ -13,6 +13,6 @@
         public int ClienteId { get; set; }
         public virtual ClienteVo Cliente { get; set; }
 
-        public ICollection<PizzaVo> Pizzas { get; set; } = new List<PizzaVo>();
+        public ICollection<PizzaVo> Pizzas { get; set; }
     }
 }

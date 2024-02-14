@@ -25,9 +25,9 @@ namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades
                 DataPreparacao = DataPreparacao,
                 Id = this.Id,
                 DataSaidaEntrega = DataSaidaEntrega,
-                ClienteId = Cliente.Id,
+                //ClienteId = Cliente.Id,
                 //Cliente = Cliente.ToVo(),
-                Pizzas = ToPizzasVo(Pizzas)
+                //Pizzas = ToPizzasVo(Pizzas)
             };
         }
 

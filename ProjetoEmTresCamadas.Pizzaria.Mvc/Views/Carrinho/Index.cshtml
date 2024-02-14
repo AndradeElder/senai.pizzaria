@@ -1,0 +1,43 @@
+﻿@model CarrinhoViewModel
+@{
+}
+
+<div class="container">
+    <h1>Items</h1>
+    <table class="table">
+        <thead class="thead-dark">
+            <tr>
+                <th>Sabor </th>
+                <th>Quantidade</th>
+                <th>Total do item</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Items)
+            {
+                <tr>
+                    <td>@item.Pizza.Sabor</td> 
+                    <td>@item.Quantidade</td>
+                    <td>@item.ValorTotal.ToString("C")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <div class="row">
+        <div class="col">
+            <span>Total @Model.Total.ToString("C") </span>
+        </div>
+     </div>
+
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-primary" asp-controller="Login" asp-action="Index">Voltar</a>
+        </div>
+        <div class="col text-right">
+            <a class="btn btn-success" asp-controller="Carrinho" asp-action="Finish">Realize o pedido</a>
+        </div>
+    </div>
+</div>
+

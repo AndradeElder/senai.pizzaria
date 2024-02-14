@@ -7,5 +7,5 @@ public class PizzaVo : EntidadeBaseVo
     public string Descricao { get; set; }
     public double Valor { get; set; }
 
-    public ICollection<PedidoVo> Pedidos { get; set; } = new List<PedidoVo>();
+    public ICollection<PedidoVo>? Pedidos { get; set; }
 }

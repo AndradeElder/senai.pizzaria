@@ -35,6 +35,11 @@ namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
 
             List<Cliente> clientes = [.. await _httpClient.GetFromJsonAsync<Cliente[]>(ClienteApiEndpoint)];
 
+            for (int i = 0; i < 100; i++)
+            {
+                clientes.Add(new Cliente() { Id = i , Nome = $"Exemplo {i}"});
+            }
+
             int totalCount = clientes.Count;
             int totalPages = (int)Math.Ceiling((double)totalCount / pageSize);
 

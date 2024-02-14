@@ -30,6 +30,16 @@ public class PizzaController : ControllerBase
         return pizzas.ToArray();
     }
 
+    [HttpGet("{ids}")]
+    public async Task<Pizza[]> GetPizzas(int[] ids)
+    {
+        Logger.LogInformation("Buscando as pizzas");
+        List<Pizza> pizzas = await _pizzaService.ObterTodos(ids);
+        Logger.LogDebug("Possui {0} pizzas", pizzas.Count);
+
+        return pizzas.ToArray();
+    }
+
     [HttpGet("{id}")]
     public async Task<Pizza> GetPizza(int id)
     {
