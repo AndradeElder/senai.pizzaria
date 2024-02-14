@@ -401,3 +401,5 @@ FodyWeavers.xsd
 /ProjetoEmTresCamadas.Pizzaria.WebApi/Pizza_Dev.db
 /ProjetoEmTresCamadas.Pizzaria.WebApi/Pizza_Dev.db-wal
 /ProjetoEmTresCamadas.Pizzaria.WebApi/Pizza_Dev.db-shm
+/Autenticacao/ProjetoEmTresCamadas.Pizzaria.Autenticacao/Authentication.db-shm
+/ProjetoEmTresCamadas.Pizzaria.WebApi/log20240214.txt

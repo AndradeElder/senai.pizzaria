@@ -1,0 +1,35 @@
+﻿@model Cliente[]
+<div class="container mt-4">
+    <div class="row">
+        <!-- Side menu -->
+        @Html.Partial("_SideMenu")
+        <!-- Main content -->
+        <div class="col-md-9">
+            <h2>Clientes</h2>
+            
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>
+                            <a href="@Url.Action("Cadastro", "Clientes")" class="btn btn-primary justify-content-end">Novo</a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var cliente in Model)
+                    {
+                        <tr>
+                            <td>@cliente.Nome</td>
+                            <td>
+                                <a asp-area="" asp-controller="Clientes" asp-action="Details" asp-route-id="@cliente.Id" class="btn btn-primary btn-sm">Detalhes</a>
+                                <a asp-area="" asp-controller="Clientes" asp-action="Edit" asp-route-id="@cliente.Id" class="btn btn-success btn-sm">Editar</a>
+                                <a asp-area="" asp-controller="Clientes" asp-action="Delete" asp-route-id="@cliente.Id" class="btn btn-danger btn-sm">Excluir</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

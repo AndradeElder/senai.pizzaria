@@ -1,7 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades;
-using System.Net.Http;
 
 namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
 {
@@ -12,12 +11,14 @@ namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
 
         private readonly HttpClient _httpClient;
         private readonly string PizzaApiEndpoint;
+        private readonly string ClienteApiEndpoint;
 
         public AdminController(IConfiguration configuration, IHttpClientFactory httpClientFactory)
         {
             _httpClient = httpClientFactory.CreateClient();
             Configuration = configuration;
             PizzaApiEndpoint = Configuration["PizzaApiEndpoint"] + "/api/pizza";
+            ClienteApiEndpoint = configuration["PizzaApiEndpoint"] + "/api/cliente";
         }
 
 
@@ -26,18 +27,19 @@ namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
             return View();
         }
 
-        [HttpPost]
-        public async Task<IActionResult> Cadastro
-            ([Bind("Sabor,TamanhoDePizza,Descricao,Valor")] Pizza pizza)
+        public async Task<IActionResult> Clientes()
         {
-            using (var response = await _httpClient.PostAsJsonAsync<Pizza>(PizzaApiEndpoint, pizza))
-            {
-                if (response.IsSuccessStatusCode)
-                {
-                    return RedirectToAction("Index");
-                }
-            }
-            return RedirectToAction("Index");
+            var clientes = await _httpClient.GetFromJsonAsync<Cliente[]>(ClienteApiEndpoint);
+
+            return View(clientes);
         }
+
+        public async Task<IActionResult> Pizzas()
+        {
+            var pizzas = await _httpClient.GetFromJsonAsync<Pizza[]>(PizzaApiEndpoint);
+
+            return View(pizzas);
+        }
+
     }
 }

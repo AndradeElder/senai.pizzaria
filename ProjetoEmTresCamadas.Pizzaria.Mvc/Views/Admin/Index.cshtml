@@ -5,32 +5,36 @@
 
 
 <div class="container mt-4">
-    <h2>Cadastro de Pizzas</h2>
-
     <div class="row">
-        <div class="card-body">
-            <form asp-controller="Pizzas" asp-action="Cadastro" method="post">
-                @* <input type="hidden" class="form-control" id="Id" name="Id" value="@ViewBag.Id" required> *@
+        <!-- Include the side menu partial view -->
+        @Html.Partial("_SideMenu")
 
-                <div class="form-group">
-                    <label for="TamanhoDePizza">TamanhoDePizza:</label>
-                    <input type="text" class="form-control" id="TamanhoDePizza" name="TamanhoDePizza" required>
-                </div>
-                <div class="form-group">
-                    <label for="sabor">Sabor:</label>
-                    <input type="text" class="form-control" id="sabor" name="sabor" required>
-                </div>
-                <div class="form-group">
-                    <label for="Descricao">Descricao:</label>
-                    <input type="text" class="form-control" id="Descricao" name="Descricao" required>
-                </div>
-                <div class="form-group">
-                    <label for="Valor">Valor:</label>
-                    <input type="number" class="form-control" id="Valor" name="Valor" required>
-                </div>
-                <br />
-                <button type="submit" class="btn btn-primary btn-block">Cadastro</button>
-            </form>
+        <!-- Main content -->
+        <div class="col-md-9">
+            <h2>Cadastro de Pizzas</h2>
+
+            <div class="card-body">
+                <form asp-controller="Pizzas" asp-action="Cadastro" method="post">
+                    <div class="form-group">
+                        <label for="TamanhoDePizza">TamanhoDePizza:</label>
+                        <input type="text" class="form-control" id="TamanhoDePizza" name="TamanhoDePizza" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="sabor">Sabor:</label>
+                        <input type="text" class="form-control" id="sabor" name="sabor" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Descricao">Descricao:</label>
+                        <input type="text" class="form-control" id="Descricao" name="Descricao" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Valor">Valor:</label>
+                        <input type="number" class="form-control" id="Valor" name="Valor" required>
+                    </div>
+                    <br />
+                    <button type="submit" class="btn btn-primary btn-block">Cadastro</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>

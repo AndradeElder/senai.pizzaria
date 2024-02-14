@@ -16,6 +16,7 @@
                 <div class="card-body">
 
                     <form asp-controller="Login" asp-action="Create" method="post">
+                        <input type="hidden" name="returnUrl" value="@Context.Request.Path" />
                         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
                         <div class="form-group">
                             <label for="Email">Email:</label>
@@ -27,19 +28,27 @@
                             <input type="text" class="form-control" id="Nome" name="Nome" required value="@Model.Nome">
                             <span asp-validation-for="Nome" class="text-danger"></span>
                         </div>
+                        @if (User.Identity.IsAuthenticated)
+                        {
+                            <div class="form-group">
+                                <label for="Role">Role:</label>
+                                <input type="text" class="form-control" id="Role" name="Role" required value="@Model.Role">
+                                <span asp-validation-for="Role" class="text-danger"></span>
+                            </div>
+                        }
                         <div class="form-group">
                             <label for="Password">Senha:</label>
                             <input type="password" class="form-control" id="Password" name="Password" required value="@Model.Password">
                             <span asp-validation-for="Password" class="text-danger"></span>
                         </div>
-                       
+
                         <div class="form-group">
                             <label for="ConfirmPassword">Confirme a senha:</label>
                             <input type="password" class="form-control" id="ConfirmPassword" name="ConfirmPassword" required value="@Model.ConfirmPassword">
                             <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
                         </div>
                         <div>
-                        <button type="submit" class="btn btn-primary btn-block">Criar</button>
+                            <button type="submit" class="btn btn-primary btn-block">Criar</button>
                         </div>
                         <br />
                     </form>

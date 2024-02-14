@@ -2,13 +2,10 @@
 using Microsoft.AspNetCore.Mvc;
 using ProjetoEmTresCamadas.Pizzaria.Mvc.Models;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades;
-using System.Text;
-using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
 {
-    [Authorize(Roles = "simples")]
+
     public class PizzasController : Controller
     {
         public PizzasViewModel PizzasViewModel { get; set; }
@@ -36,7 +33,7 @@ namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
         //    //    // Adicione mais pizzas conforme necessário
         //    //};
         //}
-
+        [Authorize(Roles = "simples")]
         public async Task<IActionResult> IndexAsync()
         {
             PizzasViewModel pizzaViewModel = new PizzasViewModel();
@@ -45,6 +42,22 @@ namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
 
             pizzaViewModel.Pizzas.AddRange(pizzas);
             return View(pizzaViewModel);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "manager")]
+        public async Task<IActionResult> Cadastro
+            ([Bind("Sabor,TamanhoDePizza,Descricao,Valor")] Pizza pizza)
+        {
+            string returnUrl = Request.Headers["Referer"].ToString();
+            using (var response = await _httpClient.PostAsJsonAsync<Pizza>(PizzaApiEndpoint, pizza))
+            {
+                if (response.IsSuccessStatusCode)
+                {
+                    return Redirect(returnUrl);
+                }
+            }
+            return Redirect(returnUrl);
         }
 
     }
