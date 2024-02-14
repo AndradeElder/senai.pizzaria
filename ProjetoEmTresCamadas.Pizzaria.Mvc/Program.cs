@@ -1,6 +1,5 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using ProjetoEmTresCamadas.Pizzaria.Mvc.Middleware;
-using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +8,10 @@ builder.Services.AddControllersWithViews();
 
 // Adicionar serviços de criação do HttpClient 
 builder.Services.AddHttpClient();
+builder.Services.AddSession(options =>
+{
+    options.Cookie.IsEssential = true; // make the session cookie essential
+});
 
 // Adicionar schema de autenticação
 builder.Services.AddAuthentication(options =>
@@ -34,6 +37,7 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseSession();
 
 app.UseAuthentication();
 app.UseAuthorization();

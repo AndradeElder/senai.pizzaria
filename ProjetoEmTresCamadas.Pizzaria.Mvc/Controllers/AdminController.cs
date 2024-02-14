@@ -13,6 +13,8 @@ namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
         private readonly string PizzaApiEndpoint;
         private readonly string ClienteApiEndpoint;
 
+        private const int pageSize = 10;
+
         public AdminController(IConfiguration configuration, IHttpClientFactory httpClientFactory)
         {
             _httpClient = httpClientFactory.CreateClient();
@@ -27,11 +29,24 @@ namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
             return View();
         }
 
-        public async Task<IActionResult> Clientes()
+        public async Task<IActionResult> Clientes(int page = 1)
         {
-            var clientes = await _httpClient.GetFromJsonAsync<Cliente[]>(ClienteApiEndpoint);
 
-            return View(clientes);
+
+            List<Cliente> clientes = [.. await _httpClient.GetFromJsonAsync<Cliente[]>(ClienteApiEndpoint)];
+
+            int totalCount = clientes.Count;
+            int totalPages = (int)Math.Ceiling((double)totalCount / pageSize);
+
+            if (totalCount < (pageSize * (page - 1)))
+            {
+                page = 1;
+            }
+            ViewBag.CurrentPage = page;
+            ViewBag.TotalPages = totalPages;
+            var clientesDaPagina = clientes.Skip(pageSize * (page - 1)).Take(pageSize).ToArray();
+
+            return View(clientesDaPagina);
         }
 
         public async Task<IActionResult> Pizzas()
