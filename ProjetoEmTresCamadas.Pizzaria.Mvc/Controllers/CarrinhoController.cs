@@ -36,7 +36,7 @@ namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
             var ids = GetPizzas(HttpContext);
 
             var idParameter = string.Join(",", ids); 
-            var endpointWithIds = $@"{PizzaApiEndpoint}\ids={idParameter}";
+            var endpointWithIds = $@"{PizzaApiEndpoint}?ids={idParameter}";
 
             var pizzas = await _httpClient.GetFromJsonAsync<Pizza[]>(endpointWithIds);
             carrinhoViewModel.ConvertPizzas(pizzas);

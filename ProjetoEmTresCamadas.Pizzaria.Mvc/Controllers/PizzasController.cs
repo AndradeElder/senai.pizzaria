@@ -18,7 +18,7 @@ namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
         }
 
         [Authorize(Roles = "simples")]
-        public async Task<IActionResult> IndexAsync()
+        public async Task<IActionResult> Index()
         {
             PizzasViewModel pizzaViewModel = new PizzasViewModel();
             pizzaViewModel.Pizzas.AddRange(await PizzaApiService.Get());
