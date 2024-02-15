@@ -1,0 +1,32 @@
+version: '3.4'
+
+services:
+  projetoemtrescamadas.pizzaria.autenticacao:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=5023
+    ports:
+      - "5023"
+
+  projetoemtrescamadas.pizzaria.webapi:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=5122
+      - ASPNETCORE_HTTPS_PORTS=5123
+    ports:
+      - "5122"
+      - "5123"
+    volumes:
+      - ${APPDATA}/Microsoft/UserSecrets:/home/app/.microsoft/usersecrets:ro
+      - ${APPDATA}/ASP.NET/Https:/home/app/.aspnet/https:ro
+
+  projetoemtrescamadas.pizzaria.mvc:
+    depends_on:
+      - projetoemtrescamadas.pizzaria.autenticacao
+      - projetoemtrescamadas.pizzaria.webapi  
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+      - ASPNETCORE_HTTP_PORTS=5222
+    ports:
+      - "5222"
+

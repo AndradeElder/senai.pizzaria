@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using ProjetoEmTresCamadas.Pizzaria.Mvc.Models;
+using ProjetoEmTresCamadas.Pizzaria.Mvc.Services;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades;
 
 namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
@@ -9,55 +10,47 @@ namespace ProjetoEmTresCamadas.Pizzaria.Mvc.Controllers
     public class PizzasController : Controller
     {
         public PizzasViewModel PizzasViewModel { get; set; }
-        public IConfiguration Configuration { get; }
+        public PizzasApiService PizzaApiService { get; set; }
 
-        private readonly HttpClient _httpClient;
-        private readonly string PizzaApiEndpoint;
-
-        public PizzasController(IConfiguration configuration, IHttpClientFactory httpClientFactory)
+        public PizzasController(PizzasApiService pizzaApiService)
         {
-            _httpClient = httpClientFactory.CreateClient();
-            Configuration = configuration;
-            PizzaApiEndpoint = Configuration["PizzaApiEndpoint"] + "/api/pizza";
+            PizzaApiService = pizzaApiService;
         }
 
-        //private List<PizzaModel> ObterPizzas()
-        //{
-        //    //// Lógica para obter dados de pizzas do seu sistema
-        //    //// Pode ser de um banco de dados, serviço, etc.
-        //    //// Aqui estou usando dados fictícios para ilustrar
-        //    //return new List<Pizza>
-        //    //{
-        //    //    new Pizza { Id = 1, Sabor = "Margherita", TamanhoDePizza = "Média", Descricao = "Pizza clássica com molho de tomate, queijo e manjericão.", Valor = 20.99, ImageUrl = "/images/margherita.jpg", Quantity = 0 },
-        //    //    new Pizza { ID = 2, Sabor = "Pepperoni", TamanhoDePizza = "Grande", Descricao = "Pizza com pepperoni, queijo e molho de tomate.", Valor = 23.99, ImageUrl = "/images/pepperoni.jpg", Quantity = 0 },
-        //    //    // Adicione mais pizzas conforme necessário
-        //    //};
-        //}
         [Authorize(Roles = "simples")]
         public async Task<IActionResult> IndexAsync()
         {
             PizzasViewModel pizzaViewModel = new PizzasViewModel();
-
-            var pizzas = await _httpClient.GetFromJsonAsync<Pizza[]>(PizzaApiEndpoint);
-
-            pizzaViewModel.Pizzas.AddRange(pizzas);
+            pizzaViewModel.Pizzas.AddRange(await PizzaApiService.Get());
             return View(pizzaViewModel);
         }
+
+        [HttpGet]
+        [Authorize(Roles = "manager")]
+        public async Task<IActionResult> Cadastro()
+        {
+            return View(new Pizza());
+        }
+
 
         [HttpPost]
         [Authorize(Roles = "manager")]
         public async Task<IActionResult> Cadastro
             ([Bind("Sabor,TamanhoDePizza,Descricao,Valor")] Pizza pizza)
         {
-            string returnUrl = Request.Headers["Referer"].ToString();
-            using (var response = await _httpClient.PostAsJsonAsync<Pizza>(PizzaApiEndpoint, pizza))
+            if (ModelState.IsValid is false)
             {
-                if (response.IsSuccessStatusCode)
-                {
-                    return Redirect(returnUrl);
-                }
+                return View(pizza);
             }
-            return Redirect(returnUrl);
+            string returnUrl = Request.Headers["Referer"].ToString();
+
+            object result = await PizzaApiService.Create(pizza);
+            if (string.IsNullOrEmpty(returnUrl))
+            {
+                return Redirect(returnUrl);
+            }
+
+            return View(pizza);
         }
 
     }

@@ -21,24 +21,23 @@ public class PizzaController : ControllerBase
     }
 
     [HttpGet]
-    public async Task<Pizza[]> GetPizzas()
+    public async Task<Pizza[]> GetPizzas([FromQueryAttribute] int[] ids = null)
     {
         Logger.LogInformation("Buscando as pizzas");
-        List<Pizza> pizzas = await _pizzaService.ObterTodos();
+        List<Pizza> pizzas;
+        if (ids == null || ids.Length == 0)
+        {
+            pizzas = await _pizzaService.ObterTodos();
+        }
+        else
+        {
+            pizzas = await _pizzaService.ObterTodos(ids);
+        }
         Logger.LogDebug("Possui {0} pizzas", pizzas.Count);
 
         return pizzas.ToArray();
     }
 
-    [HttpGet("{ids}")]
-    public async Task<Pizza[]> GetPizzas(int[] ids)
-    {
-        Logger.LogInformation("Buscando as pizzas");
-        List<Pizza> pizzas = await _pizzaService.ObterTodos(ids);
-        Logger.LogDebug("Possui {0} pizzas", pizzas.Count);
-
-        return pizzas.ToArray();
-    }
 
     [HttpGet("{id}")]
     public async Task<Pizza> GetPizza(int id)
@@ -65,7 +64,7 @@ public class PizzaController : ControllerBase
     {
         Logger.LogInformation("Atualizando a pizza");
         Logger.LogDebug("Dados da pizza a ser criada {0}", pizza);
-        return await _pizzaService.AtualizarAsync(pizza); 
+        return await _pizzaService.AtualizarAsync(pizza);
     }
 
     [HttpDelete]

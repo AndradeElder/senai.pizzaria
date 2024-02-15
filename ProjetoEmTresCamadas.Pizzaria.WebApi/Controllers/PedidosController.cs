@@ -1,18 +1,16 @@
-﻿using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Regras;
-using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Serviços;
 
 namespace ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PedidoController : ControllerBase
+    public class PedidosController : ControllerBase
     {
         private readonly IPedidoService _pedidoService;
 
-        public PedidoController(IPedidoService pedidoService)
+        public PedidosController(IPedidoService pedidoService)
         {
             _pedidoService = pedidoService;
         }

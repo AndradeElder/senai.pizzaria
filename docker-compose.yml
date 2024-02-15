@@ -1,0 +1,37 @@
+version: '0.1'
+
+services:
+
+  projetoemtrescamadas.pizzaria.mvc:
+    image: ${DOCKER_REGISTRY-}projetoemtrescamadaspizzariamvc
+    build:
+      context: .
+      dockerfile: ProjetoEmTresCamadas.Pizzaria.Mvc/Dockerfile
+    ports:
+      - "5222:5222"
+    networks:
+      - api_network
+
+  projetoemtrescamadas.pizzaria.autenticacao:
+    image: ${DOCKER_REGISTRY-}projetoemtrescamadaspizzariaautenticacao
+    build:
+      context: .
+      dockerfile: Autenticacao/ProjetoEmTresCamadas.Pizzaria.Autenticacao/Dockerfile
+    ports:
+      - "5023:5023"
+    networks:
+      - api_network
+
+  projetoemtrescamadas.pizzaria.webapi:
+    image: ${DOCKER_REGISTRY-}projetoemtrescamadaspizzariawebapi
+    build:
+      context: .
+      dockerfile: ProjetoEmTresCamadas.Pizzaria.WebApi/Dockerfile
+    ports:
+      - "5122:5222"
+    networks:
+      - api_network
+
+networks:
+  api_network:
+    driver: bridge

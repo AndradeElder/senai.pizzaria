@@ -2710,3 +2710,702 @@ System.InvalidOperationException: The Include path 'PedidosPizza->Pedido' result
 2024-02-15 13:50:32.674 +00:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidoController.GetPedidos (ProjetoEmTresCamadas.Pizzaria.WebApi) in 59072.1048ms
 2024-02-15 13:50:32.674 +00:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidoController.GetPedidos (ProjetoEmTresCamadas.Pizzaria.WebApi)'
 2024-02-15 13:50:32.679 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32775/api/Pedido - 200 null application/json; charset=utf-8 59104.4194ms
+2024-02-15 15:24:57.951 +00:00 [INF] Ola eu sou informação
+2024-02-15 15:24:58.221 +00:00 [INF] Now listening on: http://[::]:8080
+2024-02-15 15:24:58.224 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 15:24:58.226 +00:00 [INF] Hosting environment: Development
+2024-02-15 15:24:58.228 +00:00 [INF] Content root path: /app
+2024-02-15 15:25:00.079 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32775/swagger/index.html - null null
+2024-02-15 15:25:00.161 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32775/swagger/index.html - 200 null text/html;charset=utf-8 82.1973ms
+2024-02-15 15:25:00.575 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32775/swagger/v1/swagger.json - null null
+2024-02-15 15:25:00.679 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32775/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 103.9818ms
+2024-02-15 15:25:27.404 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32775/api/Pizza/1,2 - application/json null
+2024-02-15 15:25:27.454 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)
+ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizza (ProjetoEmTresCamadas.Pizzaria.WebApi)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-02-15 15:25:27.457 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32775/api/Pizza/1,2 - 500 null text/plain; charset=utf-8 52.5085ms
+2024-02-15 15:26:53.566 +00:00 [INF] Ola eu sou informação
+2024-02-15 15:26:53.821 +00:00 [INF] Now listening on: http://[::]:8080
+2024-02-15 15:26:53.823 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 15:26:53.826 +00:00 [INF] Hosting environment: Development
+2024-02-15 15:26:53.827 +00:00 [INF] Content root path: /app
+2024-02-15 15:26:57.431 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32775/swagger/index.html - null null
+2024-02-15 15:26:57.505 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32775/swagger/index.html - 200 null text/html;charset=utf-8 73.7448ms
+2024-02-15 15:27:00.290 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32775/swagger/v1/swagger.json - null null
+2024-02-15 15:27:00.364 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32775/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 74.686ms
+2024-02-15 15:27:36.135 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32775/api/Pizza/1,2,3 - null null
+2024-02-15 15:27:36.194 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+Microsoft.AspNetCore.Routing.Matching.AmbiguousMatchException: The request matched multiple endpoints. Matches: 
+
+ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)
+ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizza (ProjetoEmTresCamadas.Pizzaria.WebApi)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ReportAmbiguity(Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.ProcessFinalCandidates(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DefaultEndpointSelector.Select(HttpContext httpContext, Span`1 candidateState)
+   at Microsoft.AspNetCore.Routing.Matching.DfaMatcher.MatchAsync(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-02-15 15:27:36.205 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32775/api/Pizza/1,2,3 - 500 null text/html; charset=utf-8 69.9325ms
+2024-02-15 15:27:38.208 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32775/favicon.ico - null null
+2024-02-15 15:27:38.211 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32775/favicon.ico - 404 0 null 2.9994ms
+2024-02-15 15:27:38.213 +00:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:32775/favicon.ico, Response status code: 404
+2024-02-15 15:29:32.602 +00:00 [INF] Ola eu sou informação
+2024-02-15 15:29:32.822 +00:00 [INF] Now listening on: http://[::]:8080
+2024-02-15 15:29:32.825 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 15:29:32.826 +00:00 [INF] Hosting environment: Development
+2024-02-15 15:29:32.828 +00:00 [INF] Content root path: /app
+2024-02-15 15:29:34.527 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32775/swagger/index.html - null null
+2024-02-15 15:29:34.604 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32775/swagger/index.html - 200 null text/html;charset=utf-8 76.7355ms
+2024-02-15 15:29:34.879 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32775/swagger/v1/swagger.json - null null
+2024-02-15 15:29:34.969 +00:00 [ERR] An unhandled exception has occurred while executing the request.
+Swashbuckle.AspNetCore.SwaggerGen.SwaggerGeneratorException: Conflicting method/path combination "GET api/Pizza" for actions - ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi),ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi). Actions require a unique method/path combination for Swagger/OpenAPI 3.0. Use ConflictingActionsResolver as a workaround
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GenerateOperations(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GeneratePaths(IEnumerable`1 apiDescriptions, SchemaRepository schemaRepository)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerDocumentWithoutFilters(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.SwaggerGen.SwaggerGenerator.GetSwaggerAsync(String documentName, String host, String basePath)
+   at Swashbuckle.AspNetCore.Swagger.SwaggerMiddleware.Invoke(HttpContext httpContext, ISwaggerProvider swaggerProvider)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2024-02-15 15:29:34.973 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32775/swagger/v1/swagger.json - 500 null text/plain; charset=utf-8 94.7091ms
+2024-02-15 15:30:59.710 +00:00 [INF] Ola eu sou informação
+2024-02-15 15:30:59.951 +00:00 [INF] Now listening on: http://[::]:8080
+2024-02-15 15:30:59.954 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 15:30:59.955 +00:00 [INF] Hosting environment: Development
+2024-02-15 15:30:59.957 +00:00 [INF] Content root path: /app
+2024-02-15 15:31:01.571 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32775/swagger/index.html - null null
+2024-02-15 15:31:01.645 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32775/swagger/index.html - 200 null text/html;charset=utf-8 74.2068ms
+2024-02-15 15:31:01.864 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32775/swagger/v1/swagger.json - null null
+2024-02-15 15:31:01.935 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32775/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 70.9362ms
+2024-02-15 15:31:06.867 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32775/api/Pizza - null null
+2024-02-15 15:31:06.874 +00:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 15:31:06.891 +00:00 [INF] Route matched with {action = "GetPizzas", controller = "Pizza"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]] GetPizzas(Int32[]) on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-15 15:31:07.361 +00:00 [INF] Saved 0 entities to in-memory store.
+2024-02-15 15:31:07.560 +00:00 [INF] Saved 1 entities to in-memory store.
+2024-02-15 15:31:07.586 +00:00 [INF] Saved 1 entities to in-memory store.
+2024-02-15 15:31:07.611 +00:00 [INF] Buscando as pizzas
+2024-02-15 15:31:07.648 +00:00 [INF] Pizzas do banco
+2024-02-15 15:31:07.655 +00:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]'.
+2024-02-15 15:31:07.667 +00:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi) in 772.5752ms
+2024-02-15 15:31:07.667 +00:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 15:31:07.672 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32775/api/Pizza - 200 null application/json; charset=utf-8 804.1178ms
+2024-02-15 15:31:19.217 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32775/api/Pizza?ids=1 - null null
+2024-02-15 15:31:19.218 +00:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 15:31:19.219 +00:00 [INF] Route matched with {action = "GetPizzas", controller = "Pizza"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]] GetPizzas(Int32[]) on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-15 15:31:19.242 +00:00 [INF] Buscando as pizzas
+2024-02-15 15:31:19.245 +00:00 [INF] Pizzas do banco
+2024-02-15 15:31:19.248 +00:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]'.
+2024-02-15 15:31:19.248 +00:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi) in 29.1619ms
+2024-02-15 15:31:19.249 +00:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 15:31:19.251 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32775/api/Pizza?ids=1 - 200 null application/json; charset=utf-8 34.454ms
+2024-02-15 15:31:34.486 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:32775/api/Pizza?ids=2 - null null
+2024-02-15 15:31:34.488 +00:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 15:31:34.488 +00:00 [INF] Route matched with {action = "GetPizzas", controller = "Pizza"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]] GetPizzas(Int32[]) on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-15 15:31:34.516 +00:00 [INF] Buscando as pizzas
+2024-02-15 15:31:34.518 +00:00 [INF] Pizzas do banco
+2024-02-15 15:31:34.520 +00:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]'.
+2024-02-15 15:31:34.520 +00:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi) in 32.256ms
+2024-02-15 15:31:34.521 +00:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 15:31:34.523 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:32775/api/Pizza?ids=2 - 200 null application/json; charset=utf-8 36.4443ms
+2024-02-15 16:21:20.685 +00:00 [INF] Ola eu sou informação
+2024-02-15 16:21:21.334 +00:00 [INF] Now listening on: http://[::]:8080
+2024-02-15 16:21:21.336 +00:00 [INF] Now listening on: https://[::]:8081
+2024-02-15 16:21:21.339 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 16:21:21.341 +00:00 [INF] Hosting environment: Development
+2024-02-15 16:21:21.342 +00:00 [INF] Content root path: /app
+2024-02-15 16:21:23.104 +00:00 [INF] Request starting HTTP/2 GET https://localhost:51683/swagger - null null
+2024-02-15 16:21:23.178 +00:00 [INF] Request finished HTTP/2 GET https://localhost:51683/swagger - 301 0 null 50.1627ms
+2024-02-15 16:21:23.184 +00:00 [INF] Request starting HTTP/2 GET https://localhost:51683/swagger/index.html - null null
+2024-02-15 16:21:23.252 +00:00 [INF] Request finished HTTP/2 GET https://localhost:51683/swagger/index.html - 200 null text/html;charset=utf-8 67.1029ms
+2024-02-15 16:21:23.258 +00:00 [INF] Request starting HTTP/2 GET https://localhost:51683/swagger/swagger-ui-bundle.js - null null
+2024-02-15 16:21:23.258 +00:00 [INF] Request starting HTTP/2 GET https://localhost:51683/swagger/swagger-ui-standalone-preset.js - null null
+2024-02-15 16:21:23.258 +00:00 [INF] Request starting HTTP/2 GET https://localhost:51683/swagger/swagger-ui.css - null null
+2024-02-15 16:21:23.361 +00:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-02-15 16:21:23.384 +00:00 [INF] Request finished HTTP/2 GET https://localhost:51683/swagger/swagger-ui.css - 200 143943 text/css 105.656ms
+2024-02-15 16:21:23.392 +00:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-02-15 16:21:23.393 +00:00 [INF] Request finished HTTP/2 GET https://localhost:51683/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 134.9612ms
+2024-02-15 16:21:23.515 +00:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-02-15 16:21:23.516 +00:00 [INF] Request finished HTTP/2 GET https://localhost:51683/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 257.7269ms
+2024-02-15 16:21:23.700 +00:00 [INF] Request starting HTTP/2 GET https://localhost:51683/swagger/v1/swagger.json - null null
+2024-02-15 16:21:23.717 +00:00 [INF] Request starting HTTP/2 GET https://localhost:51683/swagger/favicon-32x32.png - null null
+2024-02-15 16:21:23.740 +00:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-02-15 16:21:23.740 +00:00 [INF] Request finished HTTP/2 GET https://localhost:51683/swagger/favicon-32x32.png - 200 628 image/png 23.8762ms
+2024-02-15 16:21:23.815 +00:00 [INF] Request finished HTTP/2 GET https://localhost:51683/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 115.7553ms
+2024-02-15 16:22:06.141 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:51682/ - null null
+2024-02-15 16:22:06.148 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:51682/ - 404 0 null 6.091ms
+2024-02-15 16:22:06.149 +00:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:51682/, Response status code: 404
+2024-02-15 16:22:11.906 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:51682/swagger - null null
+2024-02-15 16:22:11.907 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:51682/swagger - 301 0 null 0.6277ms
+2024-02-15 16:22:11.910 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:51682/swagger/index.html - null null
+2024-02-15 16:22:11.911 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:51682/swagger/index.html - 200 null text/html;charset=utf-8 1.0201ms
+2024-02-15 16:22:11.948 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:51682/swagger/swagger-ui.css - null null
+2024-02-15 16:22:11.948 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:51682/swagger/swagger-ui-bundle.js - null null
+2024-02-15 16:22:11.956 +00:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-02-15 16:22:11.980 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:51682/swagger/swagger-ui-standalone-preset.js - null null
+2024-02-15 16:22:11.981 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:51682/swagger/swagger-ui.css - 200 143943 text/css 32.6424ms
+2024-02-15 16:22:12.021 +00:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-02-15 16:22:12.022 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:51682/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 42.6299ms
+2024-02-15 16:22:12.024 +00:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-02-15 16:22:12.025 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:51682/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 76.3252ms
+2024-02-15 16:22:12.434 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:51682/swagger/v1/swagger.json - null null
+2024-02-15 16:22:12.440 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:51682/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 5.6263ms
+2024-02-15 16:22:12.448 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:51682/swagger/favicon-32x32.png - null null
+2024-02-15 16:22:12.449 +00:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-02-15 16:22:12.449 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:51682/swagger/favicon-32x32.png - 200 628 image/png 0.8963ms
+2024-02-15 16:30:27.807 +00:00 [INF] Ola eu sou informação
+2024-02-15 16:30:28.551 +00:00 [INF] Now listening on: http://[::]:5122
+2024-02-15 16:30:28.554 +00:00 [INF] Now listening on: https://[::]:5123
+2024-02-15 16:30:28.557 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 16:30:28.560 +00:00 [INF] Hosting environment: Development
+2024-02-15 16:30:28.562 +00:00 [INF] Content root path: /app
+2024-02-15 16:30:34.018 +00:00 [INF] Request starting HTTP/2 GET https://localhost:52400/swagger - null null
+2024-02-15 16:30:34.047 +00:00 [INF] Request finished HTTP/2 GET https://localhost:52400/swagger - 301 0 null 25.7609ms
+2024-02-15 16:30:34.052 +00:00 [INF] Request starting HTTP/2 GET https://localhost:52400/swagger/index.html - null null
+2024-02-15 16:30:34.112 +00:00 [INF] Request finished HTTP/2 GET https://localhost:52400/swagger/index.html - 200 null text/html;charset=utf-8 59.7436ms
+2024-02-15 16:30:34.117 +00:00 [INF] Request starting HTTP/2 GET https://localhost:52400/swagger/swagger-ui-bundle.js - null null
+2024-02-15 16:30:34.117 +00:00 [INF] Request starting HTTP/2 GET https://localhost:52400/swagger/swagger-ui.css - null null
+2024-02-15 16:30:34.117 +00:00 [INF] Request starting HTTP/2 GET https://localhost:52400/swagger/swagger-ui-standalone-preset.js - null null
+2024-02-15 16:30:34.171 +00:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-02-15 16:30:34.172 +00:00 [INF] Request finished HTTP/2 GET https://localhost:52400/swagger/swagger-ui.css - 200 143943 text/css 54.4631ms
+2024-02-15 16:30:34.179 +00:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-02-15 16:30:34.179 +00:00 [INF] Request finished HTTP/2 GET https://localhost:52400/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 61.7637ms
+2024-02-15 16:30:34.236 +00:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-02-15 16:30:34.236 +00:00 [INF] Request finished HTTP/2 GET https://localhost:52400/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 118.9778ms
+2024-02-15 16:30:34.426 +00:00 [INF] Request starting HTTP/2 GET https://localhost:52400/swagger/v1/swagger.json - null null
+2024-02-15 16:30:34.439 +00:00 [INF] Request starting HTTP/2 GET https://localhost:52400/swagger/favicon-32x32.png - null null
+2024-02-15 16:30:34.440 +00:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-02-15 16:30:34.440 +00:00 [INF] Request finished HTTP/2 GET https://localhost:52400/swagger/favicon-32x32.png - 200 628 image/png 1.4129ms
+2024-02-15 16:30:34.504 +00:00 [INF] Request finished HTTP/2 GET https://localhost:52400/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 78.2077ms
+2024-02-15 16:33:20.439 +00:00 [INF] Ola eu sou informação
+2024-02-15 16:33:21.001 +00:00 [INF] Now listening on: http://[::]:5122
+2024-02-15 16:33:21.005 +00:00 [INF] Now listening on: https://[::]:5123
+2024-02-15 16:33:21.007 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 16:33:21.010 +00:00 [INF] Hosting environment: Development
+2024-02-15 16:33:21.012 +00:00 [INF] Content root path: /app
+2024-02-15 16:33:36.177 +00:00 [INF] Request starting HTTP/2 GET https://localhost:52595/swagger - null null
+2024-02-15 16:33:36.216 +00:00 [INF] Request finished HTTP/2 GET https://localhost:52595/swagger - 301 0 null 35.3543ms
+2024-02-15 16:33:36.222 +00:00 [INF] Request starting HTTP/2 GET https://localhost:52595/swagger/index.html - null null
+2024-02-15 16:33:36.299 +00:00 [INF] Request finished HTTP/2 GET https://localhost:52595/swagger/index.html - 200 null text/html;charset=utf-8 77.5911ms
+2024-02-15 16:33:36.306 +00:00 [INF] Request starting HTTP/2 GET https://localhost:52595/swagger/swagger-ui-standalone-preset.js - null null
+2024-02-15 16:33:36.306 +00:00 [INF] Request starting HTTP/2 GET https://localhost:52595/swagger/swagger-ui-bundle.js - null null
+2024-02-15 16:33:36.306 +00:00 [INF] Request starting HTTP/2 GET https://localhost:52595/swagger/swagger-ui.css - null null
+2024-02-15 16:33:36.340 +00:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-02-15 16:33:36.340 +00:00 [INF] Request finished HTTP/2 GET https://localhost:52595/swagger/swagger-ui.css - 200 143943 text/css 34.435ms
+2024-02-15 16:33:36.389 +00:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-02-15 16:33:36.389 +00:00 [INF] Request finished HTTP/2 GET https://localhost:52595/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 82.996ms
+2024-02-15 16:33:36.438 +00:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-02-15 16:33:36.438 +00:00 [INF] Request finished HTTP/2 GET https://localhost:52595/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 132.1589ms
+2024-02-15 16:33:37.436 +00:00 [INF] Request starting HTTP/2 GET https://localhost:52595/swagger/v1/swagger.json - null null
+2024-02-15 16:33:37.447 +00:00 [INF] Request starting HTTP/2 GET https://localhost:52595/swagger/favicon-32x32.png - null null
+2024-02-15 16:33:37.448 +00:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-02-15 16:33:37.449 +00:00 [INF] Request finished HTTP/2 GET https://localhost:52595/swagger/favicon-32x32.png - 200 628 image/png 2.0505ms
+2024-02-15 16:33:37.521 +00:00 [INF] Request finished HTTP/2 GET https://localhost:52595/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 85.6103ms
+2024-02-15 16:36:40.378 +00:00 [INF] Ola eu sou informação
+2024-02-15 16:36:41.019 +00:00 [INF] Now listening on: http://[::]:5122
+2024-02-15 16:36:41.022 +00:00 [INF] Now listening on: https://[::]:5123
+2024-02-15 16:36:41.024 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 16:36:41.027 +00:00 [INF] Hosting environment: Development
+2024-02-15 16:36:41.029 +00:00 [INF] Content root path: /app
+2024-02-15 16:36:42.974 +00:00 [INF] Request starting HTTP/2 GET https://localhost:53618/swagger - null null
+2024-02-15 16:36:43.009 +00:00 [INF] Request finished HTTP/2 GET https://localhost:53618/swagger - 301 0 null 38.2578ms
+2024-02-15 16:36:43.023 +00:00 [INF] Request starting HTTP/2 GET https://localhost:53618/swagger/index.html - null null
+2024-02-15 16:36:43.101 +00:00 [INF] Request finished HTTP/2 GET https://localhost:53618/swagger/index.html - 200 null text/html;charset=utf-8 77.9053ms
+2024-02-15 16:36:43.130 +00:00 [INF] Request starting HTTP/2 GET https://localhost:53618/swagger/swagger-ui-bundle.js - null null
+2024-02-15 16:36:43.129 +00:00 [INF] Request starting HTTP/2 GET https://localhost:53618/swagger/swagger-ui.css - null null
+2024-02-15 16:36:43.130 +00:00 [INF] Request starting HTTP/2 GET https://localhost:53618/swagger/swagger-ui-standalone-preset.js - null null
+2024-02-15 16:36:43.200 +00:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-02-15 16:36:43.201 +00:00 [INF] Request finished HTTP/2 GET https://localhost:53618/swagger/swagger-ui.css - 200 143943 text/css 71.6696ms
+2024-02-15 16:36:43.211 +00:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-02-15 16:36:43.211 +00:00 [INF] Request finished HTTP/2 GET https://localhost:53618/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 81.4762ms
+2024-02-15 16:36:43.278 +00:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-02-15 16:36:43.279 +00:00 [INF] Request finished HTTP/2 GET https://localhost:53618/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 149.1922ms
+2024-02-15 16:36:43.417 +00:00 [INF] Request starting HTTP/2 GET https://localhost:53618/swagger/v1/swagger.json - null null
+2024-02-15 16:36:43.432 +00:00 [INF] Request starting HTTP/2 GET https://localhost:53618/swagger/favicon-32x32.png - null null
+2024-02-15 16:36:43.433 +00:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-02-15 16:36:43.434 +00:00 [INF] Request finished HTTP/2 GET https://localhost:53618/swagger/favicon-32x32.png - 200 628 image/png 1.769ms
+2024-02-15 16:36:43.515 +00:00 [INF] Request finished HTTP/2 GET https://localhost:53618/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 97.5979ms
+2024-02-15 16:40:06.262 +00:00 [INF] Ola eu sou informação
+2024-02-15 16:40:06.848 +00:00 [INF] Now listening on: http://[::]:5122
+2024-02-15 16:40:06.851 +00:00 [INF] Now listening on: https://[::]:5123
+2024-02-15 16:40:06.853 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 16:40:06.856 +00:00 [INF] Hosting environment: Development
+2024-02-15 16:40:06.858 +00:00 [INF] Content root path: /app
+2024-02-15 16:40:08.733 +00:00 [INF] Request starting HTTP/2 GET https://localhost:53856/swagger - null null
+2024-02-15 16:40:08.780 +00:00 [INF] Request finished HTTP/2 GET https://localhost:53856/swagger - 301 0 null 42.1931ms
+2024-02-15 16:40:08.786 +00:00 [INF] Request starting HTTP/2 GET https://localhost:53856/swagger/index.html - null null
+2024-02-15 16:40:08.857 +00:00 [INF] Request finished HTTP/2 GET https://localhost:53856/swagger/index.html - 200 null text/html;charset=utf-8 70.7747ms
+2024-02-15 16:40:08.862 +00:00 [INF] Request starting HTTP/2 GET https://localhost:53856/swagger/swagger-ui-bundle.js - null null
+2024-02-15 16:40:08.862 +00:00 [INF] Request starting HTTP/2 GET https://localhost:53856/swagger/swagger-ui.css - null null
+2024-02-15 16:40:08.863 +00:00 [INF] Request starting HTTP/2 GET https://localhost:53856/swagger/swagger-ui-standalone-preset.js - null null
+2024-02-15 16:40:08.947 +00:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-02-15 16:40:08.948 +00:00 [INF] Request finished HTTP/2 GET https://localhost:53856/swagger/swagger-ui.css - 200 143943 text/css 85.4867ms
+2024-02-15 16:40:08.959 +00:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-02-15 16:40:08.960 +00:00 [INF] Request finished HTTP/2 GET https://localhost:53856/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 96.6521ms
+2024-02-15 16:40:09.056 +00:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-02-15 16:40:09.057 +00:00 [INF] Request finished HTTP/2 GET https://localhost:53856/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 194.294ms
+2024-02-15 16:40:09.208 +00:00 [INF] Request starting HTTP/2 GET https://localhost:53856/swagger/v1/swagger.json - null null
+2024-02-15 16:40:09.227 +00:00 [INF] Request starting HTTP/2 GET https://localhost:53856/swagger/favicon-32x32.png - null null
+2024-02-15 16:40:09.228 +00:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-02-15 16:40:09.229 +00:00 [INF] Request finished HTTP/2 GET https://localhost:53856/swagger/favicon-32x32.png - 200 628 image/png 1.8813ms
+2024-02-15 16:40:09.314 +00:00 [INF] Request finished HTTP/2 GET https://localhost:53856/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 105.7275ms
+2024-02-15 16:40:22.863 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:53855/ - null null
+2024-02-15 16:40:22.872 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:53855/ - 404 0 null 8.8648ms
+2024-02-15 16:40:22.874 +00:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://localhost:53855/, Response status code: 404
+2024-02-15 16:40:28.636 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:53855/swagger - null null
+2024-02-15 16:40:28.637 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:53855/swagger - 301 0 null 0.7419ms
+2024-02-15 16:40:28.640 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:53855/swagger/index.html - null null
+2024-02-15 16:40:28.641 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:53855/swagger/index.html - 200 null text/html;charset=utf-8 1.1192ms
+2024-02-15 16:40:28.680 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:53855/swagger/swagger-ui.css - null null
+2024-02-15 16:40:28.680 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:53855/swagger/swagger-ui-bundle.js - null null
+2024-02-15 16:40:28.689 +00:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-02-15 16:40:28.690 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:53855/swagger/swagger-ui.css - 200 143943 text/css 9.6964ms
+2024-02-15 16:40:28.694 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:53855/swagger/swagger-ui-standalone-preset.js - null null
+2024-02-15 16:40:28.710 +00:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-02-15 16:40:28.710 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:53855/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 16.4071ms
+2024-02-15 16:40:28.714 +00:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-02-15 16:40:28.715 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:53855/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 34.7769ms
+2024-02-15 16:40:28.855 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:53855/swagger/v1/swagger.json - null null
+2024-02-15 16:40:28.861 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:53855/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 5.7532ms
+2024-02-15 16:40:28.870 +00:00 [INF] Request starting HTTP/1.1 GET http://localhost:53855/swagger/favicon-32x32.png - null null
+2024-02-15 16:40:28.871 +00:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-02-15 16:40:28.871 +00:00 [INF] Request finished HTTP/1.1 GET http://localhost:53855/swagger/favicon-32x32.png - 200 628 image/png 1.1414ms
+2024-02-15 16:45:15.568 +00:00 [INF] Ola eu sou informação
+2024-02-15 16:45:16.247 +00:00 [INF] Now listening on: http://[::]:5122
+2024-02-15 16:45:16.249 +00:00 [INF] Now listening on: https://[::]:5123
+2024-02-15 16:45:16.252 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 16:45:16.254 +00:00 [INF] Hosting environment: Development
+2024-02-15 16:45:16.257 +00:00 [INF] Content root path: /app
+2024-02-15 16:45:18.181 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55184/swagger - null null
+2024-02-15 16:45:18.225 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55184/swagger - 301 0 null 41.0713ms
+2024-02-15 16:45:18.232 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55184/swagger/index.html - null null
+2024-02-15 16:45:18.313 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55184/swagger/index.html - 200 null text/html;charset=utf-8 81.2809ms
+2024-02-15 16:45:18.319 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55184/swagger/swagger-ui.css - null null
+2024-02-15 16:45:18.319 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55184/swagger/swagger-ui-bundle.js - null null
+2024-02-15 16:45:18.320 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55184/swagger/swagger-ui-standalone-preset.js - null null
+2024-02-15 16:45:18.416 +00:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-02-15 16:45:18.418 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55184/swagger/swagger-ui.css - 200 143943 text/css 99.2375ms
+2024-02-15 16:45:18.426 +00:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-02-15 16:45:18.427 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55184/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 107.7605ms
+2024-02-15 16:45:18.498 +00:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-02-15 16:45:18.499 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55184/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 180.7571ms
+2024-02-15 16:45:18.673 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55184/swagger/v1/swagger.json - null null
+2024-02-15 16:45:18.750 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55184/swagger/favicon-32x32.png - null null
+2024-02-15 16:45:18.751 +00:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-02-15 16:45:18.751 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55184/swagger/favicon-32x32.png - 200 628 image/png 21.9187ms
+2024-02-15 16:45:18.830 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55184/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 156.8523ms
+2024-02-15 16:46:13.559 +00:00 [INF] Ola eu sou informação
+2024-02-15 16:46:14.220 +00:00 [INF] Now listening on: http://[::]:5122
+2024-02-15 16:46:14.223 +00:00 [INF] Now listening on: https://[::]:5123
+2024-02-15 16:46:14.226 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 16:46:14.228 +00:00 [INF] Hosting environment: Development
+2024-02-15 16:46:14.230 +00:00 [INF] Content root path: /app
+2024-02-15 16:46:16.069 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55262/swagger - null null
+2024-02-15 16:46:16.116 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55262/swagger - 301 0 null 42.0433ms
+2024-02-15 16:46:16.123 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55262/swagger/index.html - null null
+2024-02-15 16:46:16.204 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55262/swagger/index.html - 200 null text/html;charset=utf-8 81.0851ms
+2024-02-15 16:46:16.208 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55262/swagger/swagger-ui-bundle.js - null null
+2024-02-15 16:46:16.208 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55262/swagger/swagger-ui.css - null null
+2024-02-15 16:46:16.208 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55262/swagger/swagger-ui-standalone-preset.js - null null
+2024-02-15 16:46:16.281 +00:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-02-15 16:46:16.283 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55262/swagger/swagger-ui.css - 200 143943 text/css 74.9945ms
+2024-02-15 16:46:16.320 +00:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-02-15 16:46:16.321 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55262/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 112.4714ms
+2024-02-15 16:46:16.377 +00:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-02-15 16:46:16.377 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55262/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 169.0487ms
+2024-02-15 16:46:16.523 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55262/swagger/v1/swagger.json - null null
+2024-02-15 16:46:16.541 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55262/swagger/favicon-32x32.png - null null
+2024-02-15 16:46:16.546 +00:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-02-15 16:46:16.547 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55262/swagger/favicon-32x32.png - 200 628 image/png 6.0966ms
+2024-02-15 16:46:16.647 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55262/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 124.6922ms
+2024-02-15 16:47:17.722 +00:00 [INF] Ola eu sou informação
+2024-02-15 16:47:18.397 +00:00 [INF] Now listening on: http://[::]:5122
+2024-02-15 16:47:18.400 +00:00 [INF] Now listening on: https://[::]:5123
+2024-02-15 16:47:18.402 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 16:47:18.404 +00:00 [INF] Hosting environment: Development
+2024-02-15 16:47:18.405 +00:00 [INF] Content root path: /app
+2024-02-15 16:47:20.615 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55262/swagger/index.html - null null
+2024-02-15 16:47:20.745 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55262/swagger/index.html - 200 null text/html;charset=utf-8 131.0811ms
+2024-02-15 16:47:21.010 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55262/swagger/v1/swagger.json - null null
+2024-02-15 16:47:21.104 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55262/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 93.8459ms
+2024-02-15 16:48:09.099 +00:00 [INF] Ola eu sou informação
+2024-02-15 16:48:09.757 +00:00 [INF] Now listening on: http://[::]:5122
+2024-02-15 16:48:09.760 +00:00 [INF] Now listening on: https://[::]:5123
+2024-02-15 16:48:09.762 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 16:48:09.764 +00:00 [INF] Hosting environment: Development
+2024-02-15 16:48:09.767 +00:00 [INF] Content root path: /app
+2024-02-15 16:48:11.446 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55404/swagger - null null
+2024-02-15 16:48:11.498 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55404/swagger - 301 0 null 47.8464ms
+2024-02-15 16:48:11.505 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55404/swagger/index.html - null null
+2024-02-15 16:48:11.586 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55404/swagger/index.html - 200 null text/html;charset=utf-8 80.4803ms
+2024-02-15 16:48:11.593 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55404/swagger/swagger-ui.css - null null
+2024-02-15 16:48:11.593 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55404/swagger/swagger-ui-bundle.js - null null
+2024-02-15 16:48:11.594 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55404/swagger/swagger-ui-standalone-preset.js - null null
+2024-02-15 16:48:11.632 +00:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-02-15 16:48:11.632 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55404/swagger/swagger-ui.css - 200 143943 text/css 39.0139ms
+2024-02-15 16:48:11.668 +00:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-02-15 16:48:11.669 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55404/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 75.0743ms
+2024-02-15 16:48:11.752 +00:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-02-15 16:48:11.753 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55404/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 159.6293ms
+2024-02-15 16:48:11.937 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55404/swagger/v1/swagger.json - null null
+2024-02-15 16:48:11.951 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55404/swagger/favicon-32x32.png - null null
+2024-02-15 16:48:11.953 +00:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-02-15 16:48:11.953 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55404/swagger/favicon-32x32.png - 200 628 image/png 1.929ms
+2024-02-15 16:48:12.045 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55404/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 108.2831ms
+2024-02-15 16:48:25.607 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55404/api/Cliente - null null
+2024-02-15 16:48:25.615 +00:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.ClienteController.BuscarClientes (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 16:48:25.627 +00:00 [INF] Route matched with {action = "BuscarClientes", controller = "Cliente"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Cliente[]] BuscarClientes() on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.ClienteController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-15 16:48:26.077 +00:00 [INF] Saved 0 entities to in-memory store.
+2024-02-15 16:48:26.257 +00:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Cliente[]'.
+2024-02-15 16:48:26.266 +00:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.ClienteController.BuscarClientes (ProjetoEmTresCamadas.Pizzaria.WebApi) in 634.7531ms
+2024-02-15 16:48:26.266 +00:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.ClienteController.BuscarClientes (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 16:48:26.271 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55404/api/Cliente - 200 null application/json; charset=utf-8 664.0328ms
+2024-02-15 16:48:33.237 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55404/api/Pizza - null null
+2024-02-15 16:48:33.239 +00:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 16:48:33.246 +00:00 [INF] Route matched with {action = "GetPizzas", controller = "Pizza"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]] GetPizzas(Int32[]) on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-15 16:48:33.344 +00:00 [INF] Saved 1 entities to in-memory store.
+2024-02-15 16:48:33.363 +00:00 [INF] Saved 1 entities to in-memory store.
+2024-02-15 16:48:33.385 +00:00 [INF] Buscando as pizzas
+2024-02-15 16:48:33.398 +00:00 [INF] Pizzas do banco
+2024-02-15 16:48:33.401 +00:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]'.
+2024-02-15 16:48:33.408 +00:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi) in 161.0981ms
+2024-02-15 16:48:33.408 +00:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 16:48:33.410 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55404/api/Pizza - 200 null application/json; charset=utf-8 174.1773ms
+2024-02-15 16:48:39.129 +00:00 [INF] Request starting HTTP/2 GET https://localhost:55404/api/Pedido - null null
+2024-02-15 16:48:39.171 +00:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidoController.GetPedidos (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 16:48:39.174 +00:00 [INF] Route matched with {action = "GetPedidos", controller = "Pedido"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pedido[]] GetPedidos() on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidoController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-15 16:48:42.672 +00:00 [INF] Saved 2 entities to in-memory store.
+2024-02-15 16:48:42.717 +00:00 [INF] Saved 3 entities to in-memory store.
+2024-02-15 16:48:44.344 +00:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pedido[]'.
+2024-02-15 16:48:44.352 +00:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidoController.GetPedidos (ProjetoEmTresCamadas.Pizzaria.WebApi) in 5177.5162ms
+2024-02-15 16:48:44.352 +00:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidoController.GetPedidos (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 16:48:44.355 +00:00 [INF] Request finished HTTP/2 GET https://localhost:55404/api/Pedido - 200 null application/json; charset=utf-8 5225.9322ms
+2024-02-15 16:52:16.076 +00:00 [INF] Ola eu sou informação
+2024-02-15 16:52:16.803 +00:00 [INF] Now listening on: http://[::]:5122
+2024-02-15 16:52:16.807 +00:00 [INF] Now listening on: https://[::]:5123
+2024-02-15 16:52:16.810 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 16:52:16.815 +00:00 [INF] Hosting environment: Development
+2024-02-15 16:52:16.819 +00:00 [INF] Content root path: /app
+2024-02-15 16:52:18.726 +00:00 [INF] Request starting HTTP/2 GET https://localhost:56487/swagger - null null
+2024-02-15 16:52:18.768 +00:00 [INF] Request finished HTTP/2 GET https://localhost:56487/swagger - 301 0 null 38.0579ms
+2024-02-15 16:52:18.774 +00:00 [INF] Request starting HTTP/2 GET https://localhost:56487/swagger/index.html - null null
+2024-02-15 16:52:18.837 +00:00 [INF] Request finished HTTP/2 GET https://localhost:56487/swagger/index.html - 200 null text/html;charset=utf-8 63.1189ms
+2024-02-15 16:52:18.844 +00:00 [INF] Request starting HTTP/2 GET https://localhost:56487/swagger/swagger-ui-standalone-preset.js - null null
+2024-02-15 16:52:18.844 +00:00 [INF] Request starting HTTP/2 GET https://localhost:56487/swagger/swagger-ui.css - null null
+2024-02-15 16:52:18.844 +00:00 [INF] Request starting HTTP/2 GET https://localhost:56487/swagger/swagger-ui-bundle.js - null null
+2024-02-15 16:52:18.934 +00:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-02-15 16:52:18.955 +00:00 [INF] Request finished HTTP/2 GET https://localhost:56487/swagger/swagger-ui.css - 200 143943 text/css 111.2708ms
+2024-02-15 16:52:18.969 +00:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-02-15 16:52:18.970 +00:00 [INF] Request finished HTTP/2 GET https://localhost:56487/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 125.7713ms
+2024-02-15 16:52:19.037 +00:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-02-15 16:52:19.038 +00:00 [INF] Request finished HTTP/2 GET https://localhost:56487/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 194.1444ms
+2024-02-15 16:52:19.188 +00:00 [INF] Request starting HTTP/2 GET https://localhost:56487/swagger/v1/swagger.json - null null
+2024-02-15 16:52:19.201 +00:00 [INF] Request starting HTTP/2 GET https://localhost:56487/swagger/favicon-32x32.png - null null
+2024-02-15 16:52:19.202 +00:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-02-15 16:52:19.202 +00:00 [INF] Request finished HTTP/2 GET https://localhost:56487/swagger/favicon-32x32.png - 200 628 image/png 1.4048ms
+2024-02-15 16:52:19.289 +00:00 [INF] Request finished HTTP/2 GET https://localhost:56487/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 101.3234ms
+2024-02-15 16:53:30.377 +00:00 [INF] Ola eu sou informação
+2024-02-15 16:53:31.024 +00:00 [INF] Now listening on: http://[::]:5122
+2024-02-15 16:53:31.027 +00:00 [INF] Now listening on: https://[::]:5123
+2024-02-15 16:53:31.030 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 16:53:31.034 +00:00 [INF] Hosting environment: Development
+2024-02-15 16:53:31.037 +00:00 [INF] Content root path: /app
+2024-02-15 16:53:32.736 +00:00 [INF] Request starting HTTP/2 GET https://localhost:56487/swagger/index.html - null null
+2024-02-15 16:53:32.867 +00:00 [INF] Request finished HTTP/2 GET https://localhost:56487/swagger/index.html - 200 null text/html;charset=utf-8 132.1344ms
+2024-02-15 16:53:33.142 +00:00 [INF] Request starting HTTP/2 GET https://localhost:56487/swagger/v1/swagger.json - null null
+2024-02-15 16:53:33.235 +00:00 [INF] Request finished HTTP/2 GET https://localhost:56487/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 92.1788ms
+2024-02-15 17:00:30.935 +00:00 [INF] Ola eu sou informação
+2024-02-15 17:00:31.560 +00:00 [INF] Now listening on: http://[::]:5122
+2024-02-15 17:00:31.563 +00:00 [INF] Now listening on: https://[::]:5123
+2024-02-15 17:00:31.567 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 17:00:31.569 +00:00 [INF] Hosting environment: Development
+2024-02-15 17:00:31.572 +00:00 [INF] Content root path: /app
+2024-02-15 17:00:33.415 +00:00 [INF] Request starting HTTP/2 GET https://localhost:57096/swagger - null null
+2024-02-15 17:00:33.459 +00:00 [INF] Request finished HTTP/2 GET https://localhost:57096/swagger - 301 0 null 41.3403ms
+2024-02-15 17:00:33.466 +00:00 [INF] Request starting HTTP/2 GET https://localhost:57096/swagger/index.html - null null
+2024-02-15 17:00:33.528 +00:00 [INF] Request finished HTTP/2 GET https://localhost:57096/swagger/index.html - 200 null text/html;charset=utf-8 62.4821ms
+2024-02-15 17:00:33.534 +00:00 [INF] Request starting HTTP/2 GET https://localhost:57096/swagger/swagger-ui.css - null null
+2024-02-15 17:00:33.534 +00:00 [INF] Request starting HTTP/2 GET https://localhost:57096/swagger/swagger-ui-bundle.js - null null
+2024-02-15 17:00:33.535 +00:00 [INF] Request starting HTTP/2 GET https://localhost:57096/swagger/swagger-ui-standalone-preset.js - null null
+2024-02-15 17:00:33.569 +00:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-02-15 17:00:33.569 +00:00 [INF] Request finished HTTP/2 GET https://localhost:57096/swagger/swagger-ui.css - 200 143943 text/css 34.8714ms
+2024-02-15 17:00:33.636 +00:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-02-15 17:00:33.637 +00:00 [INF] Request finished HTTP/2 GET https://localhost:57096/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 102.1398ms
+2024-02-15 17:00:33.721 +00:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-02-15 17:00:33.721 +00:00 [INF] Request finished HTTP/2 GET https://localhost:57096/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 187.1687ms
+2024-02-15 17:00:33.888 +00:00 [INF] Request starting HTTP/2 GET https://localhost:57096/swagger/v1/swagger.json - null null
+2024-02-15 17:00:33.902 +00:00 [INF] Request starting HTTP/2 GET https://localhost:57096/swagger/favicon-32x32.png - null null
+2024-02-15 17:00:33.903 +00:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-02-15 17:00:33.903 +00:00 [INF] Request finished HTTP/2 GET https://localhost:57096/swagger/favicon-32x32.png - 200 628 image/png 1.7182ms
+2024-02-15 17:00:33.987 +00:00 [INF] Request finished HTTP/2 GET https://localhost:57096/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 99.8508ms
+2024-02-15 17:14:42.810 +00:00 [INF] Ola eu sou informação
+2024-02-15 17:14:43.446 +00:00 [INF] Now listening on: http://[::]:5122
+2024-02-15 17:14:43.448 +00:00 [INF] Now listening on: https://[::]:5123
+2024-02-15 17:14:43.451 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 17:14:43.454 +00:00 [INF] Hosting environment: Development
+2024-02-15 17:14:43.456 +00:00 [INF] Content root path: /app
+2024-02-15 17:14:45.191 +00:00 [INF] Request starting HTTP/2 GET https://localhost:58674/swagger - null null
+2024-02-15 17:14:45.241 +00:00 [INF] Request finished HTTP/2 GET https://localhost:58674/swagger - 301 0 null 44.647ms
+2024-02-15 17:14:45.248 +00:00 [INF] Request starting HTTP/2 GET https://localhost:58674/swagger/index.html - null null
+2024-02-15 17:14:45.338 +00:00 [INF] Request finished HTTP/2 GET https://localhost:58674/swagger/index.html - 200 null text/html;charset=utf-8 90.1998ms
+2024-02-15 17:14:45.343 +00:00 [INF] Request starting HTTP/2 GET https://localhost:58674/swagger/swagger-ui-bundle.js - null null
+2024-02-15 17:14:45.364 +00:00 [INF] Request starting HTTP/2 GET https://localhost:58674/swagger/swagger-ui-standalone-preset.js - null null
+2024-02-15 17:14:45.343 +00:00 [INF] Request starting HTTP/2 GET https://localhost:58674/swagger/swagger-ui.css - null null
+2024-02-15 17:14:45.437 +00:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-02-15 17:14:45.438 +00:00 [INF] Request finished HTTP/2 GET https://localhost:58674/swagger/swagger-ui.css - 200 143943 text/css 94.1143ms
+2024-02-15 17:14:45.463 +00:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-02-15 17:14:45.463 +00:00 [INF] Request finished HTTP/2 GET https://localhost:58674/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 119.4783ms
+2024-02-15 17:14:45.535 +00:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-02-15 17:14:45.535 +00:00 [INF] Request finished HTTP/2 GET https://localhost:58674/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 191.8206ms
+2024-02-15 17:14:45.685 +00:00 [INF] Request starting HTTP/2 GET https://localhost:58674/swagger/v1/swagger.json - null null
+2024-02-15 17:14:45.703 +00:00 [INF] Request starting HTTP/2 GET https://localhost:58674/swagger/favicon-32x32.png - null null
+2024-02-15 17:14:45.704 +00:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-02-15 17:14:45.704 +00:00 [INF] Request finished HTTP/2 GET https://localhost:58674/swagger/favicon-32x32.png - 200 628 image/png 2.1536ms
+2024-02-15 17:14:45.782 +00:00 [INF] Request finished HTTP/2 GET https://localhost:58674/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 96.7ms
+2024-02-15 17:16:57.154 +00:00 [INF] Ola eu sou informação
+2024-02-15 17:16:57.772 +00:00 [INF] Now listening on: http://[::]:5122
+2024-02-15 17:16:57.775 +00:00 [INF] Now listening on: https://[::]:5123
+2024-02-15 17:16:57.777 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 17:16:57.780 +00:00 [INF] Hosting environment: Development
+2024-02-15 17:16:57.783 +00:00 [INF] Content root path: /app
+2024-02-15 17:16:59.433 +00:00 [INF] Request starting HTTP/2 GET https://localhost:58674/swagger/index.html - null null
+2024-02-15 17:16:59.574 +00:00 [INF] Request finished HTTP/2 GET https://localhost:58674/swagger/index.html - 200 null text/html;charset=utf-8 143.2556ms
+2024-02-15 17:16:59.834 +00:00 [INF] Request starting HTTP/2 GET https://localhost:58674/swagger/v1/swagger.json - null null
+2024-02-15 17:16:59.934 +00:00 [INF] Request finished HTTP/2 GET https://localhost:58674/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 100.3299ms
+2024-02-15 17:17:40.818 +00:00 [INF] Ola eu sou informação
+2024-02-15 17:17:41.408 +00:00 [INF] Now listening on: http://[::]:5122
+2024-02-15 17:17:41.410 +00:00 [INF] Now listening on: https://[::]:5123
+2024-02-15 17:17:41.412 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 17:17:41.414 +00:00 [INF] Hosting environment: Development
+2024-02-15 17:17:41.416 +00:00 [INF] Content root path: /app
+2024-02-15 17:17:43.096 +00:00 [INF] Request starting HTTP/2 GET https://localhost:58674/swagger/index.html - null null
+2024-02-15 17:17:43.218 +00:00 [INF] Request finished HTTP/2 GET https://localhost:58674/swagger/index.html - 200 null text/html;charset=utf-8 123.0404ms
+2024-02-15 17:17:43.353 +00:00 [INF] Request starting HTTP/2 GET https://localhost:58674/swagger/v1/swagger.json - null null
+2024-02-15 17:17:43.466 +00:00 [INF] Request finished HTTP/2 GET https://localhost:58674/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 112.665ms
+2024-02-15 17:23:50.626 +00:00 [INF] Ola eu sou informação
+2024-02-15 17:23:51.254 +00:00 [INF] Now listening on: http://[::]:5122
+2024-02-15 17:23:51.257 +00:00 [INF] Now listening on: https://[::]:5123
+2024-02-15 17:23:51.260 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 17:23:51.263 +00:00 [INF] Hosting environment: Development
+2024-02-15 17:23:51.265 +00:00 [INF] Content root path: /app
+2024-02-15 17:23:53.066 +00:00 [INF] Request starting HTTP/2 GET https://localhost:59824/swagger - null null
+2024-02-15 17:23:53.114 +00:00 [INF] Request finished HTTP/2 GET https://localhost:59824/swagger - 301 0 null 44.224ms
+2024-02-15 17:23:53.123 +00:00 [INF] Request starting HTTP/2 GET https://localhost:59824/swagger/index.html - null null
+2024-02-15 17:23:53.205 +00:00 [INF] Request finished HTTP/2 GET https://localhost:59824/swagger/index.html - 200 null text/html;charset=utf-8 82.2304ms
+2024-02-15 17:23:53.212 +00:00 [INF] Request starting HTTP/2 GET https://localhost:59824/swagger/swagger-ui-bundle.js - null null
+2024-02-15 17:23:53.212 +00:00 [INF] Request starting HTTP/2 GET https://localhost:59824/swagger/swagger-ui-standalone-preset.js - null null
+2024-02-15 17:23:53.212 +00:00 [INF] Request starting HTTP/2 GET https://localhost:59824/swagger/swagger-ui.css - null null
+2024-02-15 17:23:53.269 +00:00 [INF] Sending file. Request path: '/swagger-ui.css'. Physical path: 'N/A'
+2024-02-15 17:23:53.271 +00:00 [INF] Request finished HTTP/2 GET https://localhost:59824/swagger/swagger-ui.css - 200 143943 text/css 59.9991ms
+2024-02-15 17:23:53.315 +00:00 [INF] Sending file. Request path: '/swagger-ui-standalone-preset.js'. Physical path: 'N/A'
+2024-02-15 17:23:53.316 +00:00 [INF] Request finished HTTP/2 GET https://localhost:59824/swagger/swagger-ui-standalone-preset.js - 200 339486 text/javascript 104.1586ms
+2024-02-15 17:23:53.381 +00:00 [INF] Sending file. Request path: '/swagger-ui-bundle.js'. Physical path: 'N/A'
+2024-02-15 17:23:53.381 +00:00 [INF] Request finished HTTP/2 GET https://localhost:59824/swagger/swagger-ui-bundle.js - 200 1096145 text/javascript 169.7212ms
+2024-02-15 17:23:53.548 +00:00 [INF] Request starting HTTP/2 GET https://localhost:59824/swagger/v1/swagger.json - null null
+2024-02-15 17:23:53.572 +00:00 [INF] Request starting HTTP/2 GET https://localhost:59824/swagger/favicon-32x32.png - null null
+2024-02-15 17:23:53.573 +00:00 [INF] Sending file. Request path: '/favicon-32x32.png'. Physical path: 'N/A'
+2024-02-15 17:23:53.574 +00:00 [INF] Request finished HTTP/2 GET https://localhost:59824/swagger/favicon-32x32.png - 200 628 image/png 2.2462ms
+2024-02-15 17:23:53.660 +00:00 [INF] Request finished HTTP/2 GET https://localhost:59824/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 111.8251ms
+2024-02-15 17:26:26.921 +00:00 [INF] Ola eu sou informação
+2024-02-15 17:26:27.530 +00:00 [INF] Now listening on: http://[::]:5122
+2024-02-15 17:26:27.532 +00:00 [INF] Now listening on: https://[::]:5123
+2024-02-15 17:26:27.535 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 17:26:27.537 +00:00 [INF] Hosting environment: Development
+2024-02-15 17:26:27.539 +00:00 [INF] Content root path: /app
+2024-02-15 17:26:29.342 +00:00 [INF] Request starting HTTP/2 GET https://localhost:59824/swagger/index.html - null null
+2024-02-15 17:26:29.449 +00:00 [INF] Request finished HTTP/2 GET https://localhost:59824/swagger/index.html - 200 null text/html;charset=utf-8 108.7909ms
+2024-02-15 17:26:29.757 +00:00 [INF] Request starting HTTP/2 GET https://localhost:59824/swagger/v1/swagger.json - null null
+2024-02-15 17:26:29.868 +00:00 [INF] Request finished HTTP/2 GET https://localhost:59824/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 111.3811ms
+2024-02-15 17:33:21.092 +00:00 [INF] Ola eu sou informação
+2024-02-15 17:33:21.726 +00:00 [INF] Now listening on: http://[::]:5122
+2024-02-15 17:33:21.729 +00:00 [INF] Now listening on: https://[::]:5123
+2024-02-15 17:33:21.731 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 17:33:21.734 +00:00 [INF] Hosting environment: Development
+2024-02-15 17:33:21.736 +00:00 [INF] Content root path: /app
+2024-02-15 17:33:23.665 +00:00 [INF] Request starting HTTP/2 GET https://localhost:59824/swagger/index.html - null null
+2024-02-15 17:33:23.805 +00:00 [INF] Request finished HTTP/2 GET https://localhost:59824/swagger/index.html - 200 null text/html;charset=utf-8 140.7069ms
+2024-02-15 17:33:23.942 +00:00 [INF] Request starting HTTP/2 GET https://localhost:59824/swagger/v1/swagger.json - null null
+2024-02-15 17:33:24.072 +00:00 [INF] Request finished HTTP/2 GET https://localhost:59824/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 129.4242ms
+2024-02-15 17:33:46.918 +00:00 [INF] Request starting HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pizza - null null
+2024-02-15 17:33:46.925 +00:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:33:46.943 +00:00 [INF] Route matched with {action = "GetPizzas", controller = "Pizza"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]] GetPizzas(Int32[]) on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-15 17:33:47.431 +00:00 [INF] Saved 0 entities to in-memory store.
+2024-02-15 17:33:47.663 +00:00 [INF] Saved 1 entities to in-memory store.
+2024-02-15 17:33:47.696 +00:00 [INF] Saved 1 entities to in-memory store.
+2024-02-15 17:33:47.738 +00:00 [INF] Buscando as pizzas
+2024-02-15 17:33:47.785 +00:00 [INF] Pizzas do banco
+2024-02-15 17:33:47.791 +00:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]'.
+2024-02-15 17:33:47.804 +00:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi) in 857.2726ms
+2024-02-15 17:33:47.804 +00:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:33:47.809 +00:00 [INF] Request finished HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pizza - 200 null application/json; charset=utf-8 891.2405ms
+2024-02-15 17:34:07.898 +00:00 [INF] Request starting HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pizza - null null
+2024-02-15 17:34:07.899 +00:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:34:07.900 +00:00 [INF] Route matched with {action = "GetPizzas", controller = "Pizza"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]] GetPizzas(Int32[]) on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-15 17:34:07.917 +00:00 [INF] Buscando as pizzas
+2024-02-15 17:34:07.919 +00:00 [INF] Pizzas do banco
+2024-02-15 17:34:07.921 +00:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]'.
+2024-02-15 17:34:07.921 +00:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi) in 21.3379ms
+2024-02-15 17:34:07.921 +00:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:34:07.924 +00:00 [INF] Request finished HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pizza - 200 null application/json; charset=utf-8 26.2237ms
+2024-02-15 17:34:58.110 +00:00 [INF] Request starting HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pizza - null null
+2024-02-15 17:34:58.113 +00:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:34:58.118 +00:00 [INF] Route matched with {action = "GetPizzas", controller = "Pizza"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]] GetPizzas(Int32[]) on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-15 17:34:58.146 +00:00 [INF] Buscando as pizzas
+2024-02-15 17:34:58.147 +00:00 [INF] Pizzas do banco
+2024-02-15 17:34:58.149 +00:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]'.
+2024-02-15 17:34:58.151 +00:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi) in 32.4944ms
+2024-02-15 17:34:58.151 +00:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:34:58.153 +00:00 [INF] Request finished HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pizza - 200 null application/json; charset=utf-8 42.1017ms
+2024-02-15 17:35:08.468 +00:00 [INF] Request starting HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pizza - null null
+2024-02-15 17:35:08.469 +00:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:35:08.469 +00:00 [INF] Route matched with {action = "GetPizzas", controller = "Pizza"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]] GetPizzas(Int32[]) on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-15 17:35:08.473 +00:00 [INF] Buscando as pizzas
+2024-02-15 17:35:08.474 +00:00 [INF] Pizzas do banco
+2024-02-15 17:35:08.476 +00:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]'.
+2024-02-15 17:35:08.477 +00:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi) in 6.9807ms
+2024-02-15 17:35:08.477 +00:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:35:08.479 +00:00 [INF] Request finished HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pizza - 200 null application/json; charset=utf-8 10.8412ms
+2024-02-15 17:35:24.049 +00:00 [INF] Ola eu sou informação
+2024-02-15 17:35:24.790 +00:00 [INF] Now listening on: http://[::]:5122
+2024-02-15 17:35:24.793 +00:00 [INF] Now listening on: https://[::]:5123
+2024-02-15 17:35:24.796 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 17:35:24.798 +00:00 [INF] Hosting environment: Development
+2024-02-15 17:35:24.800 +00:00 [INF] Content root path: /app
+2024-02-15 17:35:26.593 +00:00 [INF] Request starting HTTP/2 GET https://localhost:59824/swagger/index.html - null null
+2024-02-15 17:35:26.724 +00:00 [INF] Request finished HTTP/2 GET https://localhost:59824/swagger/index.html - 200 null text/html;charset=utf-8 132.5671ms
+2024-02-15 17:35:26.861 +00:00 [INF] Request starting HTTP/2 GET https://localhost:59824/swagger/v1/swagger.json - null null
+2024-02-15 17:35:26.986 +00:00 [INF] Request finished HTTP/2 GET https://localhost:59824/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 124.3469ms
+2024-02-15 17:35:43.887 +00:00 [INF] Request starting HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pizza - null null
+2024-02-15 17:35:43.893 +00:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:35:43.911 +00:00 [INF] Route matched with {action = "GetPizzas", controller = "Pizza"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]] GetPizzas(Int32[]) on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-15 17:35:44.406 +00:00 [INF] Saved 0 entities to in-memory store.
+2024-02-15 17:35:44.636 +00:00 [INF] Saved 1 entities to in-memory store.
+2024-02-15 17:35:44.660 +00:00 [INF] Saved 1 entities to in-memory store.
+2024-02-15 17:35:44.691 +00:00 [INF] Buscando as pizzas
+2024-02-15 17:35:44.726 +00:00 [INF] Pizzas do banco
+2024-02-15 17:35:44.733 +00:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]'.
+2024-02-15 17:35:44.746 +00:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi) in 830.2668ms
+2024-02-15 17:35:44.746 +00:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:35:44.751 +00:00 [INF] Request finished HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pizza - 200 null application/json; charset=utf-8 863.7982ms
+2024-02-15 17:35:57.460 +00:00 [INF] Request starting HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/cliente - null null
+2024-02-15 17:35:57.462 +00:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.ClienteController.BuscarClientes (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:35:57.465 +00:00 [INF] Route matched with {action = "BuscarClientes", controller = "Cliente"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Cliente[]] BuscarClientes() on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.ClienteController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-15 17:35:57.499 +00:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Cliente[]'.
+2024-02-15 17:35:57.503 +00:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.ClienteController.BuscarClientes (ProjetoEmTresCamadas.Pizzaria.WebApi) in 37.1093ms
+2024-02-15 17:35:57.503 +00:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.ClienteController.BuscarClientes (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:35:57.505 +00:00 [INF] Request finished HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/cliente - 200 null application/json; charset=utf-8 45.0093ms
+2024-02-15 17:36:27.729 +00:00 [INF] Request starting HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pedidos - null null
+2024-02-15 17:36:27.732 +00:00 [INF] Request finished HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pedidos - 404 0 null 2.4996ms
+2024-02-15 17:36:27.733 +00:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pedidos, Response status code: 404
+2024-02-15 17:37:03.010 +00:00 [INF] Ola eu sou informação
+2024-02-15 17:37:03.724 +00:00 [INF] Now listening on: http://[::]:5122
+2024-02-15 17:37:03.727 +00:00 [INF] Now listening on: https://[::]:5123
+2024-02-15 17:37:03.729 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 17:37:03.732 +00:00 [INF] Hosting environment: Development
+2024-02-15 17:37:03.734 +00:00 [INF] Content root path: /app
+2024-02-15 17:37:05.454 +00:00 [INF] Request starting HTTP/2 GET https://localhost:59824/swagger/index.html - null null
+2024-02-15 17:37:05.576 +00:00 [INF] Request finished HTTP/2 GET https://localhost:59824/swagger/index.html - 200 null text/html;charset=utf-8 123.6606ms
+2024-02-15 17:37:27.353 +00:00 [INF] Request starting HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pizza - null null
+2024-02-15 17:37:27.361 +00:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:37:27.380 +00:00 [INF] Route matched with {action = "GetPizzas", controller = "Pizza"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]] GetPizzas(Int32[]) on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-15 17:37:27.921 +00:00 [INF] Saved 0 entities to in-memory store.
+2024-02-15 17:37:28.155 +00:00 [INF] Saved 1 entities to in-memory store.
+2024-02-15 17:37:28.180 +00:00 [INF] Saved 1 entities to in-memory store.
+2024-02-15 17:37:28.210 +00:00 [INF] Buscando as pizzas
+2024-02-15 17:37:28.244 +00:00 [INF] Pizzas do banco
+2024-02-15 17:37:28.251 +00:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pizza[]'.
+2024-02-15 17:37:28.265 +00:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi) in 882.0914ms
+2024-02-15 17:37:28.266 +00:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PizzaController.GetPizzas (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:37:28.270 +00:00 [INF] Request finished HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pizza - 200 null application/json; charset=utf-8 916.9538ms
+2024-02-15 17:37:47.405 +00:00 [INF] Request starting HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pedidos - null null
+2024-02-15 17:37:47.409 +00:00 [INF] Request finished HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pedidos - 404 0 null 3.3826ms
+2024-02-15 17:37:47.410 +00:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pedidos, Response status code: 404
+2024-02-15 17:38:09.317 +00:00 [INF] Request starting HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pedidos - null null
+2024-02-15 17:38:09.322 +00:00 [INF] Request finished HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pedidos - 404 0 null 4.1846ms
+2024-02-15 17:38:09.322 +00:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pedidos, Response status code: 404
+2024-02-15 17:38:20.066 +00:00 [INF] Request starting HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pedidos - null null
+2024-02-15 17:38:20.066 +00:00 [INF] Request finished HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pedidos - 404 0 null 0.6578ms
+2024-02-15 17:38:20.067 +00:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pedidos, Response status code: 404
+2024-02-15 17:39:37.319 +00:00 [INF] Ola eu sou informação
+2024-02-15 17:39:38.123 +00:00 [INF] Now listening on: http://[::]:5122
+2024-02-15 17:39:38.126 +00:00 [INF] Now listening on: https://[::]:5123
+2024-02-15 17:39:38.128 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 17:39:38.130 +00:00 [INF] Hosting environment: Development
+2024-02-15 17:39:38.133 +00:00 [INF] Content root path: /app
+2024-02-15 17:39:40.030 +00:00 [INF] Request starting HTTP/2 GET https://localhost:59824/swagger/index.html - null null
+2024-02-15 17:39:40.147 +00:00 [INF] Request finished HTTP/2 GET https://localhost:59824/swagger/index.html - 200 null text/html;charset=utf-8 117.479ms
+2024-02-15 17:39:40.301 +00:00 [INF] Request starting HTTP/2 GET https://localhost:59824/swagger/v1/swagger.json - null null
+2024-02-15 17:39:40.406 +00:00 [INF] Request finished HTTP/2 GET https://localhost:59824/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 104.5925ms
+2024-02-15 17:39:46.664 +00:00 [INF] Request starting HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pedidos - null null
+2024-02-15 17:39:46.672 +00:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidosController.GetPedidos (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:39:46.687 +00:00 [INF] Route matched with {action = "GetPedidos", controller = "Pedidos"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pedido[]] GetPedidos() on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidosController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-15 17:39:47.168 +00:00 [INF] Saved 0 entities to in-memory store.
+2024-02-15 17:39:47.325 +00:00 [INF] Saved 2 entities to in-memory store.
+2024-02-15 17:39:47.405 +00:00 [INF] Saved 3 entities to in-memory store.
+2024-02-15 17:39:47.634 +00:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pedido[]'.
+2024-02-15 17:39:47.669 +00:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidosController.GetPedidos (ProjetoEmTresCamadas.Pizzaria.WebApi) in 978.0932ms
+2024-02-15 17:39:47.669 +00:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidosController.GetPedidos (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:39:47.675 +00:00 [INF] Request finished HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pedidos - 200 null application/json; charset=utf-8 1011.0338ms
+2024-02-15 17:40:11.794 +00:00 [INF] Request starting HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pedidos - null null
+2024-02-15 17:40:11.795 +00:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidosController.GetPedidos (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:40:11.798 +00:00 [INF] Route matched with {action = "GetPedidos", controller = "Pedidos"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pedido[]] GetPedidos() on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidosController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-15 17:40:11.826 +00:00 [INF] Saved 2 entities to in-memory store.
+2024-02-15 17:40:11.846 +00:00 [INF] Saved 3 entities to in-memory store.
+2024-02-15 17:40:11.855 +00:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pedido[]'.
+2024-02-15 17:40:11.858 +00:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidosController.GetPedidos (ProjetoEmTresCamadas.Pizzaria.WebApi) in 59.7025ms
+2024-02-15 17:40:11.860 +00:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidosController.GetPedidos (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:40:11.864 +00:00 [INF] Request finished HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pedidos - 200 null application/json; charset=utf-8 70.3085ms
+2024-02-15 17:40:20.292 +00:00 [INF] Request starting HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pedidos - null null
+2024-02-15 17:40:20.294 +00:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidosController.GetPedidos (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:40:20.294 +00:00 [INF] Route matched with {action = "GetPedidos", controller = "Pedidos"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pedido[]] GetPedidos() on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidosController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-15 17:40:20.333 +00:00 [INF] Saved 2 entities to in-memory store.
+2024-02-15 17:40:20.353 +00:00 [INF] Saved 3 entities to in-memory store.
+2024-02-15 17:40:20.361 +00:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pedido[]'.
+2024-02-15 17:40:20.362 +00:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidosController.GetPedidos (ProjetoEmTresCamadas.Pizzaria.WebApi) in 67.2466ms
+2024-02-15 17:40:20.362 +00:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidosController.GetPedidos (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:40:20.364 +00:00 [INF] Request finished HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pedidos - 200 null application/json; charset=utf-8 72.6417ms
+2024-02-15 17:40:43.911 +00:00 [INF] Ola eu sou informação
+2024-02-15 17:40:44.596 +00:00 [INF] Now listening on: http://[::]:5122
+2024-02-15 17:40:44.599 +00:00 [INF] Now listening on: https://[::]:5123
+2024-02-15 17:40:44.602 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 17:40:44.606 +00:00 [INF] Hosting environment: Development
+2024-02-15 17:40:44.608 +00:00 [INF] Content root path: /app
+2024-02-15 17:40:46.418 +00:00 [INF] Request starting HTTP/2 GET https://localhost:59824/swagger/index.html - null null
+2024-02-15 17:40:46.557 +00:00 [INF] Request finished HTTP/2 GET https://localhost:59824/swagger/index.html - 200 null text/html;charset=utf-8 139.6374ms
+2024-02-15 17:40:46.693 +00:00 [INF] Request starting HTTP/2 GET https://localhost:59824/swagger/v1/swagger.json - null null
+2024-02-15 17:40:46.811 +00:00 [INF] Request finished HTTP/2 GET https://localhost:59824/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 117.122ms
+2024-02-15 17:40:55.155 +00:00 [INF] Request starting HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pedidos - null null
+2024-02-15 17:40:55.162 +00:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidosController.GetPedidos (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:40:55.175 +00:00 [INF] Route matched with {action = "GetPedidos", controller = "Pedidos"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pedido[]] GetPedidos() on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidosController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-15 17:40:55.750 +00:00 [INF] Saved 0 entities to in-memory store.
+2024-02-15 17:40:55.891 +00:00 [INF] Saved 2 entities to in-memory store.
+2024-02-15 17:40:55.961 +00:00 [INF] Saved 3 entities to in-memory store.
+2024-02-15 17:40:56.205 +00:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pedido[]'.
+2024-02-15 17:40:56.233 +00:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidosController.GetPedidos (ProjetoEmTresCamadas.Pizzaria.WebApi) in 1055.6671ms
+2024-02-15 17:40:56.234 +00:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidosController.GetPedidos (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:40:56.240 +00:00 [INF] Request finished HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pedidos - 200 null application/json; charset=utf-8 1084.7678ms
+2024-02-15 17:41:29.844 +00:00 [INF] Ola eu sou informação
+2024-02-15 17:41:30.443 +00:00 [INF] Now listening on: http://[::]:5122
+2024-02-15 17:41:30.446 +00:00 [INF] Now listening on: https://[::]:5123
+2024-02-15 17:41:30.449 +00:00 [INF] Application started. Press Ctrl+C to shut down.
+2024-02-15 17:41:30.453 +00:00 [INF] Hosting environment: Development
+2024-02-15 17:41:30.455 +00:00 [INF] Content root path: /app
+2024-02-15 17:41:32.169 +00:00 [INF] Request starting HTTP/2 GET https://localhost:59824/swagger/index.html - null null
+2024-02-15 17:41:32.315 +00:00 [INF] Request finished HTTP/2 GET https://localhost:59824/swagger/index.html - 200 null text/html;charset=utf-8 147.3552ms
+2024-02-15 17:41:32.452 +00:00 [INF] Request starting HTTP/2 GET https://localhost:59824/swagger/v1/swagger.json - null null
+2024-02-15 17:41:32.549 +00:00 [INF] Request finished HTTP/2 GET https://localhost:59824/swagger/v1/swagger.json - 200 null application/json;charset=utf-8 97.7124ms
+2024-02-15 17:41:35.095 +00:00 [INF] Request starting HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pedidos - null null
+2024-02-15 17:41:35.102 +00:00 [INF] Executing endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidosController.GetPedidos (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:41:35.115 +00:00 [INF] Route matched with {action = "GetPedidos", controller = "Pedidos"}. Executing controller action with signature System.Threading.Tasks.Task`1[ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pedido[]] GetPedidos() on controller ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidosController (ProjetoEmTresCamadas.Pizzaria.WebApi).
+2024-02-15 17:41:35.648 +00:00 [INF] Saved 0 entities to in-memory store.
+2024-02-15 17:41:35.791 +00:00 [INF] Saved 2 entities to in-memory store.
+2024-02-15 17:41:35.872 +00:00 [INF] Saved 3 entities to in-memory store.
+2024-02-15 17:41:36.109 +00:00 [INF] Executing ObjectResult, writing value of type 'ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades.Pedido[]'.
+2024-02-15 17:41:36.142 +00:00 [INF] Executed action ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidosController.GetPedidos (ProjetoEmTresCamadas.Pizzaria.WebApi) in 1023.8437ms
+2024-02-15 17:41:36.143 +00:00 [INF] Executed endpoint 'ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers.PedidosController.GetPedidos (ProjetoEmTresCamadas.Pizzaria.WebApi)'
+2024-02-15 17:41:36.147 +00:00 [INF] Request finished HTTP/1.1 GET http://projetoemtrescamadas.pizzaria.webapi:5122/api/pedidos - 200 null application/json; charset=utf-8 1052.4936ms

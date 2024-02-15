@@ -26,7 +26,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoEmTresCamadas.Pizzar
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "5.Autenticação", "5.Autenticação", "{C74D6EAE-218B-476A-98A5-618C98363620}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetoEmTresCamadas.Pizzaria.Autenticacao", "Autenticacao\ProjetoEmTresCamadas.Pizzaria.Autenticacao\ProjetoEmTresCamadas.Pizzaria.Autenticacao.csproj", "{08139191-8DF7-450E-9721-C0018033BE53}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetoEmTresCamadas.Pizzaria.Autenticacao", "Autenticacao\ProjetoEmTresCamadas.Pizzaria.Autenticacao\ProjetoEmTresCamadas.Pizzaria.Autenticacao.csproj", "{08139191-8DF7-450E-9721-C0018033BE53}"
+EndProject
+Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{2716AD4E-D513-4748-BDCE-2840F2E6261F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -58,6 +60,10 @@ Global
 		{08139191-8DF7-450E-9721-C0018033BE53}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{08139191-8DF7-450E-9721-C0018033BE53}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{08139191-8DF7-450E-9721-C0018033BE53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2716AD4E-D513-4748-BDCE-2840F2E6261F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2716AD4E-D513-4748-BDCE-2840F2E6261F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2716AD4E-D513-4748-BDCE-2840F2E6261F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2716AD4E-D513-4748-BDCE-2840F2E6261F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

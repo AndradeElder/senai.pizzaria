@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
 using ProjetoEmTresCamadas.Pizzaria.Mvc.Middleware;
+using ProjetoEmTresCamadas.Pizzaria.Mvc.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +26,10 @@ builder.Services.AddAuthentication(options =>
     options.LogoutPath = "/Login/Logout"; // Defenir página logout
     options.AccessDeniedPath = "/Login/Denied";
 });
+
+builder.Services.AddScoped<PizzasApiService>();
+builder.Services.AddScoped<PedidosApiService>();
+builder.Services.AddScoped<ClientesApiService>();
 
 var app = builder.Build();
 
