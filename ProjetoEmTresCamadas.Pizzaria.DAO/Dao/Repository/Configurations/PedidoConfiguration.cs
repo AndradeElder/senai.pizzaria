@@ -11,9 +11,21 @@ namespace ProjetoEmTresCamadas.Pizzaria.DAO.Dao.Repository.Configurations
             builder.ToTable("Pedidos");
             builder.HasKey(x => x.Id);
 
-            builder.HasMany(a => a.Pizzas)
-                .WithMany(a => a.Pedidos)
-                .UsingEntity(j => j.ToTable("PedidoPizza"));
+            // Configurar relacionamentos
+            builder.HasMany(p => p.PedidosPizza)
+                   .WithOne(pp => pp.Pedido)
+                   .HasForeignKey(pp => pp.PedidoId)
+                   .OnDelete(DeleteBehavior.Cascade);
+
+        }
+    }
+
+    public class PedidosPizzaConfiguration : IEntityTypeConfiguration<PedidosPizza>
+    {
+        public void Configure(EntityTypeBuilder<PedidosPizza> builder)
+        {
+            builder.ToTable("PedidosPizza");
+            builder.HasKey(x => x.Id);
         }
     }
 }

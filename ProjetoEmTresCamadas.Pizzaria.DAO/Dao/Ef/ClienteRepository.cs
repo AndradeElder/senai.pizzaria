@@ -20,8 +20,8 @@ namespace ProjetoEmTresCamadas.Pizzaria.DAO.Dao.Ef
             }
 
             // Seed some students
-            await AddAsync(new ClienteVo { Nome = "John Doe", UserId = Guid.NewGuid() });
-            await AddAsync(new ClienteVo { Nome = "Jane Smith", UserId = Guid.NewGuid() });
+            //await AddAsync(new ClienteVo { Nome = "John Doe", UserId = Guid.NewGuid() });
+            //await AddAsync(new ClienteVo { Nome = "Jane Smith", UserId = Guid.NewGuid() });
 
             // Save changes
             await _context.SaveChangesAsync();

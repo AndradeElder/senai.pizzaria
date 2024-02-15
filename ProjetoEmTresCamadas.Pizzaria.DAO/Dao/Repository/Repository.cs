@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ProjetoEmTresCamadas.Pizzaria.DAO.Regras;
-using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
 using System.Linq.Expressions;
 
 namespace ProjetoEmTresCamadas.Pizzaria.DAO.Dao.Repository;
@@ -32,7 +31,6 @@ public class Repository<TEntity> : IRepository<TEntity> where TEntity : class
     public async Task<TEntity> GetByIdAsync(int id)
     {
         var entity = await _dbSet.FindAsync(id);
-        _context.Entry(entity).State = EntityState.Detached; // Detach existingCliente if it's being tracked
         return entity;
     }
 
