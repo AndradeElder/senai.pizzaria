@@ -1,0 +1,6 @@
+@ProjetoEmTresCamadas.Pizzaria.Autenticacao_HostAddress = http://localhost:5023
+
+GET {{ProjetoEmTresCamadas.Pizzaria.Autenticacao_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

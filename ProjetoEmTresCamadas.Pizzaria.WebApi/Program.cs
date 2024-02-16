@@ -1,5 +1,7 @@
-using ProjetoEmTresCamadas.Clienteria.DAO.Dao;
+using Microsoft.EntityFrameworkCore;
 using ProjetoEmTresCamadas.Pizzaria.DAO.Dao;
+using ProjetoEmTresCamadas.Pizzaria.DAO.Dao.Ef;
+using ProjetoEmTresCamadas.Pizzaria.DAO.Dao.Repository;
 using ProjetoEmTresCamadas.Pizzaria.DAO.Regras;
 using ProjetoEmTresCamadas.Pizzaria.DAO.Settings;
 using ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Regras;
@@ -23,14 +25,19 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.Configure<ConnectionStrings>(builder.Configuration.GetSection("ConnectionStrings"));
 
+var connectionStrings = builder.Configuration.GetSection("ConnectionStrings").GetValue<string>("Master");
+
+Console.WriteLine(connectionStrings);
+
+builder.Services.AddDbContext<AppDbContext>(options => options.UseInMemoryDatabase("Testes"));
+builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
 // Criação objetos acesso a dados
-builder.Services.AddScoped<IPizzaDao, PizzaDao>();
-builder.Services.AddScoped<IClienteDao, ClienteDao>();
-builder.Services.AddScoped<IPedidoClienteDao, PedidoClienteDao>();
-builder.Services.AddScoped<IPedidoDao, PedidoDao>();
+builder.Services.AddScoped<IPizzaDao, PizzaRepository>();
+builder.Services.AddScoped<IClienteDao, ClienteRepository>();
+builder.Services.AddScoped<IPedidoDao, PedidoRepository>();
 
 //Criação objetos de serviço
-builder.Services.AddScoped<IPizzaService,PizzaService>();
+builder.Services.AddScoped<IPizzaService, PizzaService>();
 builder.Services.AddScoped<IClienteService, ClienteService>();
 builder.Services.AddScoped<IPedidoService, PedidoService>();
 
@@ -53,7 +60,9 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseAuthentication();
 app.UseAuthorization();
+
 
 app.MapControllers();
 

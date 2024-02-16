@@ -26,13 +26,14 @@
 
 
 @section scripts {
+
     <script>
         function adicionarAoCarrinho(pizzaId) {
-            var quantidade = $('#' + pizzaId).val();
-
-            $.post('/Carrinho/AdicionarAoCarrinho', { id: pizzaId, quantidade: quantidade })
+            $.post('/Carrinho/AdicionarAoCarrinho', { pizzaId: pizzaId })
                 .done(function (data) {
                     alert('Pizza adicionada ao carrinho com sucesso!');
+                    var totalItens = parseInt($('#totalItens').text()) + 1;
+                    $('#totalItens').text(totalItens);
                 })
                 .fail(function () {
                     alert('Erro ao adicionar a pizza ao carrinho.');

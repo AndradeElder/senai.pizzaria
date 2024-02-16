@@ -8,6 +8,5 @@ public interface IPedidoService :
     IAtualizar<Pedido>,
     IDeletar<Pedido>
 {   
-    string ObterInformacoesPedidos();
 }
 

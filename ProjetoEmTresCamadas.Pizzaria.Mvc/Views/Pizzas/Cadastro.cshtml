@@ -1,0 +1,44 @@
+﻿@{
+    Layout = "_LayoutAdmin";
+}
+@model Pizza
+
+<div class="container mt-4">
+    <div class="row">
+        <!-- Include the side menu partial view -->
+        @Html.Partial("_SideMenu")
+
+        <!-- Main content -->
+        <div class="col-md-9">
+            <h2>Cadastro de Pizzas</h2>
+
+            <div class="card-body">
+                <form asp-controller="Pizzas" asp-action="Cadastro" method="post">
+                    <div class="form-group">
+                        <label for="TamanhoDePizza">Tamanho de Pizza:</label>
+                        <select asp-for="TamanhoDePizza" class="form-control">
+                            @foreach (var size in Enum.GetValues(typeof(TamanhoDePizza)))
+                            {
+                                <option value="@size">@size</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Sabor"></label>
+                        <input asp-for="Sabor" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Descricao"></label>
+                        <input asp-for="Descricao" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Valor"></label>
+                        <input asp-for="Valor" class="form-control" type="number" required />
+                    </div>
+                    <br />
+                    <button type="submit" class="btn btn-primary btn-block">Cadastro</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

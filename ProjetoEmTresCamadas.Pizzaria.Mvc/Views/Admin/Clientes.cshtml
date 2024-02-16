@@ -1,0 +1,49 @@
+﻿@model Cliente[]
+<div class="container mt-4">
+    <div class="row">
+        <!-- Side menu -->
+        @Html.Partial("_SideMenu")
+        <!-- Main content -->
+        <div class="col-md-9">
+            <h2>Clientes</h2>
+            
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>
+                            <a href="@Url.Action("Cadastro", "Clientes")" class="btn btn-primary">Novo</a>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var cliente in Model)
+                    {
+                        <tr>
+                            <td>@cliente.Nome</td>
+                            <td>
+                                <a asp-area="" asp-controller="Clientes" asp-action="Details" asp-route-id="@cliente.Id" class="btn btn-primary btn-sm">Detalhes</a>
+                                <a asp-area="" asp-controller="Clientes" asp-action="Edit" asp-route-id="@cliente.Id" class="btn btn-success btn-sm">Editar</a>
+                                <a asp-area="" asp-controller="Clientes" asp-action="Delete" asp-route-id="@cliente.Id" class="btn btn-danger btn-sm">Excluir</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <!-- Pagination -->
+            @if (ViewBag.TotalPages > 1)
+            {
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-end">
+                        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                        {
+                            <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                                <a class="page-link" href="@Url.Action("Clientes","Admin", new { page = i })">@i</a>
+                            </li>
+                        }
+                    </ul>
+                </nav>
+            }
+        </div>
+    </div>
+</div>

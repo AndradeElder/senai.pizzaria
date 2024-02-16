@@ -21,11 +21,11 @@ public class PizzaService : IPizzaService
         Logger = logger;
     }
 
-    public Pizza Adicionar(Pizza objeto)
+    public async Task<Pizza> AdicionarAsync(Pizza objeto)
     {
-
         PizzaVo pizzaVo = objeto.ToPizzaVo();
-        objeto.Id = PizzaDao.CriarRegistro(pizzaVo);
+        await PizzaDao.AddAsync(pizzaVo);
+        objeto.Id = pizzaVo.Id;
         Logger.LogInformation("Pizza adicionada com sucesso");
         return objeto;
     }
@@ -33,27 +33,32 @@ public class PizzaService : IPizzaService
     public async Task<List<Pizza>> ObterTodos()
     {
         List<Pizza> pizzas = new ();
-        List<PizzaVo> pizzasBanco = PizzaDao.ObterRegistros();
+        List<PizzaVo> pizzasBanco = PizzaDao.GetAll().ToList();
         Logger.LogInformation("Pizzas do banco");
         foreach (PizzaVo pizzaVo in pizzasBanco)
         {
-            Pizza pizza = new Pizza()
-            {
-                Descricao = pizzaVo.Descricao,
-                Sabor = pizzaVo.Sabor,
-                TamanhoDePizza = (TamanhoDePizza)pizzaVo.TamanhoDePizza,
-                Valor = pizzaVo.Valor,
-                Id = pizzaVo.Id,
-            };
+            Pizza pizza = MapPizzaVo(pizzaVo);
             pizzas.Add(pizza);
         }
         return pizzas;
     }
 
+    public static Pizza MapPizzaVo(PizzaVo pizzaVo)
+    {
+        return new Pizza()
+        {
+            Descricao = pizzaVo.Descricao,
+            Sabor = pizzaVo.Sabor,
+            TamanhoDePizza = (TamanhoDePizza)pizzaVo.TamanhoDePizza,
+            Valor = pizzaVo.Valor,
+            Id = pizzaVo.Id,
+        };
+    }
+
     public async Task<Pizza> AtualizarAsync(Pizza objeto)
     {
         PizzaVo pizzaVo = objeto.ToPizzaVo();
-        await PizzaDao.AtualizarRegistro(pizzaVo);
+        PizzaDao.Update(pizzaVo);
 
         objeto = (await Obter(objeto.Id));
 
@@ -63,7 +68,8 @@ public class PizzaService : IPizzaService
 
     public async Task Deletar(int ID)
     {
-        await PizzaDao.DeletarRegistro(ID);
+        PizzaVo pizzaVo = await PizzaDao.GetByIdAsync(ID);
+        PizzaDao.Delete(pizzaVo);
     }
 
     public async Task<List<Pizza>> ObterTodos(int[] id)
@@ -77,15 +83,8 @@ public class PizzaService : IPizzaService
 
     public async Task<Pizza> Obter(int id)
     {
-        PizzaVo pizzaVo = await PizzaDao.ObterRegistro(id);
-        Pizza pizza = new ()
-        {
-            Descricao = pizzaVo.Descricao,
-            Sabor = pizzaVo.Sabor,
-            TamanhoDePizza = (TamanhoDePizza)pizzaVo.TamanhoDePizza,
-            Valor = pizzaVo.Valor,
-            Id = pizzaVo.Id,
-        };
+        PizzaVo pizzaVo = await PizzaDao.GetByIdAsync(id);
+        Pizza pizza = MapPizzaVo(pizzaVo);
         return pizza;
     }
 }

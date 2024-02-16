@@ -1,9 +1,4 @@
 ﻿using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades
 {
@@ -14,7 +9,7 @@ namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades
 
         public ClienteVo ToVo()
         {
-            return new ClienteVo {  Nome = Nome, Id = Id, UserId = UserId };
+            return new ClienteVo { Nome = Nome, UserId = UserId, Id = Id };//, UserId = UserId };
         }
     }
 }

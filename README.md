@@ -5,6 +5,10 @@
 - .net 8
 - Sqlite
 - Web Api
+- ef core
+- jwt
+- padrão repositorio
+- Asp.net MVC
 
 
 ## Regras 

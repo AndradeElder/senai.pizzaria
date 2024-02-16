@@ -2,7 +2,7 @@
 
 namespace ProjetoEmTresCamadas.Pizzaria.DAO.Regras;
 
-public interface IClienteDao : IDao<ClienteVo>
+public interface IClienteDao : IRepository<ClienteVo>
 {
 
 }

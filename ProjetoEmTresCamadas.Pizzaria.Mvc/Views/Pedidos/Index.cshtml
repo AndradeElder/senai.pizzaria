@@ -1,0 +1,64 @@
+﻿
+@{
+    Layout = "_LayoutAdmin";
+}
+@model Pedido[]
+
+<div class="container mt-4">
+    <div class="row">
+        <!-- Include the side menu partial view -->
+        @Html.Partial("_SideMenu")
+
+        <div class="col-md-9">
+            <h2>Pedidos</h2>
+
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <td>Nome Cliente </td>
+                        <td>DataSolicitacao</td>
+                        <td>DataPreparacao</td>
+                        <td>DataSaidaEntrega</td>
+                        <td>Total de pizzas</td>
+                        <td>Valor pedido</td>
+                        <th>
+                            
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var pedido in Model)
+                    {
+                        <tr>
+                            <td>@pedido.Cliente.Nome </td>
+                            <td>@pedido.DataSolicitacao</td>
+                            <td>@pedido.DataPreparacao</td>
+                            <td>@pedido.DataSaidaEntrega</td>
+                            <td>@pedido.Pizzas.Count</td>
+                            <td>@pedido.Pizzas.Sum(x=> x.Valor)</td>
+                            <td>
+                                <a asp-area="" asp-controller="Pedidos" asp-action="Details" asp-route-id="@pedido.Id" class="btn btn-primary btn-sm">Detalhes</a>
+                                <a asp-area="" asp-controller="Pedidos" asp-action="Edit" asp-route-id="@pedido.Id" class="btn btn-success btn-sm">Editar</a>
+                                <a asp-area="" asp-controller="Pedidos" asp-action="Delete" asp-route-id="@pedido.Id" class="btn btn-danger btn-sm">Excluir</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <!-- Pagination -->
+            @if (ViewBag.TotalPages > 1)
+            {
+                <nav aria-label="Page navigation">
+                    <ul class="pagination justify-content-end">
+                        @for (int i = 1; i <= ViewBag.TotalPages; i++)
+                        {
+                            <li class="page-item @(i == ViewBag.CurrentPage ? "active" : "")">
+                                <a class="page-link" href="@Url.Action("Index","Pedidos", new { page = i })">@i</a>
+                            </li>
+                        }
+                    </ul>
+                </nav>
+            }
+        </div>
+    </div>
+</div>

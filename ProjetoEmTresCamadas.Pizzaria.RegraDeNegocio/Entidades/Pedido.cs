@@ -1,9 +1,4 @@
 ﻿using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades
 {
@@ -21,17 +16,26 @@ namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Entidades
         public DateTime? DataSaidaEntrega { get; set; }
         public DateTime? DataFinalizacaoEntrega { get; set; }
 
-        public PedidoClienteVo ToPedidoClienteVo()
+        public PedidoVo ToPedidoClienteVo()
         {
-            return new PedidoClienteVo()
+            return new PedidoVo()
             {
-                CLienteID = Cliente.Id,
                 DataSolicitacao = DataSolicitacao,
                 DataFinalizacaoEntrega = DataFinalizacaoEntrega,
                 DataPreparacao = DataPreparacao,
                 Id = this.Id,
                 DataSaidaEntrega = DataSaidaEntrega,
+                //ClienteId = Cliente.Id,
+                //Cliente = Cliente.ToVo(),
+                //Pizzas = ToPizzasVo(Pizzas)
             };
+        }
+
+        private ICollection<PizzaVo> ToPizzasVo(List<Pizza> pizzas)
+        {
+            var pizzasVo = new HashSet<PizzaVo>();
+            pizzas.ForEach(pizza => pizzasVo.Add(new PizzaVo() { Id = pizza.Id }));
+            return pizzasVo;
         }
     }
 }

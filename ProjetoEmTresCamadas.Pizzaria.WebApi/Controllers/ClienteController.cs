@@ -24,7 +24,7 @@ namespace ProjetoEmTresCamadas.Pizzaria.WebApi.Controllers
         [HttpPost]
         public async Task<Cliente> Adicionar(Cliente cliente)
         {
-            return _clienteService.Adicionar(cliente);
+            return await _clienteService.AdicionarAsync(cliente);
         }
 
         [HttpPut]

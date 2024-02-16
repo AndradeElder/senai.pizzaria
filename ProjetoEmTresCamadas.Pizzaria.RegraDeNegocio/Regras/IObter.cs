@@ -1,4 +1,6 @@
-﻿namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Regras;
+﻿using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
+
+namespace ProjetoEmTresCamadas.Pizzaria.RegraDeNegocio.Regras;
 
 public interface IObter<T>
 {

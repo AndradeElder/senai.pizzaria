@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.Cookies;
-using System.Text;
+using ProjetoEmTresCamadas.Pizzaria.Mvc.Middleware;
+using ProjetoEmTresCamadas.Pizzaria.Mvc.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -8,6 +9,10 @@ builder.Services.AddControllersWithViews();
 
 // Adicionar serviços de criação do HttpClient 
 builder.Services.AddHttpClient();
+builder.Services.AddSession(options =>
+{
+    options.Cookie.IsEssential = true; // make the session cookie essential
+});
 
 // Adicionar schema de autenticação
 builder.Services.AddAuthentication(options =>
@@ -22,6 +27,10 @@ builder.Services.AddAuthentication(options =>
     options.AccessDeniedPath = "/Login/Denied";
 });
 
+builder.Services.AddScoped<PizzasApiService>();
+builder.Services.AddScoped<PedidosApiService>();
+builder.Services.AddScoped<ClientesApiService>();
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -33,10 +42,12 @@ if (!app.Environment.IsDevelopment())
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseSession();
 
 app.UseAuthentication();
 app.UseAuthorization();
 
+app.UseMiddleware<ValidarTokenMiddleware>();
 app.MapControllerRoute(
     name: "default",
     pattern: "{controller=Login}/{action=Index}/{id?}");

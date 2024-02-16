@@ -3,7 +3,7 @@ using ProjetoEmTresCamadas.Pizzaria.DAO.ValueObjects;
 
 namespace ProjetoEmTresCamadas.Pizzaria.DAO.Dao;
 
-public interface IPizzaDao : IDao<PizzaVo>
+public interface IPizzaDao : IRepository<PizzaVo>
 {
 
 }
